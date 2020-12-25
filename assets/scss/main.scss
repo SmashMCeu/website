@@ -1,0 +1,64 @@
+#about {
+  padding: 80px 0;
+  h3 {
+    color: #4caf50;
+    margin-top: 0;
+    margin-bottom: 100px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+}
+
+#shop {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("../img/shop.png");
+  padding: 80px 0;
+
+  .rank {
+    margin: 10px 0;
+    background-color: white;
+    .header {
+      padding: 10px 0;
+      background-color: #4caf50;
+      span {
+        cursor: default;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 25px;
+      }
+    }
+
+    .footer {
+      padding: 20px 0;
+      .btn {
+        padding: 0px 40px;
+      }
+    }
+
+    td {
+      cursor: default;
+    }
+  }
+}
+
+#imprint {
+  padding: 80px 0;
+}
+
+.info-card {
+  padding: 0 20px;
+  h5 {
+    color: #4caf50;
+    margin: 5px 0;
+  }
+  i {
+    font-size: 70px;
+  }
+  p {
+    color: #414141;
+  }
+}

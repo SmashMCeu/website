@@ -1,0 +1,92 @@
+nav {
+  position: fixed;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2) !important;
+  line-height: 38px !important;
+  background-color: transparent !important;
+
+  a {
+    color: white;
+  }
+  ul {
+    margin: 12.5px 0;
+    li {
+      margin: 0 6px;
+    }
+    a {
+      color: white;
+      transition: background-color .3s;
+      transition: color .3s;
+      &:hover {
+        background-color: white;
+        color: #4CAF50;
+        transition: background-color .6s;
+      }
+    }
+  }
+
+  img {
+    padding: 15px 0;
+  }
+}
+
+.navToggle {
+  position: absolute;
+  left: 25px;
+  display: none;
+}
+
+.nav-wrapper {
+  padding: 0 30px;
+}
+
+@media (max-width: 992px) {
+  .navToggle {
+    display: block;
+  }
+  nav {
+    margin-top: 0;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    
+    ul {
+      width: 100%;
+      text-align: center;
+      padding-top: 50px;
+      &.right {
+        float: left !important;
+      }
+
+      li {
+        float: none;
+        button {
+          margin: 6px 0;
+        }
+      }
+    }
+
+    a::after {
+      display: none !important;
+    }
+
+    &.open{
+      height: 265px;
+    }
+  }
+}
+
+.logout {
+  margin-top: 10px;
+  font-size: 16px;
+  &:hover {
+    background-color: transparent !important;
+    border: 1px solid white;
+  }
+}
+
+@media (max-width: 592px) {
+  nav {
+    img {
+      padding-bottom: 24px;
+    }
+  }
+}

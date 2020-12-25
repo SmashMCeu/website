@@ -1,0 +1,247 @@
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.vertical-align {
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  align-items: center; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.loading {
+  background-color: #fff;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../img/loader.gif") center no-repeat #fff; }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  z-index: 2000; }
+
+nav {
+  position: fixed;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2) !important;
+  line-height: 38px !important;
+  background-color: transparent !important; }
+  nav a {
+    color: white; }
+  nav ul {
+    margin: 12.5px 0; }
+    nav ul li {
+      margin: 0 6px; }
+    nav ul a {
+      color: white;
+      transition: background-color .3s;
+      transition: color .3s; }
+      nav ul a:hover {
+        background-color: white;
+        color: #4CAF50;
+        transition: background-color .6s; }
+  nav img {
+    padding: 15px 0; }
+
+.navToggle {
+  position: absolute;
+  left: 25px;
+  display: none; }
+
+.nav-wrapper {
+  padding: 0 30px; }
+
+@media (max-width: 992px) {
+  .navToggle {
+    display: block; }
+  nav {
+    margin-top: 0;
+    transition-duration: 0.5s;
+    overflow: hidden; }
+    nav ul {
+      width: 100%;
+      text-align: center;
+      padding-top: 50px; }
+      nav ul.right {
+        float: left !important; }
+      nav ul li {
+        float: none; }
+        nav ul li button {
+          margin: 6px 0; }
+    nav a::after {
+      display: none !important; }
+    nav.open {
+      height: 265px; } }
+
+.logout {
+  margin-top: 10px;
+  font-size: 16px; }
+  .logout:hover {
+    background-color: transparent !important;
+    border: 1px solid white; }
+
+@media (max-width: 592px) {
+  nav img {
+    padding-bottom: 24px; } }
+
+header {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("../img/header.png"); }
+  header .vertical-align {
+    min-height: 450px; }
+  header p {
+    padding: 0;
+    font-size: 22px; }
+  header span {
+    display: inline-block;
+    font-weight: 600;
+    padding: 0px 15px;
+    border: 10px solid white;
+    letter-spacing: 10px;
+    padding-bottom: 8px;
+    font-size: 70px; }
+
+@media (max-width: 992px) {
+  header span {
+    font-size: 30px;
+    border: 5px solid white; }
+  header p {
+    font-size: 18px; } }
+
+#about {
+  padding: 80px 0; }
+  #about h3 {
+    color: #4caf50;
+    margin-top: 0;
+    margin-bottom: 100px;
+    font-weight: bold;
+    letter-spacing: 2px; }
+
+#shop {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("../img/shop.png");
+  padding: 80px 0; }
+  #shop .rank {
+    margin: 10px 0;
+    background-color: white; }
+    #shop .rank .header {
+      padding: 10px 0;
+      background-color: #4caf50; }
+      #shop .rank .header span {
+        cursor: default;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 25px; }
+    #shop .rank .footer {
+      padding: 20px 0; }
+      #shop .rank .footer .btn {
+        padding: 0px 40px; }
+    #shop .rank td {
+      cursor: default; }
+
+#imprint {
+  padding: 80px 0; }
+
+.info-card {
+  padding: 0 20px; }
+  .info-card h5 {
+    color: #4caf50;
+    margin: 5px 0; }
+  .info-card i {
+    font-size: 70px; }
+  .info-card p {
+    color: #414141; }
+
+footer a {
+  color: white; }
+
+.contact {
+  margin-top: 20px; }
+  .contact a {
+    transition: background-color 0.5s;
+    background-color: white;
+    padding: 7px 10px;
+    padding-top: 8px;
+    border-radius: 50%; }
+    .contact a:hover {
+      transition: background-color 0.5s;
+      background-color: rgba(255, 255, 255, 0.8); }
+  .contact .col {
+    margin: 5px 0;
+    padding: 0 4px; }
+
+@media (max-width: 600px) {
+  .footer-col {
+    text-align: center !important; } }
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #4CAF50 !important;
+  font-size: 16px;
+  text-transform: none; }
+
+.select-dropdown li.disabled,
+.select-dropdown li.disabled > span,
+.select-dropdown li.optgroup {
+  color: rgba(0, 0, 0, 0.3) !important; }
+
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="url"]:not(.browser-default):focus:not([readonly]),
+input[type="time"]:not(.browser-default):focus:not([readonly]),
+input[type="date"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+input[type="tel"]:not(.browser-default):focus:not([readonly]),
+input[type="number"]:not(.browser-default):focus:not([readonly]),
+input[type="search"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #4CAF50;
+  box-shadow: 0 1px 0 0 #4CAF50; }
+  input:not([type]):focus:not([readonly]) + label,
+  input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="password"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="url"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="time"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="date"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="datetime-local"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="tel"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="number"]:not(.browser-default):focus:not([readonly]) + label,
+  input[type="search"]:not(.browser-default):focus:not([readonly]) + label,
+  textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #4CAF50; }
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom-color: #4CAF50; }
