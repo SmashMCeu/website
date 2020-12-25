@@ -1,29 +1,30 @@
 footer {
-    a {
-        color: white;
-    }
+  a {
+    color: white;
+  }
 }
 .contact {
-    margin-top: 20px;
-    a {
-        transition: background-color 0.5s;
-        background-color: white;
-        padding: 7px 10px;
-        padding-top: 8px;
-        border-radius: 50%;
-        &:hover {
-            transition: background-color 0.5s;
-            background-color: rgba($color: #ffff, $alpha: 0.8);
-        }
+  margin-top: 20px;
+  a {
+    transition: background-color 0.5s;
+    background-color: white;
+    padding: 7px 10px;
+    padding-top: 8px;
+    border-radius: 50%;
+    &:hover {
+      transition: background-color 0.5s;
+      background-color: rgba($color: #ffff, $alpha: 0.8);
     }
-    .col {
-        margin: 5px 0;
-        padding: 0 4px;
-    }
+  }
+  .col {
+    margin: 5px 0;
+    padding: 0 4px;
+  }
 }
 
 @media (max-width: 600px) {
-    .footer-col {
-        text-align: center !important;
-    }
+  .footer-col {
+    text-align: center !important;
+  }
 }
+
