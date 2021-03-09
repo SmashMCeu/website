@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="SmashMC | Appeal" />
+    <meta
+      name="description"
+      content="You think you have been banned wrongly or want to apologize
+    for your actions then you are on the right page!"
+    />
+    <meta
+      name="keywords"
+      content="smashmc, smash, apply, bewerben, minecraft smash, smash server, minecraft, molecraft, bedwars, bw-1vs1, minecraft server"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smashmc.eu/appeal" />
+    <meta property="og:title" content="SmashMC | Appeal" />
+    <meta
+      property="og:description"
+      content="You think you have been banned wrongly or want to apologize
+      for your actions then you are on the right page!"
+    />
+    <meta
+      property="og:image"
+      content="https://smashmc.eu/assets/img/smashmc.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://smashmc.eu/appeal" />
+    <meta property="twitter:title" content="SmashMC | Appeal" />
+    <meta
+      property="twitter:description"
+      content="You think you have been banned wrongly or want to apologize
+      for your actions then you are on the right page!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://smashmc.eu/assets/img/smashmc.png"
+    />
+
+    <title>SmashMC | Appeal</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
+    <link
+      href="assets/css/styles.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link rel="icon" href="assets/img/favicon.png" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper s-container">
+        <a href="/" class="brand-logo"
+          ><img src="assets/img/favicon.png" height="65px" alt="brand logo"
+        /></a>
+        <ul class="right">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#shop">Shop</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="appeal.html">Appeal</a></li>
+          <li><a href="rules.html">Rules</a></li>
+        </ul>
+        <span class="navToggle"><i class="material-icons">menu</i></span>
+      </div>
+    </nav>
+
+    <header id="home">
+      <div class="overlay">
+        <div class="vertical-align">
+          <div class="s-container center-align">
+            <div class="row">
+              <div
+                class="col s12 l8 xl4 left-align animate__animated animate__fadeInLeft"
+              >
+                <span>Ufairly banned?</span>
+                <h1>Appeal</h1>
+                <p>
+                  You think you have been banned wrongly or want to apologize
+                  for your actions then you are on the right page!
+                </p>
+                <div class="online">
+                  <span class="material-icons">group</span>
+                  <span class="text">Online :</span
+                  ><span class="slots">0 / 100</span>
+                </div>
+              </div>
+              <div
+                class="col xl4 offset-xl2 hide-on-med-and-down right-align animate__animated animate__bounceInUp"
+              >
+                <img
+                  class="skinrender"
+                  src="assets/img/skins/appeal.png"
+                  alt="skinrender"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="alert">
+        <div class="vertical-align">
+          <div class="box">
+            <h1 id="alert-title">SENDED!</h1>
+            <p id="alert-text">
+              Thank you for your complaint, we will review your appeal as soon
+              as possible
+            </p>
+            <button onclick="hideAlert()" class="noselect">Ok</button>
+          </div>
+        </div>
+      </div>
+      <div id="appeal">
+        <div class="row">
+          <form class="col s4 offset-s4">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name" type="text" class="validate" required />
+                <label for="name">First Name *</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">games</i>
+                <input id="minecraft" type="text" class="validate" required />
+                <label for="minecraft">Minecraft Name *</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">contacts</i>
+                <input id="discord" type="tel" class="validate" />
+                <label for="discord">Discord</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="text" class="validate" required />
+                <label for="email">E-Mail *</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="punishid" type="text" class="validate" required />
+                <label for="punishid">Ban/Mute ID *</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">message</i>
+                <textarea
+                  id="message"
+                  class="materialize-textarea"
+                  required
+                ></textarea>
+                <label for="message">Message *</label>
+              </div>
+            </div>
+            <div class="col s12 right-align">
+              <button
+                onclick="send()"
+                class="btn waves-effect waves-light"
+                type="button"
+                name="action"
+              >
+                Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer green">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">About Us</h5>
+            <p class="grey-text text-lighten-4">
+              We started this project to play Smash with our friends. Now you
+              can join for free to be a part of our community.
+            </p>
+          </div>
+          <div class="col l3 offset-l3 s12">
+            <h5 class="white-text">Links</h5>
+            <div class="row contact">
+              <div class="col">
+                <a
+                  href="https://www.youtube.com/channel/UCXCWMVDmilgSg4xdiVwEHxw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/youtube-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="youtube"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="https://twitter.com/SmashMC_EU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/twitter-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="twitter"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="https://www.instagram.com/smashmc.eu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/instagram-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="instagram"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="https://www.tiktok.com/@smashmc.eu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/tiktok-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="instagram"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="ts3server://smashmc.eu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/teamspeak-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="teamspeak3"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="https://discord.com/invite/uz2y9bH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/svg/discord-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="discord"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <br />
+          <div class="row">
+            <div class="footer-col col s12 m6">
+              Copyright &copy; 2021 SmashMC
+            </div>
+            <div class="footer-col col s12 m6 right-align">
+              <a href="imprint.html">Impressum & Dateschutz</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="script"></div>
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/scroll-smooth.js"></script>
+    <script>
+      $(".navToggle").click(function () {
+        $(this).toggleClass("open");
+        $("nav").toggleClass("open");
+      });
+
+      function showAlert() {
+        $("body").css("overflow", "hidden");
+        $("#alert").fadeIn("slow");
+      }
+
+      function changeAndShowAlert(title, text) {
+        $("#alert-title").html(title);
+        $("#alert-text").html(text);
+        showAlert();
+      }
+
+      function hideAlert() {
+        $("body").css("overflow", "initial");
+        $("#alert").fadeOut("slow");
+      }
+
+      function send() {
+        $.ajax({
+          url: "mail.php",
+          method: "POST",
+          data: {
+            name: $("#name").val(),
+            minecraft: $("#minecraft").val(),
+            discord: $("#discord").val(),
+            email: $("#email").val(),
+            punishid: $("#punishid").val(),
+            message: $("#message").val(),
+          },
+        }).done(function (script) {
+          $("#script").html(script);
+        });
+      }
+
+      function ping(ip, port) {
+        $.getJSON(
+          "https://api.minetools.eu/ping/" + ip + "/" + port,
+          function (json) {
+            if (json) {
+              if (json.players) {
+                if (json.players.online && json.players.max) {
+                  $(".slots").each(function () {
+                    $(this).html(
+                      json.players.online + " / " + json.players.max
+                    );
+                  });
+                }
+              }
+            }
+          }
+        );
+      }
+
+      $(document).ready(function () {
+        ping("mc.smashmc.eu", "25565");
+        setInterval(function () {
+          ping("mc.smashmc.eu", "25565");
+        }, 1000 * 30);
+      });
+    </script>
+  </body>
+</html>

@@ -1,64 +1,215 @@
+.text-banner {
+  margin-bottom: 200px;
+  height: 60px;
+  width: 100%;
+  background-color: #4caf50;
+  .inner {
+    text-align: center;
+    height: 100%;
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+
+    span {
+      letter-spacing: 3px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .title {
+      line-height: 24px;
+      font-weight: 700;
+      font-size: 30px;
+      color: #3e3e3e;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      font-size: 17px;
+      color: #878484;
+    }
+  }
+}
+
+#toast {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.7);
+  z-index: 999999;
+  margin: 0 auto;
+  img {
+    position: absolute;
+    height: auto;
+    width: 40vw;
+    margin: 0 auto;
+    left: calc(100vw / 2 - 20vw);
+  }
+}
+
 #about {
-  padding: 80px 0;
-  h3 {
+  overflow: hidden;
+  margin-top: 200px;
+}
+
+.game {
+  position: relative;
+  .title {
+    text-transform: uppercase;
     color: #4caf50;
-    margin-top: 0;
-    margin-bottom: 100px;
-    font-weight: bold;
+    font-size: 45px;
     letter-spacing: 2px;
+  }
+  .preview {
+    width: 100%;
+    height: auto;
+  }
+  .icon {
+    top: 20px;
+    right: -20px;
+    position: absolute;
+    text-align: right;
+    display: inline-block;
+    background-color: #4caf50;
+    border-radius: 50%;
+    padding: 20px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  p {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    right: -30px;
+    font-size: 20px;
+    color: #3e3e3e;
   }
 }
 
 #shop {
+  overflow: hidden;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-image: url("../img/shop.jpg");
-  padding: 80px 0;
+  background-image: url("../img/shop.png");
 
-  .rank {
-    margin: 10px 0;
+  .s-container {
+    padding: 40px 0;
+  }
+
+  h1,
+  h4 {
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-weight: 300;
+  }
+}
+
+.rank {
+  margin: 40px 20px;
+  letter-spacing: 2px;
+  .header {
+    position: relative;
+    text-transform: uppercase;
+    background-color: #4caf50;
+    color: white;
+    padding: 20px 30px;
+    width: 100%;
+  }
+  .name {
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .price {
+    position: absolute;
+    font-size: 30px;
+    top: 15px;
+    right: 15px;
+  }
+  ul {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  li {
     background-color: white;
-    .header {
-      padding: 10px 0;
-      background-color: #4caf50;
-      span {
-        cursor: default;
-        color: white;
-        font-weight: bold;
-        text-transform: uppercase;
+    color: #3e3e3e;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #4caf50;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 15px;
+    transition: background-color 0.5s;
+    &:hover {
+      transition: background-color 0.5s;
+      background-color: #3e9340;
+    }
+  }
+}
+
+#apply {
+  margin-top: 200px;
+}
+
+#appeal,
+#rules {
+  margin: 200px 0;
+}
+
+@media (max-width: 475px) {
+  .game {
+    p {
+      right: 0;
+    }
+    .icon {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .text-banner {
+    .inner {
+      width: 100%;
+      .title {
         font-size: 25px;
       }
-    }
-
-    .footer {
-      padding: 20px 0;
-      .btn {
-        padding: 0px 40px;
+      .subtitle {
+        font-size: 12px;
       }
     }
-
-    td {
-      cursor: default;
+  }
+  .rank {
+    .price {
+      font-size: 22px;
     }
-  }
-}
-
-#imprint {
-  padding: 80px 0;
-}
-
-.info-card {
-  padding: 0 20px;
-  h5 {
-    color: #4caf50;
-    margin: 5px 0;
-  }
-  i {
-    font-size: 70px;
-  }
-  p {
-    color: #414141;
+    .name {
+      font-size: 40px;
+    }
+    li {
+      font-size: 14px;
+    }
   }
 }

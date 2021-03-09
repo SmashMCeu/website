@@ -1,49 +1,119 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SmashMC.eu | The Ultimate Smash Network!</title>
+    <meta
+      name="title"
+      content="SmashMC | The Ultimate Minecraft Smash Server!"
+    />
+    <meta
+      name="description"
+      content="SmashMC is a Minecraft network with a great community and mini games such as the unique mode Smash Molecraft, BedWars 1vs1 or Survival. We can say with conviction that our Smash mode is the best there is."
+    />
+    <meta
+      name="keywords"
+      content="smashmc, smash, minecraft smash, smash server, minecraft, molecraft, bedwars, bw-1vs1, minecraft server"
+    />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smashmc.eu/" />
+    <meta
+      property="og:title"
+      content="SmashMC | The Ultimate Minecraft Smash Server!"
+    />
+    <meta
+      property="og:description"
+      content="SmashMC is a Minecraft network mini games such as Smash, Molecraft, BedWars 1vs1 or Survival. We can say with conviction that our Smash mode is the best there is."
+    />
+    <meta
+      property="og:image"
+      content="https://smashmc.eu/assets/img/smashmc.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://smashmc.eu/" />
+    <meta
+      property="twitter:title"
+      content="SmashMC | The Ultimate Minecraft Smash Server!"
+    />
+    <meta
+      property="twitter:description"
+      content="SmashMC is a Minecraft network mini games such as Smash, Molecraft, BedWars 1vs1 or Survival. We can say with conviction that our Smash mode is the best there is."
+    />
+    <meta
+      property="twitter:image"
+      content="https://smashmc.eu/assets/img/smashmc.png"
+    />
+
+    <title>SmashMC | The Ultimate Smash Network!</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="assets/css/materialize.min.css"
-    />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
     <link
       href="assets/css/styles.css"
       type="text/css"
       rel="stylesheet"
       media="screen,projection"
     />
-    <link rel="icon" href="assets/img/brand.png" />
+    <link rel="icon" href="assets/img/favicon.png" />
   </head>
 
   <body>
-    <!--<div class="loading"></div>-->
-    <nav class="green">
-      <div class="nav-wrapper container">
+    <nav>
+      <div class="nav-wrapper s-container">
         <a href="#" class="brand-logo"
-          ><img src="assets/img/brand.png" height="65px"
+          ><img src="assets/img/favicon.png" height="65px" alt="brand logo"
         /></a>
         <ul class="right">
-          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#shop">Shop</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <!--<li><a href="appeal.html">Appeal</a></li>-->
+          <li><a href="rules.html">Rules</a></li>
         </ul>
-        <a href="#" class="navToggle"><i class="material-icons">menu</i></a>
+        <span class="navToggle"><i class="material-icons">menu</i></span>
       </div>
     </nav>
 
     <header id="home">
-      <div class="vertical-align">
-        <div class="container center-align">
-          <div class="row">
-            <div class="col s12 m8 offset-m2">
-              <img src="assets/img/logo.png" width="90%" height="auto" />
+      <div class="overlay">
+        <div class="vertical-align">
+          <div class="s-container center-align">
+            <div class="row">
+              <div
+                class="col s12 l8 xl4 left-align animate__animated animate__fadeInLeft"
+              >
+                <span>Welcome to</span>
+                <h1>SmashMC.eu</h1>
+                <p>
+                  We started this project to play Smash with our friends. Now
+                  you can join for free to be a part of our community.
+                </p>
+                <div class="online noselect">
+                  <span class="material-icons">group</span>
+                  <span class="text">Online :</span
+                  ><span class="slots">0 / 100</span>
+                </div>
+              </div>
+              <div
+                class="col xl4 offset-xl2 hide-on-med-and-down right-align animate__animated animate__bounceInUp"
+              >
+                <img
+                  id="mario"
+                  class="skinrender"
+                  src="assets/img/skins/mario.png"
+                  alt="skinrender"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -51,132 +121,199 @@
     </header>
 
     <main>
-      <div id="about" class="container center-align">
-        <h3>Why should I join SmashMC.eu?</h3>
-        <div class="row">
-          <div class="col l4 m12">
-            <div class="info-card">
-              <i class="material-icons">child_friendly</i>
-              <h5>Family Friendly</h5>
-              <p>
-                Our hand made, high quality games are great fun for the whole
-                family.
-              </p>
-            </div>
+      <div class="alert">
+        <div class="vertical-align">
+          <div class="box">
+            <h1>HOW TO BUY?</h1>
+            <p>
+              Join our
+              <a
+                href="ts3server://smashmc.eu"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TeamSpeak</a
+              >
+              or
+              <a
+                href="https://discord.com/invite/uz2y9bH"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Discord</a
+              >
+              and tell a team member you want to buy a rank.
+            </p>
+            <button onclick="hideAlert()" class="noselect">
+              Ok, I get it now
+            </button>
           </div>
-          <div class="col l4 m12">
-            <div class="info-card">
-              <i class="material-icons">directions_bike</i>
-              <h5>Performance</h5>
-              <p>
-                Thanks to innovative fiber optics technology we provide the best
-                Minecraft gaming experience you ever dreamed of.
-              </p>
-            </div>
+        </div>
+      </div>
+      <div id="about">
+        <div class="text-banner">
+          <div class="inner">
+            <span class="title">About our server</span>
+            <span class="subtitle">What do we offer?</span>
           </div>
-          <div class="col l4 m12">
-            <div class="info-card">
-              <i class="material-icons">smoke_free</i>
-              <h5>No Smoking</h5>
-              <p>
-                In order to protect the enviroment and the health of our
-                players, smoking is not allowed on our servers.
-              </p>
+        </div>
+        <div id="toast">
+          <img src="assets/img/69420.gif" alt="69420" />
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col s12 l6 xl4">
+              <div class="game onAppear fadeInLeft">
+                <span class="title">Smash</span>
+                <div class="icon">
+                  <img src="assets/img/smash/item.png" alt="minecraft item" />
+                </div>
+                <img
+                  class="preview"
+                  src="assets/img/smash/preview.png"
+                  alt="game preview"
+                />
+                <p>
+                  Our knock 'em down gamemode smash is based on the game "Super
+                  Smash Bros". Knock your enemies off the map with over 30
+                  characters, each with their own skills. Pick up special items
+                  and use them for your own advantage!
+                </p>
+              </div>
+            </div>
+
+            <div class="col s12 l6 xl4 offset-xl4">
+              <div class="game onAppear fadeInRight">
+                <span class="title">Molecraft</span>
+                <div class="icon">
+                  <img
+                    src="assets/img/molecraft/item.png"
+                    alt="minecraft item"
+                  />
+                </div>
+                <img
+                  class="preview"
+                  src="assets/img/molecraft/preview.png"
+                  alt="game preview"
+                />
+                <p>
+                  Dig your way through dirt in order to find equipment! Gear up
+                  with loot, upgrade it with enchants, and search for your
+                  enemies! Be on the lookout for random events! They could have
+                  a positive as well as a negative impact on your game.
+                </p>
+              </div>
+            </div>
+
+            <div class="col s12 l6 xl4">
+              <div class="game onAppear fadeInLeft">
+                <span class="title">BW-1VS1</span>
+                <div class="icon">
+                  <img src="assets/img/bedwars/item.png" alt="minecraft item" />
+                </div>
+                <img
+                  class="preview"
+                  src="assets/img/bedwars/preview.png"
+                  alt="game preview"
+                />
+                <p>
+                  Our variation of bedwars is an 1v1 based gamemode. But that's
+                  not all! It gives you the option to enable features like no
+                  hit delay, no item loss or even disable knockback! You can
+                  even disable things you don't like, like for example hunger,
+                  fall damage, bed protection and more!
+                </p>
+              </div>
+            </div>
+
+            <div class="col s12 l6 xl4 offset-xl4">
+              <div class="game onAppear fadeInRight">
+                <span class="title">Survival</span>
+                <div class="icon">
+                  <img
+                    src="assets/img/survival/item.png"
+                    alt="minecraft item"
+                  />
+                </div>
+                <img
+                  class="preview"
+                  src="assets/img/survival/preview.png"
+                  alt="game preview"
+                />
+                <p>
+                  The classic survival! Mine, build, craft and survive. Gear up,
+                  build a base and raid other players! You've got known features
+                  helping you along the way like for example /tpa, /sethome and
+                  more.
+                </p>
+              </div>
+            </div>
+
+            <div class="col s12 l6 xl4">
+              <div class="game onAppear fadeInLeft">
+                <span class="title">GunGame</span>
+                <div class="icon">
+                  <img src="assets/img/gungame/item.png" alt="minecraft item" />
+                </div>
+                <img
+                  class="preview"
+                  src="assets/img/gungame/preview.png"
+                  alt="game preview"
+                />
+                <p>
+                  We also have a Gungame variant of Smash! Knock your enemies
+                  off the map and level up! Each level you’ll play as a
+                  different character. Be fast & reach level 7 to win the game!
+                  Who will be the fastest?
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="shop" class="center-align">
-        <div class="container">
-          <div class="row">
-            <div class="col s12 m6 l4 offset-l1">
-              <div class="rank z-depth-3">
-                <div class="header">
-                  <span>Pro Rank</span>
-                </div>
-                <table class="centered highlight">
-                  <tbody>
-                    <tr>
-                      <td>Pro prefix</td>
-                    </tr>
-                    <tr>
-                      <td>Smash VIP characters</td>
-                    </tr>
-                    <tr>
-                      <td>Smash advanced items voting</td>
-                    </tr>
-                    <tr>
-                      <td>Join full game servers</td>
-                    </tr>
-                    <tr>
-                      <td>BW-1vs1 VIP settings</td>
-                    </tr>
-                    <tr>
-                      <td>Molecraft event tokens</td>
-                    </tr>
-                    <tr>
-                      <td>Private Smash rounds (4 slots)</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        +10.35 respect
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
 
-                <div class="footer">
-                  <a
-                    href="ts3server://smashmc.eu"
-                    class="waves-effect waves-light btn green"
-                    >Buy for 10€</a
-                  >
+      <div id="shop">
+        <div class="overlay">
+          <div class="s-container center-align">
+            <h1>Purchase a rank</h1>
+            <h4>and support us</h4>
+            <div class="row">
+              <div class="col s12 l6 xl4 offset-xl2 left-align">
+                <div class="rank onAppear fadeInBottomLeft">
+                  <div class="header">
+                    <span class="name">Pro</span>
+                    <span class="price">€10.00</span>
+                  </div>
+                  <ul class="items">
+                    <li>Smash VIP characters</li>
+                    <li>Smash advanced items voting</li>
+                    <li>Join full game servers</li>
+                    <li>BW-1VS1 VIP settings</li>
+                    <li>Molecraft event tokens</li>
+                    <li>Private Smash rounds (4 slots)</li>
+                    <li>+10.35 respect</li>
+                  </ul>
+                  <button onclick="showAlert()" class="buy noselect">
+                    Buy
+                  </button>
                 </div>
               </div>
-            </div>
-
-            <div class="col s12 m6 l4 offset-l2">
-              <div class="rank z-depth-3">
-                <div class="header">
-                  <span>Pro+ Rank</span>
-                </div>
-                <table class="centered highlight">
-                  <tbody>
-                    <tr>
-                      <td>Pro+ prefix</td>
-                    </tr>
-                    <tr>
-                      <td>All features from Pro</td>
-                    </tr>
-                    <tr>
-                      <td>Start Smash rounds faster</td>
-                    </tr>
-                    <tr>
-                      <td>Start Molecraft rounds faster</td>
-                    </tr>
-                    <tr>
-                      <td>Force Smash maps (Using: /forcemap)</td>
-                    </tr>
-                    <tr>
-                      <td>Admins are going to like you</td>
-                    </tr>
-                    <tr>
-                      <td>Private Smash rounds (8 slots)</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        +99999999 respect
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div class="footer">
-                  <a
-                    href="ts3server://smashmc.eu"
-                    class="waves-effect waves-light btn green"
-                    >Buy for 20€</a
-                  >
+              <div class="col s12 l6 xl4 left-align">
+                <div class="rank onAppear fadeInBottomRight">
+                  <div class="header">
+                    <span class="name">Pro+</span>
+                    <span class="price">€20.00</span>
+                  </div>
+                  <ul class="items">
+                    <li>All features from Pro</li>
+                    <li>Start Smash rounds faster</li>
+                    <li>Start Molecraft rounds faster</li>
+                    <li>Force Smash maps</li>
+                    <li>Joinme Command</li>
+                    <li>Private Smash rounds (8 slots)</li>
+                    <li>+99999999 respect</li>
+                  </ul>
+                  <button onclick="showAlert()" class="buy noselect">
+                    Buy
+                  </button>
                 </div>
               </div>
             </div>
@@ -196,33 +333,81 @@
             </p>
           </div>
           <div class="col l3 offset-l3 s12">
-            <h5 class="white-text">Contact</h5>
+            <h5 class="white-text">Links</h5>
             <div class="row contact">
               <div class="col">
                 <a
                   href="https://www.youtube.com/channel/UCXCWMVDmilgSg4xdiVwEHxw"
                   target="_blank"
+                  rel="noopener noreferrer"
                   ><img
                     src="assets/svg/youtube-brands.svg"
                     height="15px"
                     width="15px"
+                    alt="youtube"
                 /></a>
               </div>
               <div class="col">
-                <a href="https://twitter.com/SmashMC_EU" target="_blank"
+                <a
+                  href="https://twitter.com/SmashMC_EU"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img
                     src="assets/svg/twitter-brands.svg"
                     height="15px"
                     width="15px"
+                    alt="twitter"
                 /></a>
               </div>
               <div class="col">
-                <a href="ts3server://smashmc.eu"
+                <a
+                  href="https://www.instagram.com/smashmc.eu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/instagram-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="instagram"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="https://www.tiktok.com/@smashmc.eu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img
+                    src="assets/svg/tiktok-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="instagram"
+                /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="ts3server://smashmc.eu"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img
                     src="assets/svg/teamspeak-brands.svg"
                     height="15px"
                     width="15px"
+                    alt="teamspeak3"
                 /></a>
+              </div>
+              <div class="col">
+                <a
+                  href="https://discord.com/invite/uz2y9bH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/svg/discord-brands.svg"
+                    height="15px"
+                    width="15px"
+                    alt="discord"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -233,10 +418,10 @@
           <br />
           <div class="row">
             <div class="footer-col col s12 m6">
-              Copyright &copy; 2020 SmashMC
+              Copyright &copy; 2021 SmashMC
             </div>
             <div class="footer-col col s12 m6 right-align">
-              <a href="imprint.html">Impressum & Datenschutz</a>
+              <a href="imprint.html">Impressum & Dateschutz</a>
             </div>
           </div>
         </div>
@@ -256,13 +441,100 @@
         $("nav").toggleClass("open");
       });
 
-      /*
-      $(document).ready(function () {
-        setTimeout(function () {
-          $(".loading").fadeOut();
-        }, 1200);
+      let clicks = 0;
+      $("#mario").click(function () {
+        clicks++;
+        if (clicks == 69) {
+          $("#toast").fadeIn("slow");
+        }
       });
-      */
+
+      var onAppear = [];
+
+      document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          onAppear = [].map.call(
+            document.querySelectorAll(".onAppear"),
+            function (item) {
+              return item;
+            }
+          );
+        },
+        false
+      );
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          onAppear.forEach(function (elem) {
+            var vwTop = window.pageYOffset;
+            var vwBottom = window.pageYOffset + window.innerHeight;
+            var elemTop = elem.offsetTop + 200;
+            var elemHeight = elem.offsetHeight;
+
+            if (vwBottom > elemTop && vwTop - elemHeight < elemTop) {
+              if ($(elem).hasClass("fadeInUp")) {
+                $(elem).addClass("animate__animated");
+                $(elem).addClass("animate__fadeInUp");
+              }
+              if ($(elem).hasClass("fadeInLeft")) {
+                $(elem).addClass("animate__animated");
+                $(elem).addClass("animate__fadeInLeft");
+              }
+              if ($(elem).hasClass("fadeInRight")) {
+                $(elem).addClass("animate__animated");
+                $(elem).addClass("animate__fadeInRight");
+              }
+              if ($(elem).hasClass("fadeInBottomLeft")) {
+                $(elem).addClass("animate__animated");
+                $(elem).addClass("animate__fadeInBottomLeft");
+              }
+              if ($(elem).hasClass("fadeInBottomRight")) {
+                $(elem).addClass("animate__animated");
+                $(elem).addClass("animate__fadeInBottomRight");
+              }
+            }
+          });
+        },
+        false
+      );
+
+      function ping(ip, port) {
+        $.getJSON(
+          "https://api.minetools.eu/ping/" + ip + "/" + port,
+          function (json) {
+            if (json) {
+              if (json.players) {
+                if (json.players.online && json.players.max) {
+                  $(".slots").each(function () {
+                    $(this).html(
+                      json.players.online + " / " + json.players.max
+                    );
+                  });
+                }
+              }
+            }
+          }
+        );
+      }
+
+      function showAlert() {
+        $("body").css("overflow", "hidden");
+        $(".alert").fadeIn("slow");
+      }
+
+      function hideAlert() {
+        $("body").css("overflow", "initial");
+        $(".alert").fadeOut("slow");
+      }
+
+      $(document).ready(function () {
+        ping("mc.smashmc.eu", "25565");
+        setInterval(function () {
+          ping("mc.smashmc.eu", "25565");
+        }, 1000 * 30);
+      });
     </script>
   </body>
 </html>

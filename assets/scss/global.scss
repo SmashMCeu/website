@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap");
+
 body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Oswald", sans-serif;
+}
+
+.onAppear {
+  opacity: 0;
 }
 
 .vertical-align {
@@ -9,6 +16,12 @@ body {
   display: flex;
   width: 100%;
   align-items: center;
+}
+
+.s-container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 2000px;
 }
 
 .noselect {
@@ -20,25 +33,48 @@ body {
   user-select: none;
 }
 
-.loading {
-  background-color: #fff;
-  position: fixed;
-  left: 0px;
-  top: 0px;
+.overlay {
   width: 100%;
   height: 100%;
-  z-index: 9999;
-  background: url("../img/loader.gif") center no-repeat #fff;
+  background: rgba($color: #000000, $alpha: 0.5);
 }
 
-.overlay {
+.alert, #alert {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color: #000000, $alpha: 0.8);
-  height: 100vh;
   width: 100vw;
-  z-index: 2000;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.5);
+  z-index: 99999;
+  .box {
+    padding: 30px;
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    h1 {
+      margin: 0;
+    }
+    p {
+      font-size: 20px;
+    }
+    button {
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      background-color: #4caf50;
+      padding: 10px 30px;
+      border-radius: 50px;
+      transition: background-color 0.5s;
+      &:hover {
+        transition: background-color 0.5s;
+        background-color: #3e9340;
+      }
+    }
+  }
 }
-

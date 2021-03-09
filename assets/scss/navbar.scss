@@ -1,45 +1,72 @@
 nav {
-  position: fixed;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2) !important;
+  position: absolute;
+  box-shadow: none !important;
   line-height: 38px !important;
   background-color: transparent !important;
 
   a {
     color: white;
   }
+
   ul {
     margin: 12.5px 0;
     li {
       margin: 0 6px;
     }
     a {
+      font-size: 22px;
       color: white;
-      transition: background-color 0.3s;
-      transition: color 0.3s;
+      text-transform: uppercase;
+      &::after {
+        transition: 0.5s;
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        margin-left: 50%;
+        background-color: transparent;
+      }
       &:hover {
-        background-color: white;
-        color: #4caf50;
-        transition: background-color 0.6s;
+        &::after {
+          transition: 0.5s;
+          margin-left: 0;
+          width: 100%;
+          background-color: white;
+        }
+        background: none;
       }
     }
   }
 
   img {
-    padding: 15px 0;
+    padding: 4px 0;
+  }
+  z-index: 9999999;
+}
+
+.brand-logo {
+  transition: transform 0.8s ease-in-out;
+  &:hover {
+    transform: rotate(360deg);
   }
 }
 
 .navToggle {
   position: absolute;
+  cursor: pointer;
+  top: 0px;
   left: 25px;
   display: none;
 }
 
 .nav-wrapper {
-  padding: 0 30px;
+  padding: 40px 0;
 }
 
 @media (max-width: 992px) {
+  .brand-logo {
+    display: none !important;
+  }
   .navToggle {
     display: block;
   }
@@ -47,15 +74,15 @@ nav {
     margin-top: 0;
     transition-duration: 0.5s;
     overflow: hidden;
+    background: rgba($color: #000000, $alpha: 0.5) !important;
 
     ul {
       width: 100%;
       text-align: center;
-      padding-top: 50px;
+      margin-top: 50px;
       &.right {
         float: left !important;
       }
-
       li {
         float: none;
         button {
@@ -69,7 +96,7 @@ nav {
     }
 
     &.open {
-      height: 265px;
+      height: 320px;
     }
   }
 }
@@ -80,13 +107,5 @@ nav {
   &:hover {
     background-color: transparent !important;
     border: 1px solid white;
-  }
-}
-
-@media (max-width: 592px) {
-  nav {
-    img {
-      padding-bottom: 24px;
-    }
   }
 }
