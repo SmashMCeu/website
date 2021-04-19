@@ -57,217 +57,426 @@
     />
     <link rel="icon" href="assets/img/favicon.png" />
   </head>
-
   <body>
-    <nav>
-      <div class="nav-wrapper s-container">
-        <a href="index.html" class="brand-logo"
-          ><img src="assets/img/favicon.png" height="65px" alt="brand logo"
-        /></a>
-        <ul class="right">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#shop">Shop</a></li>
-          <li><a href="apply.html">Apply</a></li>
-          <!--<li><a href="appeal.html">Appeal</a></li>-->
-          <li><a href="rules.html">Rules</a></li>
-        </ul>
-        <span class="navToggle"><i class="material-icons">menu</i></span>
-      </div>
-    </nav>
-
-    <header id="home">
-      <div class="overlay">
-        <div class="vertical-align">
-          <div class="s-container center-align">
-            <div class="row">
-              <div
-                class="col s12 l8 xl4 left-align animate__animated animate__fadeInLeft"
-              >
-                <span>Become a part of</span>
-                <h1>our team</h1>
-                <p>
-                  Do you want to support our server? Then apply and become part
-                  of our team.
-                </p>
-                <div class="online">
-                  <span class="material-icons">group</span>
-                  <span class="text">Online :</span
-                  ><span class="slots">0 / 100</span>
+      <nav>
+          <div class="nav-wrapper s-container">
+              <a href="index.html" class="brand-logo">
+                  <img src="assets/img/favicon.png" height="65px" alt="brand logo" />
+              </a>
+              <ul class="right">
+                  <li><a href="index.html#about">About</a></li>
+                  <li><a href="index.html#shop">Shop</a></li>
+                  <li><a href="apply.html">Apply</a></li>
+                  <!--<li><a href="appeal.html">Appeal</a></li>-->
+                  <li><a href="rules.html">Rules</a></li>
+              </ul>
+              <span class="navToggle"><i class="material-icons">menu</i></span>
+          </div>
+      </nav>
+      <header id="home">
+          <div class="overlay">
+              <div class="vertical-align">
+                  <div class="s-container center-align">
+                      <div class="row">
+                          <div class="col s12 l8 xl4 left-align animate__animated animate__fadeInLeft">
+                              <span>Become a part of</span>
+                              <h1>our team</h1>
+                              <p>
+                                  Do you want to support our server? Then apply and become part
+                                  of our team.
+                              </p>
+                              <div class="online">
+                                  <span class="material-icons">group</span>
+                                  <span class="text">Online :</span><span class="slots">0 / 100</span>
+                              </div>
+                          </div>
+                          <div class="col xl4 offset-xl2 hide-on-med-and-down right-align animate__animated animate__bounceInUp">
+                              <img class="skinrender"
+                                   src="assets/img/skins/apply.png"
+                                   alt="skinrender" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <main>
+          <form id="apply" class="row" href="sendForm.php" method="post">
+              <div class="col s12" style="text-align:center;">
+                  <h3>SmashMC Bewerbung</h3>
+              </div>
+              <div class="col s12 m6 offset-m3" data-required-field="select">
+                    <div>
+                        <span data-required>Bewerbungsrang</span>
+                        <div class="input-field">
+                            <select name="rank">
+                                <option value="" disabled selected>Rang auswählen</option>
+                                <option value="supporter">Supporter</option>
+                                <option value="content">Content</option>
+                                <option value="developer">Developer</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+                <div class="col s12 m3 offset-m3">
+                    <span data-required>Vorname</span>
+                    <div class="input-field">
+                        <input id="name" type="text" class="validate" placeholder="Max" required>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <span data-required>Minecraft Name</span>
+                    <div class="input-field">
+                        <input id="mc_name" type="text" class="validate" placeholder="Mustermann_MC" required>
+                    </div>
+                </div>
+                <div class="col s12 m3 offset-m3">
+                    <span data-required>Alter</span>
+                    <div class="input-field">
+                        <input id="age" type="text" class="validate" placeholder="17" required>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <span>Woher kennst du SmashMC.eu?</span>
+                    <div class="input-field">
+                        <input id="heard_from" type="text" class="validate" placeholder="Freunde, Internet, Anderer Server">
+                    </div>
+                </div>
+                <div class="col s12 m3 offset-m3">
+                    <span>Was sind deine Stärken?</span>
+                    <div class="input-field">
+                        <input id="strenghts" type="text" class="validate" placeholder="Ich kann gut..">
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <span>Was sind deine Schwächen?</span>
+                    <div class="input-field">
+                        <input id="weaknesses" type="text" class="validate" placeholder="Ich kann schlecht..">
+                    </div>
+                </div>
+                <div class="col s12 m3 offset-m3">
+                    <span data-required>Gibt uns eine kurze Beschreibung von dir</span>
+                    <div class="input-field">
+                        <input id="bio" type="text" class="validate" placeholder="Hobbys, Freizeit, Schule / Ausbildung" required>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <span data-required>Kontaktmöglichkeiten</span>
+                    <div class="input-field">
+                        <input id="weaknesses" type="text" class="validate" placeholder="Discord-Tag oder Email-Adresse" required>
+                    </div>
+                </div>
+                <div class="col s12 m3 offset-m3">
+                    <span data-required>Seit wann spielst du auf SmashMC?</span>
+                    <p>
+                        <label>
+                            <input name="playtime" type="radio" required />
+                            <span>Weniger als 1 Monat</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="playtime" type="radio" />
+                            <span>1-6 Monate</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="playtime" type="radio" />
+                            <span>6-12 Monate</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="playtime" type="radio" />
+                            <span>Länger als 1 Jahr</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="col s12 m3" data-required-field="checkbox">
+                    <span data-required>Was trifft auf dich zu?</span>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Ich besitze ein funktionierendes Mikrofon</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Ich besitze TeamSpeak3 (oder kompatible Clients)</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Ich bin in der Lage, Videos oder Screenshots aufzunehmen</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Ich besitze einen Minecraft Hack-Client</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="col s12 m3 offset-m3">
+                    <span data-required>Wie viel Zeit kannst du (in etwa) in der Woche täglich für SmashMC aufbringen?</span>
+                    <p>
+                        <label>
+                            <input name="time_to_play_week" type="radio" required />
+                            <span>unter 30 Minuten</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_week" type="radio" />
+                            <span>30 - 60 Minuten</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_week" type="radio" />
+                            <span>1 - 2 Stunden</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_week" type="radio" />
+                            <span>3 - 4 Stunden</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_week" type="radio" />
+                            <span>Mehr als 4 Stunden</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="col s12 m3">
+                    <span data-required>Wie viel Zeit kannst du (in etwa) am Wochenende täglich für SmashMC aufbringen?</span>
+                    <p>
+                        <label>
+                            <input name="time_to_play_weekend" type="radio" required />
+                            <span>unter 30 Minuten</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_weekend" type="radio" />
+                            <span>30 - 60 Minuten</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_weekend" type="radio" />
+                            <span>1 - 2 Stunden</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_weekend" type="radio" />
+                            <span>3 - 4 Stunden</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="time_to_play_weekend" type="radio" />
+                            <span>Mehr als 4 Stunden</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="col s12 m3 offset-m3" data-required-field="checkbox">
+                    <span data-required>Welche Sprachen sprichst du?</span>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Deutsch</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Englisch</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Sonstiges</span>
+                        </label>
+                        <div class="input-field">
+                            <input id="languages" type="text" class="validate" placeholder="Sonstige Sprachen aufzählen">
+                        </div>
+                    </p>
+                </div>
+                <div class="col s12 m3" data-required-field="checkbox">
+                    <span data-required>Was möchtest du als Supporter tun?</span>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Spieler helfen</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Spieler bestrafen</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Konflike lösen</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="col s12 m6 offset-m3">
+                    <p>Deine Bewerbung wird i.d.R. innerhalb von 1-7 Tagen bearbeitet. Solltest du in diesem Zeitraum eine Nachricht bekommen, ist das super und bedeutet, dass du einen Schritt weiter bist.</p>
+                    <p>Wichtig: Schau bitte auch in diesem Zeitraum bei deinen Discord-Freundschaftsanfragen nach!</p>
+                    <p>Solltest du innerhalb von 7 Tagen keine Nachricht bekommen, muss das nicht unbedingt schlecht sein. Es wird unter verschiedenen Kriterien der Beantwortung, des Bewerbungsformulars unterschieden und je nach dem wie viele Bewerbungen es gibt, kann sich der Zeitraum auch verlängern.</p>
+                    <p>Bitte beachte:</p>
+                    <ol>
+                        <li>Die Teamleitung muss keine Auskunft geben, wieso und weshalb eine Bewerbung abgelehnt worden ist.</li>
+                        <li>Das Schicken mehrerer Bewerbungen bringt nichts. Diese werden automatisch gelöscht.</li>
+                    </ol>
+                    <p>Viel Erfolg!</p>
+                    <p>Das SmashMC Team</p>
+                </div>
+              <div class="col s12 m3 offset-m3">
+                  <button class="btn waves-effect waves-light" type="submit" name="action">
+                      Bewerbung absenden
+                      <i class="material-icons right">send</i>
+                  </button>
               </div>
-              <div
-                class="col xl4 offset-xl2 hide-on-med-and-down right-align animate__animated animate__bounceInUp"
-              >
-                <img
-                  class="skinrender"
-                  src="assets/img/skins/apply.png"
-                  alt="skinrender"
-                />
+          </form>
+      </main>
+      <footer class="page-footer green">
+          <div class="container">
+              <div class="row">
+                  <div class="col l6 s12">
+                      <h5 class="white-text">About Us</h5>
+                      <p class="grey-text text-lighten-4">
+                          We started this project to play Smash with our friends. Now you
+                          can join for free to be a part of our community.
+                      </p>
+                  </div>
+                  <div class="col l3 offset-l3 s12">
+                      <h5 class="white-text">Links</h5>
+                      <div class="row contact">
+                          <div class="col">
+                              <a href="https://www.youtube.com/channel/UCXCWMVDmilgSg4xdiVwEHxw"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                  <img src="assets/svg/youtube-brands.svg"
+                                       height="15px"
+                                       width="15px"
+                                       alt="youtube" />
+                              </a>
+                          </div>
+                          <div class="col">
+                              <a href="https://twitter.com/SmashMC_EU"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                  <img src="assets/svg/twitter-brands.svg"
+                                       height="15px"
+                                       width="15px"
+                                       alt="twitter" />
+                              </a>
+                          </div>
+                          <div class="col">
+                              <a href="https://www.instagram.com/smashmc.eu"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                  <img src="assets/svg/instagram-brands.svg"
+                                       height="15px"
+                                       width="15px"
+                                       alt="instagram" />
+                              </a>
+                          </div>
+                          <div class="col">
+                              <a href="https://www.tiktok.com/@smashmc.eu"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                  <img src="assets/svg/tiktok-brands.svg"
+                                       height="15px"
+                                       width="15px"
+                                       alt="instagram" />
+                              </a>
+                          </div>
+                          <div class="col">
+                              <a href="ts3server://smashmc.eu"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                  <img src="assets/svg/teamspeak-brands.svg"
+                                       height="15px"
+                                       width="15px"
+                                       alt="teamspeak3" />
+                              </a>
+                          </div>
+                          <div class="col">
+                              <a href="https://discord.com/invite/uz2y9bH"
+                                 target="_blank"
+                                 rel="noopener noreferrer">
+                                  <img src="assets/svg/discord-brands.svg"
+                                       height="15px"
+                                       width="15px"
+                                       alt="discord" />
+                              </a>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <div id="apply">
-        <!--<iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfbd3O7ivFUsP21yOf7bvwi8-7s4y9HgMYfm3S656l7k4CRvg/viewform?embedded=true"
-          width="100%"
-          height="4500px"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          >Loading...</iframe
-        >-->
-      </div>
-    </main>
-
-    <footer class="page-footer green">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">About Us</h5>
-            <p class="grey-text text-lighten-4">
-              We started this project to play Smash with our friends. Now you
-              can join for free to be a part of our community.
-            </p>
+          <div class="footer-copyright">
+              <div class="container">
+                  <br />
+                  <div class="row">
+                      <div class="footer-col col s12 m6">
+                          Copyright &copy; 2021 SmashMC
+                      </div>
+                      <div class="footer-col col s12 m6 right-align">
+                          <a href="imprint.html">Impressum & Dateschutz</a>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="col l3 offset-l3 s12">
-            <h5 class="white-text">Links</h5>
-            <div class="row contact">
-              <div class="col">
-                <a
-                  href="https://www.youtube.com/channel/UCXCWMVDmilgSg4xdiVwEHxw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="assets/svg/youtube-brands.svg"
-                    height="15px"
-                    width="15px"
-                    alt="youtube"
-                /></a>
-              </div>
-              <div class="col">
-                <a
-                  href="https://twitter.com/SmashMC_EU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="assets/svg/twitter-brands.svg"
-                    height="15px"
-                    width="15px"
-                    alt="twitter"
-                /></a>
-              </div>
-              <div class="col">
-                <a
-                  href="https://www.instagram.com/smashmc.eu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="assets/svg/instagram-brands.svg"
-                    height="15px"
-                    width="15px"
-                    alt="instagram"
-                /></a>
-              </div>
-              <div class="col">
-                <a
-                  href="https://www.tiktok.com/@smashmc.eu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="assets/svg/tiktok-brands.svg"
-                    height="15px"
-                    width="15px"
-                    alt="instagram"
-                /></a>
-              </div>
-              <div class="col">
-                <a
-                  href="ts3server://smashmc.eu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="assets/svg/teamspeak-brands.svg"
-                    height="15px"
-                    width="15px"
-                    alt="teamspeak3"
-                /></a>
-              </div>
-              <div class="col">
-                <a
-                  href="https://discord.com/invite/uz2y9bH"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="assets/svg/discord-brands.svg"
-                    height="15px"
-                    width="15px"
-                    alt="discord"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          <br />
-          <div class="row">
-            <div class="footer-col col s12 m6">
-              Copyright &copy; 2021 SmashMC
-            </div>
-            <div class="footer-col col s12 m6 right-align">
-              <a href="imprint.html">Impressum & Dateschutz</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script src="assets/js/materialize.min.js"></script>
+      <script src="assets/js/scroll-smooth.js"></script>
+      <script>
+          $(".navToggle").click(function () {
+              $(this).toggleClass("open");
+              $("nav").toggleClass("open");
+          });
 
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/materialize.min.js"></script>
-    <script src="assets/js/scroll-smooth.js"></script>
-    <script>
-      $(".navToggle").click(function () {
-        $(this).toggleClass("open");
-        $("nav").toggleClass("open");
-      });
-
-      function ping(ip, port) {
-        $.getJSON(
-          "https://api.minetools.eu/ping/" + ip + "/" + port,
-          function (json) {
-            if (json) {
-              if (json.players) {
-                if (json.players.online && json.players.max) {
-                  $(".slots").each(function () {
-                    $(this).html(
-                      json.players.online + " / " + json.players.max
-                    );
-                  });
-                }
-              }
-            }
+          function ping(ip, port) {
+              $.getJSON(
+                  "https://api.minetools.eu/ping/" + ip + "/" + port,
+                  function (json) {
+                      if (json) {
+                          if (json.players) {
+                              if (json.players.online && json.players.max) {
+                                  $(".slots").each(function () {
+                                      $(this).html(
+                                          json.players.online + " / " + json.players.max
+                                      );
+                                  });
+                              }
+                          }
+                      }
+                  }
+              );
           }
-        );
-      }
 
-      $(document).ready(function () {
-        ping("mc.smashmc.eu", "25565");
-        setInterval(function () {
-          ping("mc.smashmc.eu", "25565");
-        }, 1000 * 30);
-      });
-    </script>
+          $(document).ready(function () {
+              ping("mc.smashmc.eu", "25565");
+              setInterval(function () {
+                  ping("mc.smashmc.eu", "25565");
+              }, 1000 * 30);
+          });
+      </script>
+      <script src="assets/js/apply.js"></script>
   </body>
 </html>
