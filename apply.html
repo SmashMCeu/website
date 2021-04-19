@@ -1,62 +1,44 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="SmashMC | Apply" />
-    <meta
-      name="description"
-      content="Do you want to support our server? Then apply and become part of our team."
-    />
-    <meta
-      name="keywords"
-      content="smashmc, smash, apply, bewerben, minecraft smash, smash server, minecraft, molecraft, bedwars, bw-1vs1, minecraft server"
-    />
+    <meta name="description"
+          content="Do you want to support our server? Then apply and become part of our team." />
+    <meta name="keywords"
+          content="smashmc, smash, apply, bewerben, minecraft smash, smash server, minecraft, molecraft, bedwars, bw-1vs1, minecraft server" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://smashmc.eu/apply" />
     <meta property="og:title" content="SmashMC | Apply" />
-    <meta
-      property="og:description"
-      content="Do you want to support our server? Then apply and become part of our team."
-    />
-    <meta
-      property="og:image"
-      content="https://smashmc.eu/assets/img/smashmc.png"
-    />
+    <meta property="og:description"
+          content="Do you want to support our server? Then apply and become part of our team." />
+    <meta property="og:image"
+          content="https://smashmc.eu/assets/img/smashmc.png" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://smashmc.eu/apply" />
     <meta property="twitter:title" content="SmashMC | Apply" />
-    <meta
-      property="twitter:description"
-      content="Do you want to support our server? Then apply and become part of our team."
-    />
-    <meta
-      property="twitter:image"
-      content="https://smashmc.eu/assets/img/smashmc.png"
-    />
+    <meta property="twitter:description"
+          content="Do you want to support our server? Then apply and become part of our team." />
+    <meta property="twitter:image"
+          content="https://smashmc.eu/assets/img/smashmc.png" />
 
     <title>SmashMC | Apply</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/materialize.min.css" />
-    <link
-      href="assets/css/styles.css"
-      type="text/css"
-      rel="stylesheet"
-      media="screen,projection"
-    />
+    <link href="assets/css/styles.css"
+          type="text/css"
+          rel="stylesheet"
+          media="screen,projection" />
     <link rel="icon" href="assets/img/favicon.png" />
-  </head>
+</head>
   <body>
       <nav>
           <div class="nav-wrapper s-container">
@@ -109,7 +91,7 @@
                     <div>
                         <span data-required>Bewerbungsrang</span>
                         <div class="input-field">
-                            <select name="rank">
+                            <select name="rank" id="rank">
                                 <option value="" disabled selected>Rang auswählen</option>
                                 <option value="supporter">Supporter</option>
                                 <option value="content">Content</option>
@@ -121,49 +103,49 @@
                 <div class="col s12 m3 offset-m3">
                     <span data-required>Vorname</span>
                     <div class="input-field">
-                        <input id="name" type="text" class="validate" placeholder="Max" required>
+                        <input id="name" name="name" type="text" class="validate" placeholder="Max" required>
                     </div>
                 </div>
                 <div class="col s12 m3">
                     <span data-required>Minecraft Name</span>
                     <div class="input-field">
-                        <input id="mc_name" type="text" class="validate" placeholder="Mustermann_MC" required>
+                        <input id="mc_name" name="mc_name" type="text" class="validate" placeholder="Mustermann_MC" required>
                     </div>
                 </div>
                 <div class="col s12 m3 offset-m3">
                     <span data-required>Alter</span>
                     <div class="input-field">
-                        <input id="age" type="text" class="validate" placeholder="17" required>
+                        <input id="age" type="text" name="age" class="validate" placeholder="17" required>
                     </div>
                 </div>
                 <div class="col s12 m3">
                     <span>Woher kennst du SmashMC.eu?</span>
                     <div class="input-field">
-                        <input id="heard_from" type="text" class="validate" placeholder="Freunde, Internet, Anderer Server">
+                        <input id="heard_from" type="text" name="heard_from" class="validate" placeholder="Freunde, Internet, Anderer Server">
                     </div>
                 </div>
                 <div class="col s12 m3 offset-m3">
                     <span>Was sind deine Stärken?</span>
                     <div class="input-field">
-                        <input id="strenghts" type="text" class="validate" placeholder="Ich kann gut..">
+                        <input id="strenghts" name="strenghts" type="text" class="validate" placeholder="Ich kann gut..">
                     </div>
                 </div>
                 <div class="col s12 m3">
                     <span>Was sind deine Schwächen?</span>
                     <div class="input-field">
-                        <input id="weaknesses" type="text" class="validate" placeholder="Ich kann schlecht..">
+                        <input id="weaknesses" name="weaktnesses" type="text" class="validate" placeholder="Ich kann schlecht..">
                     </div>
                 </div>
                 <div class="col s12 m3 offset-m3">
                     <span data-required>Gibt uns eine kurze Beschreibung von dir</span>
                     <div class="input-field">
-                        <input id="bio" type="text" class="validate" placeholder="Hobbys, Freizeit, Schule / Ausbildung" required>
+                        <input id="bio" name="bio" type="text" class="validate" placeholder="Hobbys, Freizeit, Schule / Ausbildung" required>
                     </div>
                 </div>
                 <div class="col s12 m3">
                     <span data-required>Kontaktmöglichkeiten</span>
                     <div class="input-field">
-                        <input id="weaknesses" type="text" class="validate" placeholder="Discord-Tag oder Email-Adresse" required>
+                        <input id="contact" name="contact" type="text" class="validate" placeholder="Discord-Tag oder Email-Adresse" required>
                     </div>
                 </div>
                 <div class="col s12 m3 offset-m3">
@@ -197,25 +179,25 @@
                     <span data-required>Was trifft auf dich zu?</span>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="i_can_1" />
                             <span>Ich besitze ein funktionierendes Mikrofon</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="i_can_2" />
                             <span>Ich besitze TeamSpeak3 (oder kompatible Clients)</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="i_can_3" />
                             <span>Ich bin in der Lage, Videos oder Screenshots aufzunehmen</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="i_can_4" />
                             <span>Ich besitze einen Minecraft Hack-Client</span>
                         </label>
                     </p>
@@ -290,23 +272,23 @@
                     <span data-required>Welche Sprachen sprichst du?</span>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="lang_1" />
                             <span>Deutsch</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="lang_2" />
                             <span>Englisch</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="lang_3" />
                             <span>Sonstiges</span>
                         </label>
                         <div class="input-field">
-                            <input id="languages" type="text" class="validate" placeholder="Sonstige Sprachen aufzählen">
+                            <input id="languages" name="lang_field" type="text" class="validate" placeholder="Sonstige Sprachen aufzählen">
                         </div>
                     </p>
                 </div>
@@ -314,19 +296,19 @@
                     <span data-required>Was möchtest du als Supporter tun?</span>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="to_do_1" />
                             <span>Spieler helfen</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="to_do_2" />
                             <span>Spieler bestrafen</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="to_do_3" />
                             <span>Konflike lösen</span>
                         </label>
                     </p>
@@ -344,8 +326,7 @@
                     <p>Das SmashMC Team</p>
                 </div>
               <div class="col s12 m3 offset-m3">
-                  <button class="btn waves-effect waves-light" type="submit" name="action">
-                      Bewerbung absenden
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Bewerbung absenden
                       <i class="material-icons right">send</i>
                   </button>
               </div>
