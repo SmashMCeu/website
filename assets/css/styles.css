@@ -156,7 +156,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../img/header.png"); }
+  background-image: url("../img/header.avif"); }
   header .vertical-align {
     min-height: 800px; }
   header h1 {
@@ -356,7 +356,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../img/shop.png"); }
+  background-image: url("../img/shop.avif"); }
   #shop .s-container {
     padding: 40px 0; }
   #shop h1,
