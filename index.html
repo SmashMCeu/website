@@ -75,10 +75,9 @@
         /></a>
         <ul class="right">
           <li><a href="#about">About</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="apply">Apply</a></li>
-          <!--<li><a href="appeal.html">Appeal</a></li>-->
+          <li><a href="https://shop.smashmc.eu">Shop</a></li>
           <li><a href="rules">Rules</a></li>
+          <li><a href="https://forum.smashmc.eu">Forum</a></li>
         </ul>
         <span class="navToggle"><i class="material-icons">menu</i></span>
       </div>
@@ -90,7 +89,14 @@
           <div class="s-container center-align">
             <div class="row">
               <div
-                class="col s12 l8 xl4 left-align animate__animated animate__fadeInLeft"
+                class="
+                  col
+                  s12
+                  l8
+                  xl4
+                  left-align
+                  animate__animated animate__fadeInLeft
+                "
               >
                 <span>Welcome to</span>
                 <h1>SmashMC.eu</h1>
@@ -105,7 +111,14 @@
                 </div>
               </div>
               <div
-                class="col xl4 offset-xl2 hide-on-med-and-down right-align animate__animated animate__bounceInUp"
+                class="
+                  col
+                  xl4
+                  offset-xl2
+                  hide-on-med-and-down
+                  right-align
+                  animate__animated animate__bounceInUp
+                "
               >
                 <img
                   id="mario"
@@ -121,33 +134,6 @@
     </header>
 
     <main>
-      <div class="alert">
-        <div class="vertical-align">
-          <div class="box">
-            <h1>HOW TO BUY?</h1>
-            <p>
-              Join our
-              <a
-                href="ts3server://smashmc.eu"
-                target="_blank"
-                rel="noopener noreferrer"
-                >TeamSpeak</a
-              >
-              or
-              <a
-                href="https://discord.com/invite/uz2y9bH"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Discord</a
-              >
-              and tell a team member you want to buy a rank.
-            </p>
-            <button onclick="hideAlert()" class="noselect">
-              Ok, I get it now
-            </button>
-          </div>
-        </div>
-      </div>
       <div id="about">
         <div class="text-banner">
           <div class="inner">
@@ -265,59 +251,6 @@
                   different character. Be fast & reach level 7 to win the game!
                   Who will be the fastest?
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="shop">
-        <div class="overlay">
-          <div class="s-container center-align">
-            <h1>Purchase a rank</h1>
-            <h4>and support us</h4>
-            <div class="row">
-              <div class="col s12 l6 xl4 offset-xl2 left-align">
-                <div class="rank onAppear fadeInBottomLeft">
-                  <div class="header">
-                    <span class="name">Pro</span>
-                    <span class="price">€10.00</span>
-                  </div>
-                  <ul class="items">
-                    <li>Smash VIP characters</li>
-                    <li>Smash advanced items voting</li>
-                    <li>Join full game servers</li>
-                    <li>BW-1VS1 VIP settings</li>
-                    <li>Molecraft event tokens</li>
-                    <li>Private Smash rounds (4 slots)</li>
-                    <li>10 Survival homes</li>
-                    <li>+10.35 respect</li>
-                  </ul>
-                  <button onclick="showAlert()" class="buy noselect">
-                    Buy
-                  </button>
-                </div>
-              </div>
-              <div class="col s12 l6 xl4 left-align">
-                <div class="rank onAppear fadeInBottomRight">
-                  <div class="header">
-                    <span class="name">Pro+</span>
-                    <span class="price">€20.00</span>
-                  </div>
-                  <ul class="items">
-                    <li>All features from Pro</li>
-                    <li>Start Smash rounds faster</li>
-                    <li>Start Molecraft rounds faster</li>
-                    <li>Force Smash maps</li>
-                    <li>Joinme Command</li>
-                    <li>Private Smash rounds (8 slots)</li>
-                    <li>25 Survival homes</li>
-                    <li>+99999999 respect</li>
-                  </ul>
-                  <button onclick="showAlert()" class="buy noselect">
-                    Buy
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -520,16 +453,6 @@
             }
           }
         );
-      }
-
-      function showAlert() {
-        $("body").css("overflow", "hidden");
-        $(".alert").fadeIn("slow");
-      }
-
-      function hideAlert() {
-        $("body").css("overflow", "initial");
-        $(".alert").fadeOut("slow");
       }
 
       $(document).ready(function () {
