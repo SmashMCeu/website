@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "viewoutput": "npx serve .output/public",
+    "generate:view": "npm run generate && npm run viewoutput"
+  },
+  "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.7.2",
+    "@iconify-json/solar": "^1.1.9",
+    "@nuxtjs/tailwindcss": "^6.10.4",
+    "nuxt": "^3.9.0",
+    "vue": "^3.4.6",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@iconify-json/mdi": "^1.1.64",
+    "vue3-carousel-nuxt": "^1.1.0"
+  }
+}
