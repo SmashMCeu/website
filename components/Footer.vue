@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-screen bg-darkBackground flex flex-wrap justify-center gap-20 py-20 text-textColorLight">
+    <div class="w-screen bg-darkBackground flex flex-wrap md:justify-between justify-center gap-20 py-20 px-40 text-textColorLight">
         
         <div class="flex flex-col gap-5">
             <div class="flex gap-3">
