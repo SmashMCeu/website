@@ -4,13 +4,18 @@
         skinImage: {
             required: true,
             type: String
+        },
+        isSlim: {
+            required: false,
+            default: false,
+            type: Boolean,
         }
     });
 
 </script>
 
 <template>
-    <div id="skin-viewer" :style="{ 'background-image': `url('${props.skinImage}')` }" class="mc-skin-viewer-9x spin">
+    <div id="skin-viewer" :style="{ 'background-image': `url('${props.skinImage}')` }" :class="{ slim: props.isSlim }" class="mc-skin-viewer-9x spin">
         <div class="player" :style="{ 'background-image': `url('${props.skinImage}')` }">
             <!-- Head -->
             <div class="head" :style="{ 'background-image': `url('${props.skinImage}')` }">

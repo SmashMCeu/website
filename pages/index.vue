@@ -63,7 +63,7 @@
 
         <div class="text-white flex gap-14">
             <div v-for="(character, index) of characters">
-                <SkinRenderer :skin-image="character.skinImage" :style="{ opacity: calcSkinPreviewCharacterOpacity(index) }" class="scale-[0.7]"/>
+                <SkinRenderer :is-slim="character.isSlimSkin" :skin-image="character.skinImage" :style="{ opacity: calcSkinPreviewCharacterOpacity(index) }" class="scale-[0.7]"/>
             </div>
         </div>
 
