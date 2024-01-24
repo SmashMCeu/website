@@ -1,4 +1,15 @@
 
+<script setup lang="ts">
+
+
+    
+    const { data }: { data: Record<string, any> } = await useAsyncData(() => queryContent("/howtosubmitmaps").findOne());
+    
+    
+
+</script>
+
+
 <template>
     <div class="w-screen h-screen bg-[url('/images/headers/HomeImage.png')] bg-cover 
                 flex flex-col justify-center">
@@ -29,6 +40,11 @@
         <p class="title">Here is a guide on how to submit your own map</p>
 
         <!-- TODO: Put the guide here -->
+
+        <div class="mt-20 text-textColorLight markdownstyle">
+            <ContentRendererMarkdown :value="data"/>
+        </div>
+       
 
 
     </div>

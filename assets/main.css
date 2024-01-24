@@ -4,6 +4,17 @@
 
 
 @layer base {
+
+    .markdownstyle h1 {
+        @apply text-3xl;
+    }
+    .markdownstyle a {
+        @apply text-primary underline;
+    }
+    .markdownstyle li {
+        @apply list-disc ml-10;
+    }
+
 }
 
 @layer components {
