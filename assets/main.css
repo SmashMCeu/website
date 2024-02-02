@@ -15,6 +15,25 @@
         @apply list-disc ml-10;
     }
 
+    input[type=text] {
+        @apply bg-darkBackground text-white;
+        @apply py-2;
+        @apply rounded-md;
+    }
+    input[type=text]:focus, input[type=text]:active {
+        @apply outline outline-primary outline-1;
+    }
+
+    input[type=checkbox] {
+        @apply cursor-pointer size-4 appearance-auto checked:appearance-auto accent-primary rounded-sm bg-gray-800;
+    }
+
+    select {
+        @apply bg-darkBackground text-gray-400 rounded-md cursor-pointer;
+    }
+    
+    
+
 }
 
 @layer components {

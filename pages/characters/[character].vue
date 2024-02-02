@@ -1,31 +1,31 @@
 <script lang="ts" setup>
 
-    // @ts-ignore
-    const searchCharacter: string = useRoute().params.character;
-    const allCharacters = await useCharacters().getAll();
 
-    let character: Character | undefined;
-
-    for (const char of allCharacters) {
-        if (char.name.toLowerCase() === searchCharacter.toLowerCase()) {
-            character = char;
-            break;
-        }
-    }
-    if (!character) {
-        await navigateTo("/characters");
-    }
+    const searchCharacter = useRoute().params.character;
 
 </script>
 
 
 <template>
 
-    <div>
+    
+    <Suspense>
 
-        <p class="text-3xl text-white font-bold pt-32">{{ character }}</p>
+        
+        <div class="h-screen flex items-center justify-center">
+            <!--@vue-ignore-->
+            <SmashCharacterInfoCard :search-character="searchCharacter"/>
+        </div>
 
-    </div>
+        <template #fallback>
+                
+            <div class="h-screen w-screen flex items-center justify-center">
+                <p class="text-white text-4xl">Loading...</p>
+            </div>
+
+        </template>
+
+    </Suspense>
 
 
 </template>

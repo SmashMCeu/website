@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
+    "dev:network": "nuxt dev --host",
     "generate": "nuxt generate",
     "viewoutput": "npx serve .output/public",
     "generate:view": "npm run generate && npm run viewoutput"
