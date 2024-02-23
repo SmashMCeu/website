@@ -29,7 +29,7 @@
     }
 
     select {
-        @apply bg-darkBackground text-gray-400 rounded-md cursor-pointer;
+        @apply bg-darkBackground text-gray-400 rounded-md cursor-pointer border-r-[14px] border-r-transparent;
     }
     
     

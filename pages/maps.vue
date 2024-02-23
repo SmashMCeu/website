@@ -13,6 +13,10 @@
 <template>
     <div class="w-screen h-screen bg-[url('/images/headers/HomeImage.png')] bg-cover 
                 flex flex-col justify-center">
+                <div class="flex flex-col ml-40 max-w-[40rem] z-[1] mt-20">
+            <p class="font-black text-white tracking-tight text-6xl">SmashMC Maps</p>
+            <p class="font-semibold text-textColorLight ml-2 mt-2 text-2xl tracking-tight leading-7">SmashMC offers unique games you can play with your friends. Take a look at our Games or just join the minecraft server and experience it yourself!</p>
+        </div>
         <div class="absolute w-full h-full bg-gradient-to-r from-20% from-transparentBackground to-60%"></div>
     </div>
 
@@ -37,7 +41,7 @@
         </div>
 
         <p class="subtitle text-2xl mt-20">Be Creative</p>
-        <p class="title">Here is a guide on how to submit your own map</p>
+        <p class="title">Here is a guide on how to build and submit your own map</p>
 
         <!-- TODO: Put the guide here -->
 

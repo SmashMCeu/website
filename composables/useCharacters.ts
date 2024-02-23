@@ -62,7 +62,7 @@ export const useCharacters = () => {
         
 
         return new Promise<Character[]>((resolve) => {
-            setTimeout(() => resolve(characters), 2000)
+            setTimeout(() => resolve(characters), 1000)
         });
     }
 

@@ -20,14 +20,25 @@
                 <a class="w-9" href="https://x.com/SmashMC_EU" target="_blank"><img src="/images/icons/TwitterSmashStyle.svg"></a>
             </div>
         </div>
-        <div class="flex flex-col mt-8">
-            <p class="font-bold text-lg mb-2">Rechtliches</p>
-            <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
-                <a href="">Impressum<span class="i-mdi-open-in-new"></span></a>
-                <a href="">Datenschutz<span class="i-mdi-open-in-new"></span></a>
-                <a href="">Cookies<span class="i-mdi-open-in-new"></span></a>
+        <div class="flex flex-row gap-10 mt-8 md:mlr-0 mr-20">
+            <div>
+                <p class="font-bold text-lg mb-2">Rechtliches</p>
+                <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
+                    <NuxtLink to="/tos">Terms of Service<span class="i-mdi-open-in-new"></span></NuxtLink>
+                    <NuxtLink to="/privacypolicy">Privacy Policy<span class="i-mdi-open-in-new"></span></NuxtLink>
+                    <a href="https://clickspeeder.com/cookie-clicker/">Cookies<span class="i-mdi-open-in-new"></span></a>
+                </div>
+            </div>
+            <div>
+                <p class="font-bold text-lg mb-2">Nützliche Links</p>
+                <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
+                    <a href="">Build and submit own maps<span class="i-mdi-open-in-new"></span></a>
+                    <a href="">Report a Bug<span class="i-mdi-open-in-new"></span></a>
+                    <a href="">Quickstart Guide<span class="i-mdi-open-in-new"></span></a>
+                </div>
             </div>
         </div>
+    
 
     </div>
 
