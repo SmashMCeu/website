@@ -40,7 +40,8 @@
             </div>
         </div>
 
-        <p class="subtitle text-2xl mt-20">Be Creative</p>
+
+        <p class="subtitle text-2xl mt-32">Be Creative</p>
         <p class="title">Here is a guide on how to build and submit your own map</p>
 
         <!-- TODO: Put the guide here -->

@@ -25,7 +25,7 @@
     }
 
     input[type=checkbox] {
-        @apply cursor-pointer size-4 appearance-auto checked:appearance-auto accent-primary rounded-sm bg-gray-800;
+        @apply cursor-pointer size-4 appearance-auto checked:appearance-auto accent-primary rounded-sm;
     }
 
     select {

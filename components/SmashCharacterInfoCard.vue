@@ -20,6 +20,21 @@
         await navigateTo("/characters");
     }
 
+    const difficultyText = ref("");
+    switch (character?.difficulty) {
+        case 1:
+            difficultyText.value = "Easy";
+            break;
+        case 2:
+            difficultyText.value = "Medium";
+            break;
+        case 3:
+            difficultyText.value = "Hard";
+            break;
+        default:
+            difficultyText.value = "Unknown";
+    }
+
 </script>
 
 
@@ -36,7 +51,7 @@
             <div class="col-span-2 mt-20 text-gray-400 text-lg">
                 <p>{{ character?.description }}</p>
                 <p class="text-gray-300 mt-5">Difficulty:</p>
-                <p class="font-bold" :style="{color: character?.primaryColor}">{{ character?.difficulty }}</p>
+                <p class="font-bold" :style="{color: character?.primaryColor}">{{ difficultyText }}</p>
                 <p class="text-gray-300">Cooldown:</p>
                 <p class="font-bold" :style="{color: character?.primaryColor}">{{ character?.cooldownTime }}</p>
             </div>
