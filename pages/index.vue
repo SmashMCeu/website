@@ -45,7 +45,7 @@
     <div class="flex items-start justify-evenly gap-10 px-40 py-20">
 
         <div class="bg-darkBackground aspect-video w-96 rounded-lg flex-grow"></div>
-        <div class="max-w-[50%] mt-5">
+        <div class="max-w-[40%] mt-5">
             <p class="subtitle">Who are we?</p>
             <p class="title font-semibold">Heading Text dies das Annanaaaas</p>
             <p class="text-lg text-textColor mt-2">Dies das Annaaannaaas. Mario mit seiner STAMPFATACKE ist zu OP, also auch einfach mal Mario nehmen anstatt zu cheaten ihr schlechte Menschen. Aber sonst ist SmashMC ein wirklich sehr toller Server also joint jetzt.</p>
