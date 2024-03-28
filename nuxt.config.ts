@@ -7,5 +7,8 @@ export default defineNuxtConfig({
   tailwindcss: {
     viewer: false,
   },
+  ui: {
+    icons: ["mdi", "simple-icons"]
+  }
 
 })
