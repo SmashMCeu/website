@@ -1,6 +1,6 @@
 <template>
 
-    <div class="text-white flex gap-8 md:gap-14">
+    <div class="text-white flex sm:gap-8 md:gap-14">
         <div v-for="(character, index) of characters">
             <SkinsRenderer :is-slim="character.isSlimSkin" :skin-image="character.skinImage" :style="{ opacity: calcSkinPreviewCharacterOpacity(index) }" class="scale-[0.7]" :spin="true"/>
         </div>

@@ -19,7 +19,11 @@
 
 </script>
 <template>
-    <div id="skin-viewer" :style="{ 'background-image': `url('${props.skinImage}')` }" :class="{ slim: props.isSlim, spin: props.spin }" class="mc-skin-viewer-9x scale-50 md:scale-75">
+    <div id="skin-viewer" :style="{ 'background-image': `url('${props.skinImage}')` }" :class="{ slim: props.isSlim, spin: props.spin }" class="mc-skin-viewer-9x 
+        scale-[35%] sm:scale-50 md:scale-75
+        !h-24       sm:!h-40    md:!h-64
+        "    
+    >
         <div class="player" :style="{ 'background-image': `url('${props.skinImage}')` }">
             <!-- Head -->
             <div class="head" :style="{ 'background-image': `url('${props.skinImage}')` }">
