@@ -4,3 +4,9 @@
 - `npm run dev:network` => run local dev server + you can access the website for example on your phone to test the responsive design.
 - `npm run generate` => generates a static site
 - `npm run generate:view` => generates a static site + starts it
+
+## Todo
+
+- [ ] Footer Links
+- [ ] Organize custom colors better (tailwind.config.js)
+
