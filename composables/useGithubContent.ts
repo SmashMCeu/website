@@ -6,6 +6,10 @@ export const useGithubContent = () => {
     const mapDir = "maps/";
     const mapListPath = mapDir + "maps.json";
 
+    const charactersDir = "characters/";
+    const characterSkinsDir = charactersDir + "skins/";
+    const charactersInfoListPath = charactersDir + "characters.json";
+
     const guidesDir = "guides/";
 
 
@@ -33,6 +37,36 @@ export const useGithubContent = () => {
     }
 
 
+    // - - - - - - - - -   C H A R A C T E R S   - - - - - - - - -
+    const getAllCharacters = async (): Promise<SmashCharacter[]> => {
+        const res: Response = await fetch(baseUrl + charactersInfoListPath);
+        let charList: Array<string> = Object.values(await res.json());
+
+        let chars = charList.map(async file => await getSmashCharacter(file));
+        
+        //TODO: remove this!!! only for testing
+        chars = chars.concat(chars);
+        chars = chars.concat(chars);
+        
+        return Promise.all(chars);
+    }
+
+    const getSmashCharacter = async (file: string): Promise<SmashCharacter> => {
+        const res: Response = await fetch(baseUrl + charactersDir + file);
+        const charInfos: SmashCharacter = await res.json();
+
+        charInfos.skinImage = await getSmashCharacterSkin(charInfos.skinImage);
+
+        return charInfos;
+    }
+    const getSmashCharacterSkin = async (file: string): Promise<string> => {
+        const res: Response = await fetch(baseUrl + characterSkinsDir + file);
+        const data: Blob = await res.blob();
+        
+        return URL.createObjectURL(data);
+    }
+
+
 
     // - - - - - - - - -   G U I D E S   - - - - - - - - -
     const getGuideByName = async (name: string): Promise<string>  => {
@@ -54,6 +88,6 @@ export const useGithubContent = () => {
 
 
 
-    return { getAllMaps, getMapImage, getGuideByName }
+    return { getAllMaps, getMapImage, getGuideByName, getAllCharacters, getSmashCharacter }
 
 }
