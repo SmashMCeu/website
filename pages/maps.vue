@@ -2,10 +2,10 @@
 <script setup lang="ts">
 
 
-    
+
     const { data }: { data: Record<string, any> } = await useAsyncData(() => queryContent("/howtosubmitmaps").findOne());
     
-    
+
 
 </script>
 
