@@ -10,8 +10,16 @@
 - [ ] Footer Links
 - [ ] Organize custom colors better (tailwind.config.js)
 - [ ] Remove marked code in useGithubContent.ts
+- [ ] Create all pages
+- [ ] Add error page
+- [ ] Handle useGithubContent.ts fetch errors
 
 - [ ] Setup all current maps in gh content repo
 - [ ] Setup all characters in gh content repo
 - [ ] Setup all guides in gh content repo
+
+- [ ] Add video for index page
+- [ ] Write serious text for website
+- [ ] Add page titles
+- [ ] SEO
 
