@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.router-link-active {
+    @apply text-activeLink;
+}
+
+.markdownRender {
+    scroll-margin-top: 8rem;
+    max-width: unset;
+}
