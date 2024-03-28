@@ -9,4 +9,9 @@
 
 - [ ] Footer Links
 - [ ] Organize custom colors better (tailwind.config.js)
+- [ ] Remove marked code in useGithubContent.ts
+
+- [ ] Setup all current maps in gh content repo
+- [ ] Setup all characters in gh content repo
+- [ ] Setup all guides in gh content repo
 
