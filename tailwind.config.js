@@ -30,6 +30,8 @@ export default {
         activeLink: "#70c1fb",
         navbarBackground: "#01010399",
 
+        headerCardsBackground: "#01010344",
+
 
 
 

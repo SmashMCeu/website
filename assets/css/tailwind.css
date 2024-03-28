@@ -11,3 +11,7 @@
     scroll-margin-top: 8rem;
     max-width: unset;
 }
+
+.rainbowGradientButton {
+    @apply bg-gradient-to-br from-[#7E07FF] via-[#33A9FF] to-[#00FF7D];
+}
