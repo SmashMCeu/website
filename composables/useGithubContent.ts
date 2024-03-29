@@ -1,3 +1,5 @@
+import type SmashCharacter from "@/types/SmashCharacter";
+
 export const useGithubContent = () => {
 
 
@@ -47,6 +49,7 @@ export const useGithubContent = () => {
         //TODO: remove this!!! only for testing
         chars = chars.concat(chars);
         chars = chars.concat(chars);
+        await new Promise((resolve, reject) => setTimeout(() => resolve("end of sleep :D"), 3000));
         
         return Promise.all(chars);
     }
