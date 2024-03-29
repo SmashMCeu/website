@@ -5,9 +5,16 @@
 - `npm run generate` => generates a static site
 - `npm run generate:view` => generates a static site + starts it
 
+
+## Used markdown guides:
+- **howToBuildAMap**.md
+- **howToCreateACharacterSkin**.md
+
+
 ## Todo
 
 - [ ] Footer Links
+- [ ] Make footer more/better responsive (text size + link section breaks)
 - [ ] Organize custom colors better (tailwind.config.js)
 - [ ] Remove marked code in useGithubContent.ts
 - [ ] Create all pages
@@ -19,6 +26,7 @@
 - [ ] Setup all guides in gh content repo
 
 - [ ] Add video for index page
+- [ ] Page header images => change if on mobild + align better in general
 - [ ] Write serious text for website
 - [ ] Add page titles
 - [ ] SEO
