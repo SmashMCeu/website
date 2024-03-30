@@ -9,11 +9,19 @@
         file: {
             type: String,
             required: true
+        },
+        local: {
+            type: Boolean,
+            default: false,
         }
     });
 
     const markdown = ref("# loading...");
-    useGithubContent().getGuideByName(props.file).then(m => markdown.value = m);
+    if (!props.local) useGithubContent().getGuideByName(props.file).then(m => markdown.value = m);
+    else {
+        const { data } = await useFetch("localMarkdown/" + props.file + ".md");
+        markdown.value = data.value as string;
+    }
 
 
 </script>

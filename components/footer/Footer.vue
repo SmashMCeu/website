@@ -17,17 +17,14 @@
             <div>
                 <p class="font-bold text-lg mb-2">Rechtliches</p>
                 <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
-                    <NuxtLink to="/tos">Terms of Service</NuxtLink>
-                    <NuxtLink to="/privacypolicy">Privacy Policy</NuxtLink>
-                    <a href="https://clickspeeder.com/cookie-clicker/">Cookies</a>
+                    <NuxtLink to="/imprint">Imprint</NuxtLink>
                 </div>
             </div>
             <div>
                 <p class="font-bold text-lg mb-2">Nützliche Links</p>
                 <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
-                    <a href="">Build and submit own maps</a>
+                    <a href="/maps#howToBuildAMap">Build and submit own maps</a>
                     <a href="">Report a Bug</a>
-                    <a href="">Quickstart Guide</a>
                 </div>
             </div>
         </div>
