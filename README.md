@@ -7,12 +7,16 @@
 
 
 ## Used markdown guides:
+### on GitHub: 
 - **howToBuildAMap**.md
 - **howToCreateACharacterSkin**.md
+### local:
+- **imprint**.md
 
 
 ## Todo
 
+- [ ] Character List Pro Badge
 - [ ] Footer Links
 - [ ] Make footer more/better responsive (text size + link section breaks)
 - [ ] Organize custom colors better (tailwind.config.js)
