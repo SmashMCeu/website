@@ -23,6 +23,8 @@
                 </Suspense>
             </div>
 
+            <MarkdownRenderer file="howToCreateACharacterSkin" class="mt-32" />
+
         </div>
     </div>
 </template>
