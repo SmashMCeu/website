@@ -4,7 +4,11 @@
 
         <div class="p-10 md:p-20 flex flex-col gap-32">
             <div class="flex flex-col lg:flex-row gap-4 sm:gap-10 lg:gap-20 lg:max-w-[80rem] items-center md:items-start">
-                <div class="aspect-video bg-darkBackground w-full lg:w-[50%] grid place-items-center text-4xl">VIDEO</div>
+                <div class="aspect-video bg-darkBackground w-full lg:w-[50%]">
+
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Jd9zRqLfHm0?si=DIMkEvLKTHFEU5JG" title="Server intro video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
                 <div class="flex-1">
                     <p class="text-lg md:text-xl lg:text-2xl tracking-tight text-primary-300">What is SmashMC?</p>
                     <p class="text-2xl md:text-3xl lg:text-4xl font-bold">We are just better than Gomme</p>
@@ -40,6 +44,5 @@
 </template>
 <script setup lang="ts">
 
-    
 
 </script>
