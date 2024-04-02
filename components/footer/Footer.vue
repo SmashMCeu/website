@@ -4,7 +4,7 @@
         
         <div class="flex flex-col gap-5">
             <div class="flex gap-3">
-                <img src="/images/SmashLogo.svg" class="w-10 hover:animate-spin">
+                <img src="/images/SmashLogo.svg" class="w-10 hover:animate-spin" @click="easterEggTriggerCount++">
                 <div class="mt-[-2px]">
                     <p class="text-3xl font-black text-white">SMASHMC.eu</p>
                     <p class="leading-3">© 2017 - 2024</p>
@@ -24,6 +24,7 @@
                 <p class="font-bold text-lg mb-2">Nützliche Links</p>
                 <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
                     <a href="/maps#howToBuildAMap">Build and submit own maps</a>
+                    <a href="/characters#howToCreateACharacterSkin">How to create skins for characters</a>
                     <a href="">Report a Bug</a>
                 </div>
             </div>
@@ -31,5 +32,14 @@
     
 
     </div>
+    <div class="fixed z-50 left-0 right-0 top-0 bottom-0 bg-black/10" v-if="easterEggTriggerCount >= 25">
+        <img src="/images/easterEggs/marioEasterEgg.gif" class="w-full h-full">
+    </div>
 
 </template>
+<script setup lang="ts">
+
+    const easterEggTriggerCount = ref(0);
+
+
+</script>
