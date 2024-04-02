@@ -20,11 +20,6 @@ export const useGithubContent = () => {
         const res: Response = await fetch(baseUrl + mapListPath);
         let maps: SmashMap[] = await res.json();
 
-        //TODO: only for testing
-        maps = maps.concat(maps);
-        maps = maps.concat(maps);
-    
-
         return Promise.all(await maps.map(async map => { 
             map.image = await getMapImage(map.image);
             return map;
@@ -45,11 +40,6 @@ export const useGithubContent = () => {
         let charList: Array<string> = Object.values(await res.json());
 
         let chars = charList.map(async file => await getSmashCharacter(file));
-        
-        //TODO: remove this!!! only for testing
-        chars = chars.concat(chars);
-        chars = chars.concat(chars);
-        await new Promise((resolve, reject) => setTimeout(() => resolve("end of sleep :D"), 3000));
         
         return Promise.all(chars);
     }
