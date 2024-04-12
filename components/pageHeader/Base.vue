@@ -13,7 +13,7 @@
 
     const props = defineProps({
         backgroundImage: {
-            default: "DefaultHeader.png",
+            default: "DefaultHeader.jpg",
             type: String,
         }
     })
