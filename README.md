@@ -16,11 +16,11 @@
 
 ## Todo
 
-- [ ] Character List Pro Badge
+- [x] Character List Pro Badge
 - [ ] Footer Links
 - [ ] Make footer more/better responsive (text size + link section breaks)
 - [ ] Organize custom colors better (tailwind.config.js)
-- [ ] Remove marked code in useGithubContent.ts
+- [x] Remove marked code in useGithubContent.ts
 - [ ] Create all pages
 - [ ] Add error page
 - [ ] Handle useGithubContent.ts fetch errors
@@ -29,8 +29,8 @@
 - [ ] Setup all characters in gh content repo
 - [ ] Setup all guides in gh content repo
 
-- [ ] Add video for index page
-- [ ] Page header images => change if on mobild + align better in general
+- [x] Add video for index page
+- [ ] Page header images => change if on mobile + align better in general
 - [ ] Write serious text for website
 - [ ] Add page titles
 - [ ] SEO
