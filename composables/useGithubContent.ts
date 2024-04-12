@@ -37,18 +37,19 @@ export const useGithubContent = () => {
     // - - - - - - - - -   C H A R A C T E R S   - - - - - - - - -
     const getAllCharacters = async (): Promise<SmashCharacter[]> => {
         const res: Response = await fetch(baseUrl + charactersInfoListPath);
-        let charList: Array<string> = Object.values(await res.json());
+        let charList: [string, string][] = Object.entries(await res.json());
 
-        let chars = charList.map(async file => await getSmashCharacter(file));
+        let chars: Promise<SmashCharacter>[] = charList.map(async entry => await getSmashCharacter(entry[1], entry[0]));
         
         return Promise.all(chars);
     }
 
-    const getSmashCharacter = async (file: string): Promise<SmashCharacter> => {
+    const getSmashCharacter = async (file: string, charName: string): Promise<SmashCharacter> => {
         const res: Response = await fetch(baseUrl + charactersDir + file);
         const charInfos: SmashCharacter = await res.json();
 
         charInfos.skinImage = await getSmashCharacterSkin(charInfos.skinImage);
+        charInfos.description = await getCharDescription(charName);
 
         return charInfos;
     }
@@ -74,6 +75,32 @@ export const useGithubContent = () => {
             });
         }
         
+    }
+
+
+
+    const translationFileUrl = "https://raw.githubusercontent.com/SmashMCeu/translation-files/main/smash/de.lang";
+    const getCharDescription = async (charName: string): Promise<string> => {
+        const file = await fetch(translationFileUrl);
+        const text = await file.text();
+
+
+        let desc = "";
+
+        for (const line of text.split("\n")) {
+            if (line.startsWith("item.lore." + charName)) {
+                
+                desc += line.split("=")[1];
+            }
+        }
+        const replace = ["§0", "§1", "§2", "§3", "§4", "§5", "§6", "§7", "§8", "§9", "§a", "§b", "§c", "§d", "§e"];
+        for (const repl of replace) {
+            desc = desc.replaceAll(repl, " ");
+        }
+        desc = desc.replace("%%", "%");
+
+   
+        return desc;
     }
 
 
