@@ -2,7 +2,7 @@
     <div>
         <PageHeaderHome />
 
-        <div class="p-10 md:p-20 flex flex-col gap-32">
+        <div class="p-10 md:p-20 flex flex-col gap-32 items-center">
             <div class="flex flex-col lg:flex-row gap-4 sm:gap-10 lg:gap-20 lg:max-w-[80rem] items-center md:items-start">
                 <div class="aspect-video bg-darkBackground w-full lg:w-[50%]">
 

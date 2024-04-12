@@ -1,13 +1,12 @@
 <template>
 
-    <div v-for="(char, index) of filteredChars" class="p-4 sm:p-10 bg-darkBackground rounded-lg flex flex-col items-center cursor-pointer"
+    <div v-for="(char, index) of filteredChars" class="overflow-hidden relative p-4 sm:p-10 bg-darkBackground rounded-lg flex flex-col items-center cursor-pointer"
         @click="openModalIndex = index">
-        <!--<p :style='{ color: char.primaryColor }'>{{ char.name }}</p>
-        <p>is pro? {{ char.isPro }}</p>
-        <p class="text-textColor">{{ char.description }}</p>
-        <p><UIcon name="i-heroicons-clock" /> {{ char.cooldownTime }}</p>
-        <UIcon :name="n <= char.difficulty ? 'i-heroicons-star-solid' : 'i-heroicons-star'" v-for="n in 3" :style='{ color: char.primaryColor }' />
-        -->
+
+        <!-- PRO BADGE -->
+        <div v-if="char.isPro" class="bg-cyan-500 text-center absolute -rotate-45 top-0 left-0 right-0 translate-x-[-50%] translate-y-[50%] ml-8">
+            <p class="lg:py-1 font-bold">Pro only</p>
+        </div>
 
         <p :style='{ color: char.primaryColor }' class="text-2xl font-bold">{{ char.name }}</p>
         <SkinsRenderer :skin-image="char.skinImage" :spin="true" :is-slim="char.isSlimSkin" class="scale-[40%] -translate-y-5 sm:translate-y-0"/>
