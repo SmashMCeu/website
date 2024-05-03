@@ -71,7 +71,7 @@
             out = out.filter(c => !c.isPro);
         }
         if (props.searchFilter.sortKey == 1) {
-            out.sort();
+            out.sort((a, b) => a.name.localeCompare(b.name));
         } else if (props.searchFilter.sortKey == 2 || props.searchFilter.sortKey == 3) {
             const flipSort = props.searchFilter.sortKey == 3 ? -1 : 1;
             out.sort((a, b) => {
