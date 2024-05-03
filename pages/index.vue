@@ -39,6 +39,15 @@
                 <SkinsPreviewGroup />
                 <UButton variant="outline" icon="i-heroicons-chevron-right" trailing size="lg" class="mt-8" to="characters">All Characters</UButton>
             </div>
+
+
+            <div class="w-full flex flex-col items-center">
+                <div class="flex flex-col items-center">
+                    <p class="text-xl tracking-tight text-primary-300">Gamemodes</p>
+                    <p class="text-2xl md:text-3xl font-bold text-center">We also have some other gamemodes for you</p>
+                </div>
+                <GamemodesList />
+            </div>
         </div>
     </div>
 </template>
