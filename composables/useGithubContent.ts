@@ -1,4 +1,5 @@
 import type SmashCharacter from "@/types/SmashCharacter";
+import { useTranslationFiles } from "./useTranslationFiles";
 
 export const useGithubContent = () => {
 
@@ -49,7 +50,11 @@ export const useGithubContent = () => {
         const charInfos: SmashCharacter = await res.json();
 
         charInfos.skinImage = await getSmashCharacterSkin(charInfos.skinImage);
-        charInfos.description = await getCharDescription(charName);
+        let description = "Error while loading!";
+        try {
+            description = await useTranslationFiles().getCharDescription(charName);
+        } catch {}
+        charInfos.description = description;
 
         return charInfos;
     }
@@ -76,34 +81,6 @@ export const useGithubContent = () => {
         }
         
     }
-
-
-
-    const translationFileUrl = "https://raw.githubusercontent.com/SmashMCeu/translation-files/main/smash/de.lang";
-    const getCharDescription = async (charName: string): Promise<string> => {
-        const file = await fetch(translationFileUrl);
-        const text = await file.text();
-
-
-        let desc = "";
-
-        for (const line of text.split("\n")) {
-            if (line.startsWith("item.lore." + charName)) {
-                
-                desc += line.split("=")[1];
-            }
-        }
-        const replace = ["§0", "§1", "§2", "§3", "§4", "§5", "§6", "§7", "§8", "§9", "§a", "§b", "§c", "§d", "§e"];
-        for (const repl of replace) {
-            desc = desc.replaceAll(repl, " ");
-        }
-        desc = desc.replace("%%", "%");
-
-   
-        return desc;
-    }
-
-
 
 
 
