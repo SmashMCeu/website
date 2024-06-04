@@ -11,9 +11,9 @@
 
 
 <template>
-    <div class="w-screen h-screen bg-[url('/images/headers/HomeImage.png')] bg-cover 
+    <div  class="w-screen h-screen bg-[url('/images/headers/HomeImage.png')] bg-cover 
                 flex flex-col justify-center">
-                <div class="flex flex-col ml-40 max-w-[40rem] z-[1] mt-20">
+        <div data-aos="fade-right" class="flex flex-col ml-40 max-w-[40rem] z-[1] mt-20">
             <p class="font-black text-white tracking-tight text-6xl">SmashMC Maps</p>
             <p class="font-semibold text-textColorLight ml-2 mt-2 text-2xl tracking-tight leading-7">SmashMC offers unique games you can play with your friends. Take a look at our Games or just join the minecraft server and experience it yourself!</p>
         </div>
@@ -27,7 +27,7 @@
         
         
         
-    <div class="px-32 flex flex-col items-center mt-36">
+    <div data-aos="fade-up" class="px-32 flex flex-col items-center mt-36">
         <div class="w-full">
             <p class="subtitle text-2xl">Favourites</p>
             <p class="title">Our most played maps</p>

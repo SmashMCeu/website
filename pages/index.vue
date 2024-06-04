@@ -31,7 +31,7 @@
 <template>
     <div class="w-screen h-screen bg-[url('/images/headers/HomeImage.png')] bg-cover 
                 flex flex-col justify-center">
-        <div class="flex flex-col ml-40 max-w-[40rem] z-[1] mt-20">
+        <div data-aos="fade-right" class="flex flex-col ml-40 max-w-[40rem] z-[1] mt-20">
             <p class="font-black text-white tracking-tight text-6xl">We are SmashMC</p>
             <p class="font-semibold text-textColorLight ml-2 mt-2 text-2xl tracking-tight leading-7">SmashMC offers unique games you can play with your friends. Take a look at our Games or just join the minecraft server and experience it yourself!</p>
             <div class="inline-flex gap-8 mt-10 items-center">
@@ -43,7 +43,7 @@
     </div>
     
 
-    <div class="flex items-start justify-evenly gap-10 px-40 py-20">
+    <div data-aos="fade-up" class="flex items-start justify-evenly gap-10 px-40 py-20">
 
         <div class="bg-darkBackground aspect-video w-96 rounded-lg flex-grow"></div>
         <div class="max-w-[40%] mt-5">
@@ -55,7 +55,7 @@
     </div>
 
 
-    <div class="flex flex-col items-center">
+    <div data-aos="fade-up" class="flex flex-col items-center">
 
 
         <p class="subtitle">Characters</p>
@@ -75,7 +75,7 @@
 
     </div>
 
-    <div class="flex flex-col items-center mt-32">
+    <div data-aos="fade-up" class="flex flex-col items-center mt-32">
 
         <p class="subtitle">Maps</p>
         <p class="title">Take a look at our Smash maps</p>
