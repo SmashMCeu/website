@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   modules: ["@nuxt/ui", "nuxt-aos"],
 
+  devtools: true,
+
   ssr: false,
   
   tailwindcss: {

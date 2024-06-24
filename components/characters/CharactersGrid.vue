@@ -1,7 +1,8 @@
 <template>
 
     <div v-for="(char, index) of filteredChars" class="overflow-hidden relative p-4 sm:p-10 bg-darkBackground rounded-lg flex flex-col items-center cursor-pointer"
-        @click="openModalIndex = index">
+        @click="openModalIndex = index"
+        data-aos="zoom-in" data-aos-duration="250">
 
         <!-- PRO BADGE -->
         <div v-if="char.isPro" class="bg-cyan-500 text-center absolute -rotate-45 top-0 left-0 right-0 translate-x-[-50%] translate-y-[50%] ml-8">

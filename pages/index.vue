@@ -4,12 +4,12 @@
 
         <div class="p-10 md:p-20 flex flex-col gap-32 items-center">
             <div class="flex flex-col lg:flex-row gap-4 sm:gap-10 lg:gap-20 lg:max-w-[80rem] items-center md:items-start">
-                <div class="aspect-video bg-darkBackground w-full lg:w-[50%]">
+                <div class="aspect-video bg-darkBackground w-full lg:w-[50%]" data-aos="fade-right">
 
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/Jd9zRqLfHm0?si=DIMkEvLKTHFEU5JG" title="Server intro video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                 </div>
-                <div class="flex-1">
+                <div class="flex-1" data-aos="fade-left">
                     <p class="text-lg md:text-xl lg:text-2xl tracking-tight text-primary-300">What is SmashMC?</p>
                     <p class="text-2xl md:text-3xl lg:text-4xl font-bold">We are just better than Gomme</p>
                     <p class="text-textColorLight mt-2">
@@ -20,7 +20,7 @@
 
 
 
-            <div class="w-full flex flex-col items-center">
+            <div class="w-full flex flex-col items-center" data-aos="fade-up">
                 <div class="flex flex-col items-center">
                     <p class="text-xl tracking-tight text-primary-300">Maps</p>
                     <p class="text-2xl md:text-3xl font-bold text-center">Take a look at our maps</p>
@@ -31,7 +31,7 @@
             
 
 
-            <div class="w-full flex flex-col items-center">
+            <div class="w-full flex flex-col items-center" data-aos="zoom-in-up">
                 <div class="flex flex-col items-center">
                     <p class="text-xl tracking-tight text-primary-300">Characters</p>
                     <p class="text-2xl md:text-3xl font-bold text-center">Some Characters you can play</p>
@@ -41,7 +41,7 @@
             </div>
 
 
-            <div class="w-full flex flex-col items-center">
+            <div class="w-full flex flex-col items-center" data-aos="zoom-in">
                 <div class="flex flex-col items-center">
                     <p class="text-xl tracking-tight text-primary-300">Gamemodes</p>
                     <p class="text-2xl md:text-3xl font-bold text-center">We also have some other gamemodes for you</p>

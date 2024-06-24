@@ -1,7 +1,10 @@
 <template>
 
     <div class="text-white flex sm:gap-8 md:gap-14">
-        <div v-for="(character, index) of characters">
+        <div v-for="(character, index) of characters" 
+            data-aos="zoom-in"
+            :data-aos-delay="100 * index">
+
             <SkinsRenderer :is-slim="character.isSlimSkin" :skin-image="character.skinImage" :style="{ opacity: calcSkinPreviewCharacterOpacity(index) }" class="scale-[0.7]" :spin="true"/>
         </div>
     </div>
