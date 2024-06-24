@@ -3,6 +3,7 @@
         <div class="flex flex-col lg:flex-row sm:items-center justify-between gap-5 lg:gap-20">
 
             <UInput v-on:change="updateSearchFilter()"
+                size="lg"
                 class="flex-1 max-w-96 w-full lg:w-fit"
                 v-model="searchInput"
                 placeholder="Search Character..."
@@ -24,11 +25,13 @@
             </UInput>
 
             <div class="flex flex-col sm:flex-row gap-5 sm:gap-10 sm:items-center max-w-96 sm:max-w-full">
-                <UCheckbox label="Hide Pro Characters" v-model="hideProCharacters" v-on:change="updateSearchFilter()"/>
+                <UCheckbox label="Hide Pro Characters" v-model="hideProCharacters" v-on:change="updateSearchFilter()"
+                    :ui="{ base:'h-5 w-5' }"
+                />
 
                 <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
                     <p class="text-textColorLight -mt-1">Sort by:</p>
-                    <USelect v-model="sortBy" :options="sortOptions" name="test" v-on:change="updateSearchFilter()"/>
+                    <USelect size="lg" v-model="sortBy" :options="sortOptions" name="test" v-on:change="updateSearchFilter()"/>
                 </div>
             </div>
 
@@ -61,6 +64,11 @@
     });
 
     const updateSearchFilter = () => {
+        // For enchanting the page:
+        if (searchInput.value.toLowerCase() == "enchant") {
+            useEnchantingTable().enchantThePage();
+        }
+        
         searchFilter.value = {
             nameInput: searchInput.value,
             hideProChars: hideProCharacters.value,
