@@ -24,6 +24,7 @@
 - [ ] Create all pages
 - [ ] Add error page
 - [ ] Handle useGithubContent.ts fetch errors
+- [ ] Navbar is slightly of centered
 
 - [ ] Setup all current maps in gh content repo
 - [ ] Setup all characters in gh content repo
