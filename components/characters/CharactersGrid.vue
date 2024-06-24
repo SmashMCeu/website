@@ -5,14 +5,14 @@
 
         <!-- PRO BADGE -->
         <div v-if="char.isPro" class="bg-cyan-500 text-center absolute -rotate-45 top-0 left-0 right-0 translate-x-[-50%] translate-y-[50%] ml-8">
-            <p class="lg:py-1 font-bold">Pro only</p>
+            <p class="lg:py-1 font-bold text-white">Pro only</p>
         </div>
 
         <p :style='{ color: char.primaryColor }' class="text-2xl font-bold">{{ char.name }}</p>
         <SkinsRenderer :skin-image="char.skinImage" :spin="true" :is-slim="char.isSlimSkin" class="scale-[40%] -translate-y-5 sm:translate-y-0"/>
 
-        <UModal :modelValue="openModalIndex == index" @close="openModalIndex = null" :ui='{ "container": "items-center" }'>
-            <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+        <UModal :overlay="false" :modelValue="openModalIndex == index" @close="openModalIndex = null" :ui='{ "container": "items-center" }'>
+            <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-700', background: 'border border-gray-700'}">
                 <template #header>
                     <div class="flex items-center justify-between">
                         <p class="text-base font-semibold leading-6" :style='{ color: char.primaryColor }'>
@@ -22,8 +22,12 @@
                     </div>
                 </template>
                 <div class="flex gap-10">
-                    <div class="max-w-[50%] mt-10 flex flex-col">
-                        <p>{{ char.description }}</p>
+                    <div class="max-w-[50%] flex flex-col">
+                        <div class="mt-6 text-textColorLight">
+                            <p>Description:</p>
+                            <p :style='{ color: char.primaryColor }'>{{ char.description }}</p>
+                            
+                        </div>
                         <div class="mt-6 text-textColorLight">
                             <p>Cooldown:</p>
                             <div class="flex items-center gap-2" :style='{ color: char.primaryColor }'>

@@ -15,6 +15,19 @@ const primary = {
   '900': '#0c416e',
   '950': '#082949',
 }
+const nuxtuiGray = { // default gray tailwind theme with little adjustments
+  '50': '#f9fafb',
+  '100': '#f3f4f6',
+  '200': '#e5e7eb',
+  '300': '#d1d5db',
+  '400': '#9ca3af',
+  '500': '#6b7280',
+  '600': '#4b5563',
+  '700': '#374151',
+  '800': '#12151c', // chnaged
+  '900': '#0E1015', // changed
+  '950': '#030712',
+}
 
 
 
@@ -26,6 +39,7 @@ export default {
         
         primary: primary,         
         nuxtuiPrimary: primary,
+        nuxtuiGray: nuxtuiGray,
 
         activeLink: "#70c1fb",
         navbarBackground: "#01010399",
