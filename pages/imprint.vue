@@ -7,3 +7,10 @@
     </div>
 
 </template>
+<script setup lang="ts">
+
+    useHead({
+        title: "SmashMC | Imprint",
+    });
+
+</script>

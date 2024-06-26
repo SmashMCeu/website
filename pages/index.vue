@@ -64,5 +64,8 @@
 </template>
 <script setup lang="ts">
 
+    useHead({
+        title: "SmashMC | Home",
+    });
 
 </script>

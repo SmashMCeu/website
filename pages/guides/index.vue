@@ -17,6 +17,12 @@
 </template>
 
 <script setup lang="ts">
+
+    useHead({
+        title: "SmashMC | Guides",
+    });
+
+
     import type GuideInfo from '~/types/GuideInfo';
     import type GuidesConfig from '~/types/GuidesConfig';
 
