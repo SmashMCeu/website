@@ -21,7 +21,7 @@
             </Suspense>
 
 
-            <MarkdownRenderer file="howToBuildAMap" class="mt-40" />
+            <MarkdownRenderer id="howToBuildAMap" class="mt-40" />
         </div>     
     
 

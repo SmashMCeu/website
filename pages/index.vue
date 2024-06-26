@@ -48,6 +48,17 @@
                 </div>
                 <GamemodesList />
             </div>
+
+
+            <div class="w-full flex flex-col items-center" data-aos="zoom-in-up">
+                <div class="flex flex-col items-center">
+                    <p class="text-xl tracking-tight text-primary-300">Gameplay</p>
+                    <p class="text-2xl md:text-3xl font-bold text-center">Screenshots of the Smash Gamemode</p>
+                </div>
+                <ScreenshotsGameplay/>
+
+            </div>
+
         </div>
     </div>
 </template>

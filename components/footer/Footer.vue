@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-screen bg-darkBackground flex flex-wrap md:justify-between justify-center gap-20 py-20 px-40 text-textColorLight">
+    <div class="w-screen bg-darkBackground flex flex-wrap md:justify-between gap-20 py-20 px-10 md:px-40 text-textColorLight">
         
         <div class="flex flex-col gap-5">
             <div class="flex gap-3">
@@ -13,7 +13,7 @@
             <div class="max-w-[25rem]">SmashMC ist der tollste und aller beste Minecraft Server, den es auf der ganzen Welt überhaupt gibt. Wir sind halt einfach besser als alle andere und dieser Text hier sollte definitiv auf der echten Webseite später stehen :D</div>
             <FooterSocialMediaIcons/>
         </div>
-        <div class="flex flex-row gap-10 mt-8 md:mlr-0 mr-20">
+        <div class="flex md:flex-row flex-col-reverse gap-10 md:mt-8">
             <div>
                 <p class="font-bold text-lg mb-2">Rechtliches</p>
                 <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">

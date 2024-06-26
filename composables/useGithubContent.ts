@@ -1,5 +1,6 @@
 import type SmashCharacter from "@/types/SmashCharacter";
 import { useTranslationFiles } from "./useTranslationFiles";
+import type GuidesConfig from "~/types/GuidesConfig";
 
 export const useGithubContent = () => {
 
@@ -14,6 +15,7 @@ export const useGithubContent = () => {
     const charactersInfoListPath = charactersDir + "characters.json";
 
     const guidesDir = "guides/";
+    const guidesConfigPath = "guides.json";
 
 
     // - - - - - - - - -   M A P S   - - - - - - - - -
@@ -68,23 +70,29 @@ export const useGithubContent = () => {
 
 
     // - - - - - - - - -   G U I D E S   - - - - - - - - -
-    const getGuideByName = async (name: string): Promise<string>  => {
-        const res: Response = await fetch(baseUrl + guidesDir + name + ".md");
+    const getGuidesJson = async (): Promise<GuidesConfig> => {
+        const res: Response = await fetch(baseUrl + guidesDir + guidesConfigPath);
+        const content: GuidesConfig = await res.json();
+        return content;
+    }
+
+    const getGuideMarkdown = async (filename: string): Promise<string> => {
+        const res: Response = await fetch(baseUrl + guidesDir + filename);
         if (res.ok) {
             const markdown = await res.text();
             return markdown;
-
         } else {
             return new Promise((resolve) => {
-                resolve(`> Error while loading '${name}.md'! Please report this error`);
+                resolve(`> Error while loading '${name}.md'!`);
             });
         }
-        
+
     }
+    
 
 
 
 
-    return { getAllMaps, getMapImage, getGuideByName, getAllCharacters, getSmashCharacter }
+    return { getAllMaps, getMapImage, getAllCharacters, getSmashCharacter, getGuidesJson, getGuideMarkdown }
 
 }
