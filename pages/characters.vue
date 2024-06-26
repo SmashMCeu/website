@@ -29,6 +29,12 @@
     </div>
 </template>
 <script setup lang="ts">
+
+    useHead({
+        title: "SmashMC | Characters",
+    });
+
+
     import type CharacterSearchFilter from "@/types/CharacterSearchFilter";
 
     const searchFilter: Ref<CharacterSearchFilter> = ref({

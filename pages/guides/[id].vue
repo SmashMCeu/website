@@ -5,8 +5,17 @@
 </template>
 
 <script setup lang="ts">
-
     const guideId: string = useRoute().params.id as string;
+   
+    const guide = await useGithubContent().getGuideById(guideId);
+    const guideName = guide === undefined ? "Guide not found" : guide.name;
+
+    useHead({
+        title: "SmashMC | " + guideName,
+    });
+
+
+    
     
     const loadingError = (id: string) => {
         throw createError({

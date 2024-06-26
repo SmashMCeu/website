@@ -1,6 +1,7 @@
 import type SmashCharacter from "@/types/SmashCharacter";
 import { useTranslationFiles } from "./useTranslationFiles";
 import type GuidesConfig from "~/types/GuidesConfig";
+import type GuideInfo from "~/types/GuideInfo";
 
 export const useGithubContent = () => {
 
@@ -88,11 +89,17 @@ export const useGithubContent = () => {
         }
 
     }
+
+    const getGuideById = async (id: string) => {
+        const guideConfig: GuidesConfig = await getGuidesJson();
+        const matchingGuides: GuideInfo[] = guideConfig.guides.filter(g => g.id == id);
+        return matchingGuides.length == 0 ? undefined : matchingGuides.at(0);
+    }
     
 
 
 
 
-    return { getAllMaps, getMapImage, getAllCharacters, getSmashCharacter, getGuidesJson, getGuideMarkdown }
+    return { getAllMaps, getMapImage, getAllCharacters, getSmashCharacter, getGuidesJson, getGuideMarkdown, getGuideById }
 
 }

@@ -28,14 +28,13 @@
         
         if (!props.local) {
 
-            const guidesConfig: GuidesConfig = await useGithubContent().getGuidesJson();
-            const matchingGuides: GuideInfo[] = guidesConfig.guides.filter(e => e.id == props.id);
+            const guide: GuideInfo | undefined = await useGithubContent().getGuideById(props.id);
             
-            if (matchingGuides.length == 0) {
+            if (guide === undefined) {
                 markdown.value = "No guide with id: " + props.id + " found! Please report this!";
                 emit("loadingerror", props.id); 
             }
-            else markdown.value = await useGithubContent().getGuideMarkdown(matchingGuides.at(0)?.path || "WrongID");
+            else markdown.value = await useGithubContent().getGuideMarkdown(guide.path);
 
 
         } else {
