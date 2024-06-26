@@ -18,17 +18,17 @@
 
 - [x] Character List Pro Badge
 - [ ] Footer Links
-- [ ] Make footer more/better responsive (text size + link section breaks)
+- [x] Make footer more/better responsive (text size + link section breaks)
 - [ ] Organize custom colors better (tailwind.config.js)
 - [x] Remove marked code in useGithubContent.ts
 - [ ] Create all pages
-- [ ] Add error page
+- [x] Add error page
 - [ ] Handle useGithubContent.ts fetch errors
-- [ ] Navbar is slightly of centered
+- [x] Navbar is slightly of centered
 - [ ] Better Page Header gradient
 
 - [ ] Setup all current maps in gh content repo
-- [ ] Setup all characters in gh content repo
+- [x] Setup all characters in gh content repo
 - [ ] Setup all guides in gh content repo
 
 - [x] Add video for index page
