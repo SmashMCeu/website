@@ -12,7 +12,7 @@
             <a href="/" class="cursor-pointer hover:child:animate-spin">
                 <img src="/images/SmashLogo.svg" class="h-12">
             </a>
-            <p class="text-2xl font-black" v-if="currentScreenWidth <= maxMobileWidth && currentScreenWidth > 400">SmashMC.eu</p>
+            <p class="text-2xl font-black" v-if="currentScreenWidth <= maxMobileWidth && currentScreenWidth > 400">{{ $t("navbar.ipText") }}</p>
             
         
             <NavbarMenuBurger v-model="isMobileMenuOpen" v-if="currentScreenWidth <= maxMobileWidth" class="ml-auto"/>
@@ -23,7 +23,7 @@
         <NavbarLinkGroup v-if="isMobileMenuOpen || currentScreenWidth > maxMobileWidth" :class='{ "flex-col items-center gap-4": currentScreenWidth <= maxMobileWidth }'/>
 
         <UButton v-if="isMobileMenuOpen || currentScreenWidth > maxMobileWidth" to="https://shop.smashmc.eu" target="_blank" icon="i-heroicons-building-storefront" variant="outline" size="xl" class="gap-3 px-4">            
-            Shop
+            {{ $t("navbar.shop") }}
         </UButton>
         
 

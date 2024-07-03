@@ -6,26 +6,24 @@
             <div class="flex gap-3">
                 <img src="/images/SmashLogo.svg" class="w-10 hover:animate-spin" @click="easterEggTriggerCount++">
                 <div class="mt-[-2px]">
-                    <p class="text-3xl font-black text-white">SMASHMC.eu</p>
-                    <p class="leading-3">© 2017 - 2024</p>
+                    <p class="text-3xl font-black text-white">{{ $t("footer.ipText") }}</p>
+                    <p class="leading-3">{{ $t("footer.copyright") }}</p>
                 </div>
             </div>
-            <div class="max-w-[25rem]">SmashMC ist der tollste und aller beste Minecraft Server, den es auf der ganzen Welt überhaupt gibt. Wir sind halt einfach besser als alle andere und dieser Text hier sollte definitiv auf der echten Webseite später stehen :D</div>
+            <div class="max-w-[25rem]">{{ $t("footer.serverDescription") }}</div>
             <FooterSocialMediaIcons/>
         </div>
         <div class="flex md:flex-row flex-col-reverse gap-10 md:mt-8">
             <div>
-                <p class="font-bold text-lg mb-2">Rechtliches</p>
+                <p class="font-bold text-lg mb-2">{{ $t("footer.legal.sectionTitle") }}</p>
                 <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
-                    <NuxtLink to="/imprint">Imprint</NuxtLink>
+                    <NuxtLink to="/imprint">{{ $t("footer.legal.imprint") }}</NuxtLink>
                 </div>
             </div>
             <div>
-                <p class="font-bold text-lg mb-2">Nützliche Links</p>
+                <p class="font-bold text-lg mb-2">{{ $t("footer.usefulPages.sectionTitle") }}</p>
                 <div class="child:flex child:items-center child:gap-1 hover:child:text-white child:mt-1">
-                    <a href="/maps#howToBuildAMap">Build and submit own maps</a>
-                    <a href="/characters#howToCreateACharacterSkin">How to create skins for characters</a>
-                    <a href="">Report a Bug</a>
+                    <a href="/rules">{{ $t("footer.usefulPages.someOtherLinks") }}</a>
                 </div>
             </div>
         </div>

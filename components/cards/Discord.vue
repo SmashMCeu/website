@@ -6,8 +6,8 @@
 
         <UIcon name="i-simple-icons-discord" class="size-10 mt-[1px]"/>
         <div class="flex flex-col justify-center mt-[-7px]">
-            <p class="text-textColorLight font-semibold text-sm">JOIN THE</p>
-            <p class="font-black text-xl leading-3">DISCORD</p>
+            <p class="text-textColorLight font-semibold text-sm">{{ $t("home.header.joinThe") }}</p>
+            <p class="font-black text-xl leading-3">{{ $t("home.header.discord") }}</p>
         </div>
 
     </a>

@@ -5,7 +5,6 @@
 </template>
 <script setup lang="ts">
     import type GuideInfo from '~/types/GuideInfo';
-    import type GuidesConfig from '~/types/GuidesConfig';
 
 
     const props = defineProps({
@@ -32,7 +31,7 @@
             
             if (guide === undefined) {
                 markdown.value = "No guide with id: " + props.id + " found! Please report this!";
-                emit("loadingerror", props.id); 
+                emit("loadingerror", props.id);
             }
             else markdown.value = await useGithubContent().getGuideMarkdown(guide.path);
 

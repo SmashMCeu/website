@@ -4,13 +4,18 @@
         <UAccordion
             multiple
             color="primary"
-            variant="soft"
+            variant="outline"
             size="xl"
             :items="props.items"
             :ui='{
                 item: { base: "ml-4" }
-            }'
-        />
+            }'>
+
+            <template #item="{ item }">
+                <div v-html="item.description" class="markdownRender markdownRender-invert"></div>
+            </template>
+
+        </UAccordion>
 
 
     </div>

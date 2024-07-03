@@ -16,16 +16,17 @@
 
 ## Todo
 
+- [ ] Add language support to QnA
+- [x] Add rules (to /rules as markdown guide)
 - [x] Character List Pro Badge
 - [ ] Footer Links
 - [x] Make footer more/better responsive (text size + link section breaks)
-- [ ] Organize custom colors better (tailwind.config.js)
 - [x] Remove marked code in useGithubContent.ts
-- [ ] Create all pages
+- [x] Create all pages
 - [x] Add error page
 - [ ] Handle useGithubContent.ts fetch errors
 - [x] Navbar is slightly of centered
-- [ ] Better Page Header gradient
+- [x] Better Page Header gradient
 
 - [ ] Setup all current maps in gh content repo
 - [x] Setup all characters in gh content repo
@@ -34,6 +35,6 @@
 - [x] Add video for index page
 - [ ] Page header images => change if on mobile + align better in general
 - [ ] Write serious text for website
-- [ ] Add page titles
+- [x] Add page titles
 - [ ] SEO
 

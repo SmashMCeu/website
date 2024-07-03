@@ -46,10 +46,6 @@ export default {
 
         headerCardsBackground: "#01010344",
 
-
-
-
-        // goal is to remove this shit...
         backgroundColor: "#12151C",
         darkBackground: "#0E1015",
         transparentBackground: "#01010399",

@@ -6,7 +6,7 @@
                 size="lg"
                 class="flex-1 max-w-96 w-full lg:w-fit"
                 v-model="searchInput"
-                placeholder="Search Character..."
+                :placeholder='$t("characters.search.searchBarPlaceholder")'
                 icon="i-heroicons-magnifying-glass-20-solid"
                 autocomplete="off"
                 :ui="{ icon: { trailing: { pointer: '' } } }"
@@ -25,12 +25,12 @@
             </UInput>
 
             <div class="flex flex-col sm:flex-row gap-5 sm:gap-10 sm:items-center max-w-96 sm:max-w-full">
-                <UCheckbox label="Hide Pro Characters" v-model="hideProCharacters" v-on:change="updateSearchFilter()"
+                <UCheckbox :label='$t("characters.search.showOnlyFree")' v-model="hideProCharacters" v-on:change="updateSearchFilter()"
                     :ui="{ base:'h-5 w-5' }"
                 />
 
                 <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                    <p class="text-textColorLight -mt-1">Sort by:</p>
+                    <p class="text-textColorLight -mt-1">{{ $t("characters.search.sort.label") }}</p>
                     <USelect size="lg" v-model="sortBy" :options="sortOptions" name="test" v-on:change="updateSearchFilter()"/>
                 </div>
             </div>
@@ -44,15 +44,21 @@
 
 
     const searchInput = ref("");
-
     const hideProCharacters = ref(false);
 
-    const sortValues: { [key: string]: 1 | 2 | 3; } = {
-        "Name": 1,
-        "Difficulty Easy -> Hard": 2,
-        "Difficulty Hard -> Easy": 3
-    }
-    const sortOptions = ["Name", "Difficulty Easy -> Hard", "Difficulty Hard -> Easy"];
+
+    const sortNameDisplay: string = useI18n().t("characters.search.sort.sortName");
+    const sortEasyToHardDisplay: string = useI18n().t("characters.search.sort.sortEasyToHard");
+    const sortHardToEasyDisplay: string = useI18n().t("characters.search.sort.sortHardToEasy");
+
+    const sortValues: Map<string, 1 | 2 | 3> = new Map([
+        [sortNameDisplay, 1],
+        [sortEasyToHardDisplay, 2],
+        [sortHardToEasyDisplay, 3]
+    ]);
+
+
+    const sortOptions = [sortNameDisplay, sortEasyToHardDisplay, sortHardToEasyDisplay];
     const sortBy = ref(sortOptions[0]);
 
     const searchFilter: ModelRef<CharacterSearchFilter> = defineModel({
@@ -72,7 +78,7 @@
         searchFilter.value = {
             nameInput: searchInput.value,
             hideProChars: hideProCharacters.value,
-            sortKey: sortValues[sortBy.value],    
+            sortKey: sortValues.get(sortBy.value) || 1,    
         }
     }
     

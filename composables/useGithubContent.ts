@@ -18,6 +18,8 @@ export const useGithubContent = () => {
     const guidesDir = "guides/";
     const guidesConfigPath = "guides.json";
 
+    const rulesDir = "rules/";
+
 
     // - - - - - - - - -   M A P S   - - - - - - - - -
     const getAllMaps = async (): Promise<SmashMap[]> => {
@@ -95,11 +97,23 @@ export const useGithubContent = () => {
         const matchingGuides: GuideInfo[] = guideConfig.guides.filter(g => g.id == id);
         return matchingGuides.length == 0 ? undefined : matchingGuides.at(0);
     }
+
+    const getRules = async (langCode: string): Promise<string> => {
+        const res: Response = await fetch(baseUrl + rulesDir + langCode + ".md");
+        if (res.ok) {
+            const markdown = await res.text();
+            return markdown;
+        } else {
+            return new Promise((resolve) => {
+                resolve(`> Rules can't be loaded! Please contact the SmashMC Team!`);
+            });
+        }
+    }
     
 
 
 
 
-    return { getAllMaps, getMapImage, getAllCharacters, getSmashCharacter, getGuidesJson, getGuideMarkdown, getGuideById }
+    return { getAllMaps, getMapImage, getAllCharacters, getSmashCharacter, getGuidesJson, getGuideMarkdown, getGuideById, getRules }
 
 }

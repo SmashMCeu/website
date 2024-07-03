@@ -6,7 +6,7 @@
 
         <!-- PRO BADGE -->
         <div v-if="char.isPro" class="bg-cyan-500 text-center absolute -rotate-45 top-0 left-0 right-0 translate-x-[-50%] translate-y-[50%] ml-8">
-            <p class="lg:py-1 font-bold text-white">Pro only</p>
+            <p class="lg:py-1 font-bold text-white">{{ $t("characters.grid.proOnlyBadge") }}</p>
         </div>
 
         <p :style='{ color: char.primaryColor }' class="text-2xl font-bold">{{ char.name }}</p>
@@ -17,7 +17,7 @@
                 <template #header>
                     <div class="flex items-center justify-between">
                         <p class="text-base font-semibold leading-6" :style='{ color: char.primaryColor }'>
-                            {{ char.name }} {{ char.isPro ? "(Pro Character)" : "" }}
+                            {{ char.name }} {{ char.isPro ? '(' + $t("characters.grid.proOnlyBadge") + ')' : "" }}
                         </p>
                         <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1" @click="openModalIndex = null" />
                     </div>
@@ -25,12 +25,12 @@
                 <div class="flex gap-10">
                     <div class="max-w-[50%] flex flex-col">
                         <div class="mt-6 text-textColorLight">
-                            <p>Description:</p>
+                            <p>{{ $t("characters.grid.descriptionLabel") }}</p>
                             <p :style='{ color: char.primaryColor }'>{{ char.description }}</p>
                             
                         </div>
                         <div class="mt-6 text-textColorLight">
-                            <p>Cooldown:</p>
+                            <p>{{ $t("characters.grid.cooldownLabel") }}</p>
                             <div class="flex items-center gap-2" :style='{ color: char.primaryColor }'>
                                 <UIcon name="i-heroicons-clock" class="size-5" />
                                 <p class="-mt-[1px] text-lg">{{ char.cooldownTime }}</p>
@@ -38,7 +38,7 @@
                             
                         </div>
                         <div class="mt-2 text-textColorLight">
-                            <p>Difficulty:</p>
+                            <p>{{ $t("characters.grid.difficultyLabel") }}</p>
                             <UIcon :name="n <= char.difficulty ? 'i-heroicons-star-solid' : 'i-heroicons-star'" v-for="n in 3" :style='{ color: char.primaryColor }' class="size-5"/>
                         </div>
                         
@@ -77,7 +77,7 @@
         }
         if (props.searchFilter.sortKey == 1) {
             out.sort((a, b) => a.name.localeCompare(b.name));
-        } else if (props.searchFilter.sortKey == 2 || props.searchFilter.sortKey == 3) {
+        } else if (props.searchFilter.sortKey == 2 || props.searchFilter.sortKey == 3) { // Needs a little fix: if key = 3 names are sorted from z -> a in one group of difficulty
             const flipSort = props.searchFilter.sortKey == 3 ? -1 : 1;
             out.sort((a, b) => {
                 if (a.difficulty - b.difficulty != 0) return (a.difficulty - b.difficulty) * flipSort;
