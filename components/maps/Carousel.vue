@@ -4,9 +4,8 @@
         ref="carouselRef"
         v-slot="{ item }"
         :items="items"
-        :ui="{ item: 'basis-full md:basis-1/2' }"
-        class="rounded-lg overflow-hidden"
-        indicators
+        :ui="{ item: 'basis-full md:basis-1/2 child:rounded-lg', container: 'gap-5' }"
+        class="overflow-hidden"
     >
 
         <img :src="item.image" class="w-full" draggable="false">
@@ -19,6 +18,7 @@
 <script setup lang="ts">
 
     const items = ref(await useGithubContent().getAllMaps());
+    items.value = items.value.concat(items.value);
     const carouselRef = ref()
 
     onMounted(() => {

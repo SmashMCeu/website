@@ -4,8 +4,8 @@
         class="mapCard cursor-pointer rounded-lg flex items-center justify-center relative bg-center bg-cover aspect-video"
         data-aos="zoom-in" data-aos-duration="250">
 
-        <p class="font-bold text-3xl text-center text-white z-10 opacity-0 transition-all">{{ map.name }}</p>
-        <div class="absolute top-0 left-0 bottom-0 right-0 backdrop-blur-[4px] rounded-lg opacity-0 transition-opacity"></div>
+        <p class="font-bold text-3xl text-center text-primary-300 z-10 opacity-0 transition-all drop-shadow">{{ map.name }}</p>
+        <div class="absolute top-0 left-0 bottom-0 right-0 backdrop-blur-[4px] rounded-lg opacity-0 transition-opacity bg-nuxtuiGray-800/70"></div>
 
     </div>
     
@@ -18,12 +18,10 @@
 </script>
 <style>
 
-    .mapCard:hover > div {
+    .mapCard:hover * {
         opacity: 1 !important;
     }
-    .mapCard:hover > p {
-        opacity: 0.75 !important;
-    }
+    
 
 
 </style>
