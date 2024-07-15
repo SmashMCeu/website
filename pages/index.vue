@@ -9,10 +9,10 @@
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/Jd9zRqLfHm0?si=DIMkEvLKTHFEU5JG" title="Server intro video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                 </div>
-                <div class="flex-1" data-aos="fade-left">
+                <div class="flex-1 -mt-1" data-aos="fade-left">
                     <p class="text-lg md:text-xl lg:text-2xl tracking-tight text-primary-300">{{ $t("home.whatIsSmashMc.sectionTitle") }}</p>
                     <p class="text-2xl md:text-3xl lg:text-4xl font-bold">{{ $t("home.whatIsSmashMc.title") }}</p>
-                    <p class="text-textColorLight mt-2">
+                    <p class="text-textColorLight mt-4 leading-7">
                         {{ $t("home.whatIsSmashMc.content") }}
                     </p>
                 </div>
