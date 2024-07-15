@@ -28,7 +28,7 @@
 - [x] Navbar is slightly of centered
 - [x] Better Page Header gradient
 
-- [ ] Setup all current maps in gh content repo
+- [x] Setup all current maps in gh content repo
 - [x] Setup all characters in gh content repo
 - [ ] Setup all guides in gh content repo
 

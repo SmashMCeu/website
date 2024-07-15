@@ -27,8 +27,8 @@
 
     "home": {
         "header": {
-            "title": "SmashMC",
-            "description": "SmashMC offers unique games you can play with your friends. Take a look at our Games or just join the minecraft server and experience it yourself!",
+            "title": "Smash in Minecraft!",
+            "description": "Erlebe Smash wie auf der Switch – mit über 40 Charakteren und 50 einzigartigen Items. Worauf wartest du? Komme jetzt auf den Server mit jeder Version ab der 1.8!",
             "serverIp": "PLAY.SMASHMC.EU",
             "clickToCopy": "Klicke zum Kopieren",
             "copiedText": "Kopiert",
@@ -38,7 +38,7 @@
         "whatIsSmashMc": {
             "sectionTitle": "Was ist SmashMC?",
             "title": "Ein einzigartiger Minecraft Server!",
-            "content": "Placeholder Text"
+            "content": "Suchst du nach einem Minecraft-Server, der dir endlosen Spaß und Abwechslung bietet? Dann ist SmashMC genau das Richtige für dich! Tauche ein in die aufregende Welt von SmashMC, dem ultimativen Minecraft PvP Server, wo du mit einzigartigen Charakteren mit speziellen Fähigkeiten deine Kampfkunst und Strategie herausforderst. Vergiss traditionelle Kämpfe – hier wählst du aus verschiedenen Charakterklassen und betrittst spannende Maps, die jedes Match zu einem neuen Erlebnis machen. Schließe dich einer lebendigen Community an und erlebe epische Kämpfe, die weit über das hinausgehen, was herkömmliche Minecraft-Server zu bieten haben und entwickle deine eigenen Strategien!"
         },
         "maps": {
             "sectionTitle": "Maps",
@@ -46,28 +46,28 @@
             "allMaps": "Alle Maps"
         },
         "characters": {
-            "sectionTitle": "Characters",
-            "title": "Ein paar beliebte Characters",
-            "allCharacters": "Alle Characters"
+            "sectionTitle": "Charaktere",
+            "title": "Ein paar beliebte Charaktere",
+            "allCharacters": "Alle Charaktere"
         },
         "gamemodes": {
             "sectionTitle": "Spielmodi",
             "title": "Hier die beliebtesten Spielmodi",
             "smash": {
                 "title": "Smash",
-                "description": "Smash ist toll :D"
+                "description": "In diesem Spielmodus kannst du mit deinem Lieblingscharakteren gegen andere Spieler mit besonderen Items und Fähigkeiten kämpfen. Versuche deine Gegner von der Welt zu schlagen und nutze deine Fähigkeit und gesammelten Items zu deinem Vorteil!"
             },
             "molecraft": {
                 "title": "Molecraft",
-                "description": "Sehr viel Erde hier..."
+                "description": "Grabe dich durch die Erde, um Ausrüstung zu finden. Verbessere sie mit Verzauberungen und halte Ausschau nach Gegnern. Zufällige Ereignisse können das Spiel dabei positiv oder negativ verändern. Also pass immer gut auf, wo du dich grade durch gräbst..."
             },
             "smashGungame": {
                 "title": "Smash Gungame",
-                "description": "Pew Pew? Nein eig nicht"
+                "description": "Töte deine Gegner mit 7 festgelegten Charakteren in einer bestimmten Reihenfolge. Für jeden Kill kommst du einen weiter. Aber sei schnell, denn der erste Spieler mit 7 Kills gewinnt!"
             },
             "smashTeams": {
                 "title": "Smash Teams",
-                "description": "Hier ist teamen erlaubt?!"
+                "description": "Kämpfe gemeinsam mit deinem Teampartner gegen andere Teams. Entwickle dine eigene Taktik, um alle anderen Teams zu besiegen!"
             }
         },
         "gameplay": {

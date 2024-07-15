@@ -1,6 +1,6 @@
 export const useTranslationFiles = () => {
 
-
+    // TODO: add lang support + cache lang file!!!
     // TRASH CODE !!!!!!!!
     const translationFileUrl = "https://cdn.smashmc.eu/translation-files/smash/de.lang";
     const characterKey = "item.lore.NAME=";
