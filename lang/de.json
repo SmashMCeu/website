@@ -79,8 +79,8 @@
     "maps": {
         "header": {
             "title": "SmashMC Maps",
-            "description": "Some maps here... Take a look at ",
-            "guideLinkText": "how to build a map"
+            "description": "Schau dir unsere vielen Maps für den Smash Modus an und lerne ihre Namen kennen. Außerdem besteht die Möglichkein eigene Maps zu bauen! Alles wichtige dafür steht hier: ",
+            "guideLinkText": "Wie baut man eine Map?"
         }
     },
 
@@ -88,8 +88,8 @@
     "characters": {
         "header": {
             "title": "SmashMC Characters",
-            "description": "Some characters here... Take a look at ",
-            "guideLinkText": "how to pixel a skin"
+            "description": "Entdecke die Vielfalt unserer über 40 einzigartigen Charaktere, jeder mit seinem eigenen Skin und individueller Fähigkeit! Nutze die Such- und Filterfunktion, um deinen perfekten Kämpfer zu finden und deine Strategie zu verbessern. Möchtest du Skins pixeln/einreichen? ",
+            "guideLinkText": "Anleitung"
         },
         "search": {
             "searchBarPlaceholder": "Suche nach Characters",

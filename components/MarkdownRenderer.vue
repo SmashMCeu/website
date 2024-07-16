@@ -20,7 +20,7 @@
     const emit = defineEmits(["loadingerror"]);
 
 
-    const markdown = ref("# loading...");
+    const markdown = ref("# Please wait...");
 
     onMounted(async () => {
         

@@ -22,9 +22,6 @@
                     </template>
                 </Suspense>
             </div>
-
-            <MarkdownRenderer id="howToCreateACharacterSkin" class="mt-32" />
-
         </div>
     </div>
 </template>

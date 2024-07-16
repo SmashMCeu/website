@@ -19,9 +19,6 @@
                     </div>
                 </template>
             </Suspense>
-
-
-            <MarkdownRenderer id="howToBuildAMap" class="mt-40" />
         </div>     
     
 
