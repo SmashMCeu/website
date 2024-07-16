@@ -20,7 +20,7 @@
             <p class="text-xs sm:text-base lg:text-sm text-textColor">{{ $t("home.gamemodes.smashGungame.description") }}</p>
         </GamemodesMode>
 
-        <GamemodesMode icon-file-name="Molecraft.jpg" data-aos="zoom-in-left">
+        <GamemodesMode icon-file-name="SmashTeams.jpg" data-aos="zoom-in-left">
             <p class="text-lg sm:text-xl lg:text-lg font-semibold text-textColorLight">{{ $t("home.gamemodes.smashTeams.title") }}</p>
             <p class="text-xs sm:text-base lg:text-sm text-textColor">{{ $t("home.gamemodes.smashTeams.description") }}</p>
         </GamemodesMode>
