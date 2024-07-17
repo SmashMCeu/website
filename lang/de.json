@@ -14,7 +14,7 @@
     "footer": {
         "ipText": "SMASHMC.eu",
         "copyright": "© 2017 - 2024",
-        "serverDescription": "Irgend nen Text",
+        "serverDescription": "Erlebe Smash wie auf der Switch! Worauf wartest du? Betrete jetzt unseren Server mit jeder Version!",
         "legal": {
             "sectionTitle": "Rechtliches",
             "imprint": "Impressum & Datenschutz"
@@ -28,7 +28,7 @@
     "home": {
         "header": {
             "title": "Smash in Minecraft!",
-            "description": "Erlebe Smash wie auf der Switch – mit über 40 Charakteren und 50 einzigartigen Items. Worauf wartest du? Komme jetzt auf den Server mit jeder Version ab der 1.8!",
+            "description": "Erlebe Smash wie auf der Switch – mit über 40 Charakteren und 50 einzigartigen Items. Worauf wartest du? Betrete jetzt unseren Server mit jeder Version!",
             "serverIp": "PLAY.SMASHMC.EU",
             "clickToCopy": "Klicke zum Kopieren",
             "copiedText": "Kopiert",
