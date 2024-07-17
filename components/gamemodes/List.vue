@@ -1,7 +1,7 @@
 <template>
     <div class="
         mt-20 max-w-[100rem]
-        grid gap-8 grid-cols-1 lg:grid-cols-2">
+        grid gap-8 grid-cols-1 xl:grid-cols-2">
 
         
         <GamemodesMode icon-file-name="Smash.jpg" :border="true" data-aos="zoom-in-right">
