@@ -1,7 +1,7 @@
 <template>
     <div class="
         fixed left-0 right-0 top-0
-        md:px-20 px-10 py-5
+        lg:px-20 px-10 py-5
         flex justify-between items-center
         bg-navbarBackground backdrop-blur-md
         z-50"
