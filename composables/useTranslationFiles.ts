@@ -2,13 +2,11 @@ export const useTranslationFiles = () => {
 
     // TODO: add lang support + cache lang file!!!
     // TRASH CODE !!!!!!!!
-    const translationFileUrl = "https://cdn.smashmc.eu/translation-files/smash/de.lang";
+    const translationFileUrl = "https://cdn.smashmc.eu/translation-files/smash/";
     const characterKey = "item.lore.NAME=";
     
-    const getCharDescription = async (charName: string): Promise<string> => {
-        const file = await fetch(translationFileUrl);
-        const text = await file.text();
-        const lines = text.split("\n");
+    const getCharDescription = async (langFileContent: string, charName: string): Promise<string> => {
+        const lines = langFileContent.split("\n");
         const key = characterKey.replace("NAME", charName);
 
         for (const line of lines) {
@@ -22,10 +20,16 @@ export const useTranslationFiles = () => {
         return "Not found!";
     }
 
+    const getTranslationFile = async (langCode: string): Promise<string> => {
+        if (langCode.length == 0) langCode = useNuxtApp().$i18n.defaultLocale;
+        const file = await fetch(translationFileUrl + langCode + ".lang");
+        return await file.text();
+    }
 
 
 
 
-    return { getCharDescription }
+
+    return { getCharDescription, getTranslationFile }
 
 }

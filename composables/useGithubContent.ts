@@ -45,19 +45,20 @@ export const useGithubContent = () => {
         const res: Response = await fetch(baseUrl + charactersInfoListPath);
         let charList: [string, string][] = Object.entries(await res.json());
 
-        let chars: Promise<SmashCharacter>[] = charList.map(async entry => await getSmashCharacter(entry[1], entry[0]));
+        const langFile: string = await useTranslationFiles().getTranslationFile(useNuxtApp().$i18n.locale.value);
+        let chars: Promise<SmashCharacter>[] = charList.map(async entry => await getSmashCharacter(langFile, entry[1], entry[0]));
         
         return Promise.all(chars);
     }
 
-    const getSmashCharacter = async (file: string, charName: string): Promise<SmashCharacter> => {
+    const getSmashCharacter = async (langFile: string, file: string, charName: string): Promise<SmashCharacter> => {
         const res: Response = await fetch(baseUrl + charactersDir + file);
         const charInfos: SmashCharacter = await res.json();
 
         charInfos.skinImage = await getSmashCharacterSkin(charInfos.skinImage);
         let description = "Error while loading!";
         try {
-            description = await useTranslationFiles().getCharDescription(charName);
+            description = await useTranslationFiles().getCharDescription(langFile, charName);
         } catch {}
         charInfos.description = description;
 
