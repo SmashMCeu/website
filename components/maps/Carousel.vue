@@ -4,7 +4,7 @@
         ref="carouselRef"
         v-slot="{ item }"
         :items="items"
-        :ui="{ item: 'basis-full md:basis-1/2 child:rounded-lg', container: 'gap-5' }"
+        :ui="{ item: 'basis-full basis-1/4 md:basis-1/2 child:rounded-lg', container: 'gap-5' }"
         class="overflow-hidden"
     >
 
