@@ -2,7 +2,7 @@
     <div>
 
         <UAccordion
-            multiple
+            closeOthers
             color="primary"
             variant="outline"
             size="xl"
