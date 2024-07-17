@@ -30,4 +30,13 @@
 
     const handleError = () => clearError({ redirect: '/' })
 
+
+    // GAY CODE
+    const colorMode = useColorMode();
+
+    onMounted(async () => {
+        await nextTick();
+        colorMode.preference = "dark";
+    });
 </script>
+
