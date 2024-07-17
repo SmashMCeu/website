@@ -67,7 +67,7 @@
             },
             "smashTeams": {
                 "title": "Smash Teams",
-                "description": "Kämpfe gemeinsam mit deinem Teampartner gegen andere Teams. Entwickle dine eigene Taktik, um alle anderen Teams zu besiegen!"
+                "description": "Kämpfe gemeinsam mit deinem Teampartner gegen andere Teams. Entwickle deine eigene Taktik, um alle anderen Teams zu besiegen!"
             }
         },
         "gameplay": {
@@ -79,7 +79,7 @@
     "maps": {
         "header": {
             "title": "SmashMC Maps",
-            "description": "Schau dir unsere vielen Maps für den Smash Modus an und lerne ihre Namen kennen. Außerdem besteht die Möglichkein eigene Maps zu bauen! Alles wichtige dafür steht hier: ",
+            "description": "Schau dir unsere zahlreichen Maps für den Smashmodus an. Gestalte den Server mit und baue deine eigene Map. Alles wichtige dafür steht hier: ",
             "guideLinkText": "Wie baut man eine Map?"
         }
     },
