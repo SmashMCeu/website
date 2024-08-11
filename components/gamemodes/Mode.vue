@@ -1,10 +1,10 @@
 <template>
     <div>
 
-        <div class="flex bg-darkBackground rounded-lg overflow-hidden items-center" :class='{ "colored-border": props.border }'>
-            <img :src='"./images/gamemodes/" + $props.iconFileName' class="size-28 sm:size-32 md:size-40 ">
+        <div class="relative flex bg-darkBackground rounded-lg overflow-hidden items-center" :class='{ "colored-border": props.border }'>
+            <img :src='"./images/gamemodes/" + $props.iconFileName' class="size-full hidden sm:block sm:size-32 md:size-40 rounded">
 
-            <div class="px-4 sm:px-10 md:px-12">
+            <div class="p-4 sm:py-0 sm:px-10 md:px-12">
                 <slot></slot>
             </div>
         </div>
