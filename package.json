@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.13.0",
+    "radix-vue": "^1.9.4",
     "vue": "latest"
   }
 }
