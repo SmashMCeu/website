@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-backgroundColorLight lg:px-32 px-12 py-10 flex md:flex-row flex-col md:gap-0 gap-10 items-center justify-between">
+    <div class="w-full bg-backgroundColorLight lg:px-32 px-12 py-10 flex lg:flex-row flex-col lg:gap-0 gap-10 lg:items-center justify-between">
         
         <div>
             <div class="flex gap-3">
@@ -13,7 +13,7 @@
             <FooterSocialIcons class="mt-2"/>
         </div>
         
-        <div class="flex gap-10 sm:flex-row flex-col">
+        <div class="flex md:gap-10 gap-4 md:flex-row flex-col">
             <div>
                 <p class="text-textColorLight font-bold text-lg">Nützliche Links</p>
                 <NuxtLink to="/" class="text-textColor">Home</NuxtLink>
