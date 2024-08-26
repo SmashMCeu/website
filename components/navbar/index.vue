@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="fixed bg-backgroundColorLight w-full lg:px-16 md:px-8 px-4 py-4 transition-all">
+        class="fixed z-40 bg-backgroundColorLight w-full lg:px-16 md:px-8 px-4 py-4 transition-all">
 
         <div class="flex items-center justify-between">
             <div>
