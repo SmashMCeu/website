@@ -1,5 +1,5 @@
 <template>
-    <div class="md:px-12 px-2 py-32 w-screen markdown">
+    <div>
 
         <MDCRenderer v-if="md" :data="md.data" :body="md.body" />
         <h1 v-else>Loading...</h1>
@@ -7,6 +7,11 @@
     </div>
 </template>
 <script lang="ts" setup>
+    definePageMeta({
+        layout: "markdown",
+    });
+
+
     import type { MDCParserResult } from '@nuxtjs/mdc';
 
 

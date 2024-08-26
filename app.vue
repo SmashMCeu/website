@@ -2,7 +2,9 @@
     <div>
         <NuxtRouteAnnouncer />
         <Navbar />
-        <NuxtPage class="min-h-screen"/>
+        <NuxtLayout>
+            <NuxtPage class="min-h-screen"/>
+        </NuxtLayout>
         <Footer />
     </div>
 </template>
