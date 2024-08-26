@@ -10,9 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.4.10",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.13.0",
     "radix-vue": "^1.9.4",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/solar": "^1.1.10"
   }
 }

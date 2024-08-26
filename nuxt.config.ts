@@ -4,5 +4,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   tailwindcss: { viewer: false },
   
-  modules: ['@nuxtjs/tailwindcss', 'radix-vue/nuxt']
+  modules: ['@nuxtjs/tailwindcss', 'radix-vue/nuxt', "@nuxt/icon"],
 })
