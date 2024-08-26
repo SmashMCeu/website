@@ -2,7 +2,7 @@
     <div>
         <NuxtRouteAnnouncer />
         <Navbar />
-        <NuxtPage />
+        <NuxtPage class="min-h-screen"/>
         <Footer />
     </div>
 </template>
@@ -11,6 +11,7 @@
     /* Fix IOS zoom on click bug */
     :root { 
         touch-action: pan-x pan-y;
+        overflow-x: hidden;
     }
     
 </style>
