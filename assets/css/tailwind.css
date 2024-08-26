@@ -9,3 +9,10 @@
     }
 
 }
+@layer utilities {
+
+    .markdown {
+      @apply max-w-full prose prose-invert prose-sm md:prose-base;
+    }
+
+}
