@@ -5,4 +5,9 @@ export default defineNuxtConfig({
   tailwindcss: { viewer: false },
   
   modules: ['@nuxtjs/tailwindcss', 'radix-vue/nuxt', "@nuxt/icon"],
+
+  nitro: {
+    compressPublicAssets: true,
+    minify: true,
+  },
 })
