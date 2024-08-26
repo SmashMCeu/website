@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <p class="text-4xl text-primary">Hello!</p>
-        <SwitchRoot v-model:checked="switchState" class="w-[42px] h-[25px] flex bg-black/50 shadow-sm rounded-full relative data-[state=checked]:bg-black">
-            <SwitchThumb class="block w-[21px] h-[21px] my-auto bg-primary shadow-sm rounded-full transition-transform duration-100 translate-x-0.5 will-change-transform data-[state=checked]:translate-x-[19px]"/>
-        </SwitchRoot>
+    <div class="flex w-full h-screen items-center justify-center gap-40 py-[8rem]">
+        
+        <div class="bg-backgroundColorLight w-[40rem] h-full rounded-xl -ml-36">
+
+        </div>
+        <div class="h-full mt-36">
+            <h1 class="text-4xl text-textColorLight font-semibold">Welcome to SmashMC.eu</h1>
+            <p class="text-lg">The best Minecraft server in the world</p>
+        </div>
+
     </div>
 </template>
-<script setup lang="ts">
-
-    const switchState = ref(false)
-
-</script>
