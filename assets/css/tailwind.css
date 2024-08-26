@@ -14,5 +14,8 @@
     .markdown {
       @apply max-w-full prose prose-invert prose-sm md:prose-base;
     }
+    .center-content {
+      @apply flex items-center justify-center;
+    }
 
 }
