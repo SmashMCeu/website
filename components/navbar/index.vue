@@ -40,7 +40,7 @@
     const mobileMenuOpen: Ref<boolean> = ref(false);
 
     const checkMobile = () => {
-        if (window.innerWidth <= maxMobileWidth) {
+        if (window.innerWidth < maxMobileWidth) {
             isMobile.value = true;
         } else {
             isMobile.value = false;
