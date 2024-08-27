@@ -53,6 +53,12 @@
         checkMobile(); // initial check
     });
 
+    // Auto close mobile menu on route change
+    watch(
+        () => useRoute().fullPath,
+        () => mobileMenuOpen.value = false
+    );
+
 
 </script>
 <style>
