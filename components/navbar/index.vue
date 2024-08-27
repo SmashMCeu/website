@@ -18,7 +18,7 @@
 
 
 
-            <button @click="mobileMenuOpen = !mobileMenuOpen" :class="{'hidden': !isMobile}" class="flex items-center justify-center text-primary">
+            <button title="menu" @click="mobileMenuOpen = !mobileMenuOpen" :class="{'hidden': !isMobile}" class="flex items-center justify-center text-primary">
                 <Icon v-if="!mobileMenuOpen" name="solar:hamburger-menu-bold" size="45" />
                 <Icon v-else name="solar:close-square-outline" size="45" />
             </button>
