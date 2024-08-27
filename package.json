@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/icon": "^1.4.10",
+    "@nuxt/image": "^1.7.0",
     "@nuxtjs/mdc": "^0.8.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.13.0",
