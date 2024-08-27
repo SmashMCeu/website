@@ -3,19 +3,19 @@
         <Icon class="lg:inline hidden mt-[1px]" size="20" name="solar:home-outline"/>
         Home
     </NuxtLink>
-    <NuxtLink to="/a">
+    <NuxtLink to="/characters">
         <Icon class="lg:inline hidden mt-[2px]" size="20" name="solar:people-nearby-linear"/>
         Characters
     </NuxtLink>
-    <NuxtLink to="/b">
+    <NuxtLink to="/maps">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:earth-outline"/>
         Maps
     </NuxtLink>
-    <NuxtLink to="/c">
+    <NuxtLink to="/guides">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:document-add-outline"/>
         Guides
     </NuxtLink>
-    <NuxtLink to="/c">
+    <NuxtLink to="/rules">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:book-bookmark-minimalistic-outline"/>
         Regeln
     </NuxtLink>
