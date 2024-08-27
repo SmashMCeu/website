@@ -12,7 +12,21 @@ export default {
 
         textColorLight: "#EDEDED",
         textColor: "#DCDCDC",
-      }
+      },
+      keyframes: {
+        dialogOverlayShow: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        dialogContentShow: {
+          from: { opacity: 0, transform: 'translate(-50%, -50%) scale(0.96)' },
+          to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
+        },
+      },
+      animation: {
+        dialogOverlayShow: 'dialogOverlayShow 150ms ease-out',
+        dialogContentShow: 'dialogContentShow 150ms ease-out',
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
