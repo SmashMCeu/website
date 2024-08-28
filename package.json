@@ -15,6 +15,7 @@
     "@nuxtjs/mdc": "^0.8.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.13.0",
+    "pocketbase": "^0.21.5",
     "radix-vue": "^1.9.5",
     "vue": "latest"
   },

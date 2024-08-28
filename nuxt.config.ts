@@ -12,6 +12,12 @@ export default defineNuxtConfig({
     '@nuxt/image'
   ],
 
+  runtimeConfig: {
+    public: {
+      pocketbaseBaseUrl: "https://pocket.smashmc.eu"
+    }
+  },
+
   nitro: {
     compressPublicAssets: true,
     minify: true,
