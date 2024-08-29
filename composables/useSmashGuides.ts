@@ -5,12 +5,12 @@ export const useSmashGuides = () => {
     // vs doesn't always import the type correctly...
     const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
     
-    const activeGuidesCollectio = "active_guidess";
+    const activeGuidesCollection = "active_guides";
 
     
     async function getGuidesList(): Promise<GuidesEntry[]> {
         try {
-            return await pb.collection(activeGuidesCollectio).getFullList<GuidesEntry>({ sort: "title" });
+            return await pb.collection(activeGuidesCollection).getFullList<GuidesEntry>({ sort: "title" });
         } catch (error) {
             createError({
                 statusCode: 500,
