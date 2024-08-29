@@ -7,11 +7,12 @@
 </template>
 <script lang="ts" setup>
     
-    const props = defineProps({
-        guideUrlId: String
-    });
+    const props = defineProps<{
+        guideUrlId: string
+    }>();
     const pb = useNuxtApp().$pocketbase;
 
+    //TODO: implement solution in composable!
     const record: Guide = await pb.collection("guides").getFirstListItem(`url_id="${props.guideUrlId}"`);    
 
 </script>

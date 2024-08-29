@@ -9,14 +9,15 @@
 </template>
 <script lang="ts" setup>
 
-    defineProps({
-        title: String,
-        subtitle: String,
-        orientation: {
-            required: false,
-            type: String as PropType<"left" | "middle" | "right">,
-            default: "middle"
+    withDefaults(
+        defineProps<{
+            title: string,
+            subtitle: string,
+            orientation?: "left" | "middle" | "right"
+        }>(),
+        {
+            orientation: "middle"
         }
-    });
+    )
 
 </script>

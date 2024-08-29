@@ -52,11 +52,8 @@
 </template>
 <script lang="ts" setup>
     
-    defineProps({
-        character: {
-            required: true,
-            type: Object as () => SmashCharacter | any
-        }
-    });
+    defineProps<{
+        character: SmashCharacter
+    }>();
 
 </script>

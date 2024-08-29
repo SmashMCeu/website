@@ -1,21 +1,16 @@
 <script lang="ts" setup>
 
-    const props = defineProps({
-        skinImage: {
-            required: true,
-            type: String
-        },
-        isSlim: {
-            required: false,
-            default: false,
-            type: Boolean,
-        },
-        spin: {
-            required: false,
-            default: false,
-            type: Boolean,
+    const props = withDefaults(
+        defineProps<{
+            skinImage: string,
+            isSlim?: boolean,
+            spin?: boolean
+        }>(),
+        {
+            isSlim: false,
+            spin: false
         }
-    });
+    )
 
 </script>
 <template>

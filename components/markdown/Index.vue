@@ -7,16 +7,15 @@
 <script lang="ts" setup>
     import type { MDCParserResult } from '@nuxtjs/mdc';
 
-    const props = defineProps({
-        path: {
-            type: String,
-            required: true
-        },
-        local: {
-            type: Boolean,
-            default: false
+    const props = withDefaults(
+            defineProps<{
+            path: string,
+            local?: boolean
+        }>(),
+        {
+            local: false
         }
-    });
+    )
 
     const md: Ref<MDCParserResult | null> = ref(null);
 
