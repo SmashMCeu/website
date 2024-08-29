@@ -4,7 +4,7 @@
         <img src="/img/header.png" alt="header" class="rounded-lg">
 
         <div class="flex flex-col gap-2">
-            <SocialCardPlayercount />
+            <SocialCardPlayerCount />
             <SocialCardMinecraft />
             <SocialCardDiscord />
             
