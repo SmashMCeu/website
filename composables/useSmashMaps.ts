@@ -6,10 +6,17 @@ export const useSmashMaps = () => {
 
     async function getSmashMaps(): Promise<SmashMap[]> { 
         const maps: Response = await fetch(mapListPath);
-        if (!maps.ok) throw createError({
-            statusCode: maps.status,
-            message: maps.statusText
-        });
+        if (!maps.ok) {
+            createError({
+                statusCode: maps.status,
+                message: maps.status == 404 ? "Maps not available" : maps.statusText,
+            });
+            showError({
+                statusCode: maps.status,
+                message: maps.status == 404 ? "Maps not available" : maps.statusText,
+            });
+            return [];
+        }
         return await maps.json();
     }
 
