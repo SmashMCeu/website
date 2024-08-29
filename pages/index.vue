@@ -16,8 +16,3 @@
     
     </div>
 </template>
-<script lang="ts" setup>
-
-    useSmashMaps().getSmashMaps();
-
-</script>
