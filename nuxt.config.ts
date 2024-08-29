@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         collections: {
             guides: "guides",
             activeGuides: "active_guides",
-            qna: "q_n_a",
+            qna: "q_and_a",
         },
       }
     }
