@@ -1,6 +1,13 @@
 declare module 'nuxt/schema' {
     interface PublicRuntimeConfig {
-        pocketbaseBaseUrl: string
+        pocketbase: {
+            baseUrl: string
+            collections: {
+                guides: string
+                activeGuides: string
+                qna: string
+            }
+        }
     }
 }
 

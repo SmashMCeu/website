@@ -5,7 +5,8 @@ export const useSmashGuides = () => {
     // vs doesn't always import the type correctly...
     const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
     
-    const activeGuidesCollection = "active_guides";
+    const activeGuidesCollection = useRuntimeConfig().public.pocketbase.collections.activeGuides;
+    const guidesCollection = useRuntimeConfig().public.pocketbase.collections.guides;
 
     
     async function getGuidesList(): Promise<GuidesEntry[]> {
@@ -34,7 +35,7 @@ export const useSmashGuides = () => {
     async function getGuideByUrlId(url_id: string): Promise<Guide> {
         // Maybe only fetch from the active_guides then use id to directly fetch from the guides collection,
         // so getting a list via api of all guides (including not public ones) is not possible
-        return await pb.collection("guides").getFirstListItem(`url_id="${url_id}"`)
+        return await pb.collection(guidesCollection).getFirstListItem(`url_id="${url_id}"`)
     }
 
 

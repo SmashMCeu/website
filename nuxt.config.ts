@@ -14,7 +14,14 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      pocketbaseBaseUrl: "https://pocket.smashmc.eu"
+      pocketbase: {
+        apiBaseUrl: "https://pocket.smashmc.eu",
+        collections: {
+            guides: "guides",
+            activeGuides: "active_guides",
+            qna: "q_n_a",
+        },
+      }
     }
   },
 
