@@ -31,7 +31,13 @@ export const useSmashGuides = () => {
         }, guide.thumbnail);
     }
 
+    async function getGuideByUrlId(url_id: string): Promise<Guide> {
+        // Maybe only fetch from the active_guides then use id to directly fetch from the guides collection,
+        // so getting a list via api of all guides (including not public ones) is not possible
+        return await pb.collection("guides").getFirstListItem(`url_id="${url_id}"`)
+    }
 
-    return { getGuidesList, getGuideThumbnailUrl };
+
+    return { getGuidesList, getGuideThumbnailUrl, getGuideByUrlId };
 
 }
