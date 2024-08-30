@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <Markdown path="https://smashmceu.github.io/website-content/rules/de.md" />
+        <p v-html="rules" class="markdown"></p>
 
     </div>
 </template>
@@ -10,5 +10,7 @@
     definePageMeta({
         layout: "markdown",
     });
+
+    const { rules } = await useSmashRules().getCurrentlyActiveRules();
     
 </script>

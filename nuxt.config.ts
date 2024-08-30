@@ -20,7 +20,11 @@ export default defineNuxtConfig({
             guides: "guides",
             activeGuides: "active_guides",
             qna: "q_and_a",
+            rules: "rules"
         },
+        rules: {
+            databaseEntryId: "active_rules_de"
+        }
       }
     }
   },
