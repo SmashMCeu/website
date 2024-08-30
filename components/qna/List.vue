@@ -19,9 +19,7 @@
                         </AccordionTrigger>
                     </AccordionHeader>
                     <AccordionContent class="text-textColor bg-mauve2 data-[state=open]:animate-accordionSlideDown data-[state=closed]:animate-accordionSlideUp overflow-hidden text-[15px]">
-                        <div class="px-5 py-4">
-                            {{ item.content }}
-                        </div>
+                        <div class="px-5 py-4 markdown *:!m-0" v-html="item.content"></div>
                     </AccordionContent>
                 </AccordionItem>
             </template>
