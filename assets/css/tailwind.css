@@ -7,6 +7,9 @@
     body {
       @apply bg-backgroundColor text-textColor;
     }
+    code {
+      @apply before:hidden after:hidden bg-backgroundColorLight p-1 rounded;
+    }
 
 }
 @layer utilities {
