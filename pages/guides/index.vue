@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-24">
+    <div class="flex flex-col items-center gap-24 *:max-w-[75rem] *:w-full">
         
         <div>
             <UtilTitle subtitle="Q&A" title="You have any questions? Here are the answers" />
