@@ -1,6 +1,6 @@
 <template>
     <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        <NuxtLink v-for="guide of guides.concat(guides.toReversed())" :to="'/guides/' + guide.url_id">
+        <NuxtLink v-for="guide of guides" :to="'/guides/' + guide.url_id">
             <div class="bg-backgroundColorLight h-full hover:scale-[103%] transition-transform p-4 cursor-pointer rounded-lg flex flex-col items-center">
                 <div :style="{ backgroundImage: `url('${useSmashGuides().getGuideThumbnailUrl(guide)}')` }" class="bg-cover bg-center rounded-lg w-full h-[13rem]"></div>
                 <div class="px-4 py-3 w-full">
