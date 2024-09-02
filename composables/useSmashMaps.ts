@@ -1,30 +1,38 @@
+import PocketBase from "pocketbase";
+
 export const useSmashMaps = () => {
 
-    const baseUrl = "https://smashmceu.github.io/website-content/maps/";
-    const mapListPath = baseUrl + "maps.json";
+    // vs doesn't always import the type correctly...
+    const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
+    
+    const mapsCollection = useRuntimeConfig().public.pocketbase.collections.maps;
 
 
-    async function getSmashMaps(): Promise<SmashMap[]> { 
-        const maps: Response = await fetch(mapListPath);
-        if (!maps.ok) {
+    async function getAllMaps(): Promise<SmashMap[]> {
+        try {
+            return await pb.collection(mapsCollection).getFullList<SmashMap>({ sort: "name" });
+        } catch (error) {
             createError({
-                statusCode: maps.status,
-                message: maps.status == 404 ? "Maps not available" : maps.statusText,
+                statusCode: 500,
+                message: "Failed to fetch maps",
             });
             showError({
-                statusCode: maps.status,
-                message: maps.status == 404 ? "Maps not available" : maps.statusText,
+                statusCode: 500,
+                message: "Failed to fetch maps",
             });
             return [];
         }
-        return await maps.json();
     }
 
-    function getSmashMapImage(imgName: string): string {
-        return baseUrl + imgName;
+    function getMapImageUrl(map: SmashMap): string {
+        return pb.files.getUrl({
+            collectionId: map.collectionId,
+            id: map.id
+        }, map.map);
     }
 
 
-    return { getSmashMaps, getSmashMapImage }
+
+    return { getAllMaps, getMapImageUrl };
 
 }

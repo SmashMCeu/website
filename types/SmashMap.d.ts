@@ -1,4 +1,10 @@
 interface SmashMap {
-    name: string,
-    image: string,
+    id: string;
+    collectionId: string
+    collectionName: string;
+    map: string;
+    name: string;
+    builtBy: string;
+    created: string;
+    updated: string;
 }

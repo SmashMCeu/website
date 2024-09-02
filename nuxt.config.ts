@@ -21,7 +21,8 @@ export default defineNuxtConfig({
             activeGuides: "active_guides",
             qna: "q_and_a",
             rules: "rules",
-            characters: "characters"
+            characters: "characters",
+            maps: "maps",
         },
         rules: {
             databaseEntryId: "active_rules_de"

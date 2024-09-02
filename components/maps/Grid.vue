@@ -5,6 +5,6 @@
 </template>
 <script lang="ts" setup>
 
-    const maps: Ref<SmashMap[]> = ref(await useSmashMaps().getSmashMaps());
+    const maps: Ref<SmashMap[]> = ref(await useSmashMaps().getAllMaps());
 
 </script>
