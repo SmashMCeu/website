@@ -1,8 +1,6 @@
 <template>
     <div class="flex flex-col gap-24">
-        
-        <img src="/img/header.png" alt="header" class="rounded-lg">
-
+    
         <div class="flex flex-col gap-2">
             <SocialCardPlayerCount />
             <SocialCardMinecraft />
@@ -16,3 +14,10 @@
     
     </div>
 </template>
+<script setup lang=ts>
+
+    definePageMeta({
+        layout: "index-page",
+    });
+
+</script>
