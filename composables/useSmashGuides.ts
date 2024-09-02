@@ -32,10 +32,22 @@ export const useSmashGuides = () => {
         }, guide.thumbnail);
     }
 
-    async function getGuideByUrlId(url_id: string): Promise<Guide> {
-        // Maybe only fetch from the active_guides then use id to directly fetch from the guides collection,
-        // so getting a list via api of all guides (including not public ones) is not possible
-        return await pb.collection(guidesCollection).getFirstListItem(`url_id="${url_id}"`)
+    async function getGuideByUrlId(url_id: string): Promise<Guide | null> {
+        try {
+            // Maybe only fetch from the active_guides then use id to directly fetch from the guides collection,
+            // so getting a list via api of all guides (including not public ones) is not possible
+            return await pb.collection(guidesCollection).getFirstListItem(`url_id="${url_id}"`)
+        } catch (error) {
+            createError({
+                statusCode: 404,
+                message: "Failed to fetch guide",
+            });
+            showError({
+                statusCode: 404,
+                message: "Failed to fetch guide",
+            });
+            return null;
+        }
     }
 
 

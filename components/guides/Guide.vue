@@ -12,5 +12,11 @@
     }>();
     
     const guide = await useSmashGuides().getGuideByUrlId(props.guideUrlId);
+    if (guide === null) {
+        throw createError({
+            statusCode: 404,
+            message: "Guide not found"
+        });
+    }
 
 </script>
