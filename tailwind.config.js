@@ -12,6 +12,8 @@ export default {
 
         textColorLight: "#EDEDED",
         textColor: "#DCDCDC",
+
+        proCharacter: "#00bcbf",
       },
       keyframes: {
         dialogOverlayShow: {

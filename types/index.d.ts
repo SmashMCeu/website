@@ -6,7 +6,8 @@ declare module 'nuxt/schema' {
                 guides: string
                 activeGuides: string
                 qna: string,
-                rules: string
+                rules: string,
+                characters: string
             },
             rules: {
                 databaseEntryId: string

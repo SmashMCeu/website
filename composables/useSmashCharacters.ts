@@ -1,41 +1,39 @@
+import PocketBase from "pocketbase";
+
 export const useSmashCharacters = () => {
 
 
-    const baseUrl = "https://smashmceu.github.io/website-content/characters/";
-    const skinsDir = "skins/";
-    const characterListPath = baseUrl + "characters.json";
+    // vs doesn't always import the type correctly...
+    const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
 
+    const charactersCollection = useRuntimeConfig().public.pocketbase.collections.characters;
 
-    async function getCharacterList(): Promise<[string, string][]> {
-        const characterList: Response = await fetch(characterListPath);
-        if (!characterList.ok) throw createError({
-            statusCode: characterList.status,
-            message: characterList.statusText
-        });
-        return Object.entries(await characterList.json());
-    }
 
     async function getAllCharacters(): Promise<SmashCharacter[]> {
-        const characterList: [string, string][] = await getCharacterList();
-        return Promise.all(characterList.map(e => getCharacter(e[1])));
+        try {
+            return await pb.collection(charactersCollection).getFullList<SmashCharacter>({ sort: "name" });
+        } catch (error) {
+            createError({
+                statusCode: 500,
+                message: "Failed to fetch characters",
+            });
+            showError({
+                statusCode: 500,
+                message: "Failed to fetch characters",
+            });
+            return [];
+        }
     }
 
-    async function getCharacter(characterFileName: string): Promise<SmashCharacter> {
-        const character: Response = await fetch(baseUrl + characterFileName);
-        if (!character.ok) throw createError({
-            statusCode: character.status,
-            message: character.statusText
-        });
-        const characterData: SmashCharacter = await character.json();
-        characterData.description = "Not implemented yet!";
-        return characterData;
+    function getCharacterSkinUrl(character: SmashCharacter): string {
+        return pb.files.getUrl({
+            collectionId: character.collectionId,
+            id: character.id
+        }, character.skin);
     }
 
-    function getCharacterSkin(skinFileName: string) {
-        return baseUrl + skinsDir + skinFileName;
-    }
+    
 
-
-    return { getCharacterList, getAllCharacters, getCharacter, getCharacterSkin };
+    return { getAllCharacters, getCharacterSkinUrl };
 
 }
