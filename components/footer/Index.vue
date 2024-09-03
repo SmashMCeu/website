@@ -16,7 +16,9 @@
         <div class="flex md:gap-10 gap-4 md:flex-row flex-col *:flex *:flex-col">
             <div>
                 <p class="text-textColorLight font-bold text-lg">Nützliche Links</p>
-                <NuxtLink to="/" class="text-textColor">Home</NuxtLink>
+                <NuxtLink to="/guides/map_guide" class="text-textColor">Wie baut man eine Map</NuxtLink>
+                <NuxtLink to="/guides/entertainer_anforderungen" class="text-textColor">Bewerbung als Entertainer</NuxtLink>
+                <NuxtLink to="/guides/partner_anforderungen" class="text-textColor">Bewerbung als Partner</NuxtLink>
             </div>
             <div>
                 <p class="text-textColorLight font-bold text-lg">Rechtliches</p>
