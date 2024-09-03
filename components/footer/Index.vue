@@ -13,7 +13,7 @@
             <FooterSocialIcons class="mt-2"/>
         </div>
         
-        <div class="flex md:gap-10 gap-4 md:flex-row flex-col">
+        <div class="flex md:gap-10 gap-4 md:flex-row flex-col *:flex *:flex-col">
             <div>
                 <p class="text-textColorLight font-bold text-lg">Nützliche Links</p>
                 <NuxtLink to="/" class="text-textColor">Home</NuxtLink>
