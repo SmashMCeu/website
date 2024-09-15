@@ -26,7 +26,9 @@ steps:
       repo: registry.smashmc.eu/nuxt-website
       tags:
         - latest
-        - $(cat .version)
+        - ${VERSION}
       dockerfile: ./Dockerfile
     depends_on:
       - get-version
+    environment:
+      VERSION: $(cat .version)
