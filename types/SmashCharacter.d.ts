@@ -3,6 +3,7 @@ interface SmashCharacter {
     collectionId: string;
     collectionName: string;
     skin: string;
+    preview: string;
     isSlimSkin: boolean;
     name: string;
     isPro: boolean;
@@ -12,4 +13,8 @@ interface SmashCharacter {
     isBetaCharacter: boolean;
     created: string;
     updated: string;
+
+    expand?: {
+        skins_via_character: SmashCharacterSkin[];
+    }
 }

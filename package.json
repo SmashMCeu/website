@@ -17,7 +17,8 @@
     "nuxt": "^3.13.0",
     "pocketbase": "^0.21.5",
     "radix-vue": "^1.9.5",
-    "vue": "latest"
+    "vue": "latest",
+    "vue-skinview3d": "^0.3.1"
   },
   "devDependencies": {
     "@iconify-json/solar": "^1.1.10",
