@@ -9,12 +9,6 @@ trigger:
     - push
 
 steps:
-  - name: get-version
-    image: node:slim
-    commands:
-      - export VERSION=$(node -p "require('./package.json').version")
-      - echo $VERSION > .version
-
   - name: docker
     image: plugins/docker
     settings:
@@ -26,9 +20,4 @@ steps:
       repo: registry.smashmc.eu/nuxt-website
       tags:
         - latest
-        - ${VERSION}
       dockerfile: ./Dockerfile
-    depends_on:
-      - get-version
-    environment:
-      VERSION: $(cat .version)
