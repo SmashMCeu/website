@@ -22,14 +22,14 @@
                 </div>
 
                 <div class="lg:row-start-1 lg:col-start-3">
-                    <img src="/img/herosection/img1.png" alt="img" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
+                    <img src="/img/herosection/img1.webp" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
                 </div>
                 <div class="lg:row-start-1 lg:col-start-4">
-                    <img src="/img/herosection/img2.png" alt="img" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
+                    <img src="/img/herosection/img2.webp" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
                 </div>
                 <div class="lg:row-start-2 lg:col-start-3 
                             md:col-span-2 md:row-span-1">
-                    <img src="/img/herosection/img3.png" alt="img" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
+                    <img src="/img/herosection/img3.webp" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
                 </div>
             </div>
         
