@@ -25,7 +25,13 @@ export const useSmashGuides = () => {
         }
     }
 
-    function getGuideThumbnailUrl(guide: GuidesEntry): string {
+    function getGuideThumbnailUrl(guide: Guide): string {
+        return pb.files.getUrl({
+            collectionId: guide.collectionId,
+            id: guide.id
+        }, guide.thumbnail);
+    }
+    function getGuidesEntryThumbnailUrl(guide: GuidesEntry): string {
         return pb.files.getUrl({
             collectionId: guide.collectionId,
             id: guide.id
@@ -51,6 +57,6 @@ export const useSmashGuides = () => {
     }
 
 
-    return { getGuidesList, getGuideThumbnailUrl, getGuideByUrlId };
+    return { getGuidesList, getGuideThumbnailUrl, getGuidesEntryThumbnailUrl, getGuideByUrlId };
 
 }

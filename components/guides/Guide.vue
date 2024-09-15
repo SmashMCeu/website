@@ -11,7 +11,7 @@
         guideUrlId: string
     }>();
     
-    const guide = await useSmashGuides().getGuideByUrlId(props.guideUrlId);
+    const guide: Guide | null = await useSmashGuides().getGuideByUrlId(props.guideUrlId);
     if (guide === null) {
         throw createError({
             statusCode: 404,
