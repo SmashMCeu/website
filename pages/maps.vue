@@ -12,3 +12,16 @@
         </Suspense>
     </div>
 </template>
+<script setup lang="ts">
+
+    useSeoMeta({
+        title: "SmashMC | Explore our Maps",
+        ogTitle: "SmashMC | Explore our Maps",
+        description: "Explore the different maps available on SmashMC. We offer a variety of maps for you to play on, each with its own unique style and gameplay.",
+        ogDescription: "Explore the different maps available on SmashMC. We offer a variety of maps for you to play on, each with its own unique style and gameplay.",
+        ogType: "website",
+        twitterCard: "summary_large_image",
+        ogImage: "https://beta.smashmc.eu/img/ogImage.webp",
+    });
+
+</script>

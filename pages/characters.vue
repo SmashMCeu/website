@@ -14,5 +14,14 @@
 </template>
 <script lang="ts" setup>
     
+    useSeoMeta({
+        title: "SmashMC | Smash Characters",
+        ogTitle: "SmashMC | Smash Characters",
+        description: "Explore the different characters available on SmashMC. We offer a variety of characters for you to play as, each with its own unique style and gameplay.",
+        ogDescription: "Explore the different characters available on SmashMC. We offer a variety of characters for you to play as, each with its own unique style and gameplay.",
+        ogType: "website",
+        twitterCard: "summary_large_image",
+        ogImage: "https://beta.smashmc.eu/img/ogImage.webp",
+    });
     
 </script>

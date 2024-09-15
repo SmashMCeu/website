@@ -20,4 +20,14 @@
         layout: "index-page",
     });
 
+    useSeoMeta({
+        title: "SmashMC | The Ultimate Smash Network!",
+        ogTitle: "SmashMC | The Ultimate Smash Network!",
+        description: "SmashMC is a unique Minecraft network with exciting mini-games. Our unique Smash mode is offering the best gameplay experience around. You can also explore different styles of Smash, such as GunGame and Teams, adding new twists to the game!",
+        ogDescription: "SmashMC is a unique Minecraft network with exciting mini-games. Our unique Smash mode is offering the best gameplay experience around. You can also explore different styles of Smash, such as GunGame and Teams, adding new twists to the game!",
+        ogType: "website",
+        twitterCard: "summary_large_image",
+        ogImage: "https://beta.smashmc.eu/img/ogImage.webp",
+    });
+
 </script>

@@ -32,3 +32,16 @@
         </div>
     </div>
 </template>
+<script setup lang="ts">
+
+    useSeoMeta({
+        title: "SmashMC | Q&A and Guides", 
+        ogTitle: "SmashMC | Q&A and Guides",
+        description: "Any questions? Here are the answers. Take a look at useful guides on SmashMC.",
+        ogDescription: "Any questions? Here are the answers. Take a look at useful guides on SmashMC.",
+        ogType: "website",
+        twitterCard: "summary_large_image",
+        ogImage: "https://smashmc.eu/img/ogImage.png",
+    });
+
+</script>
