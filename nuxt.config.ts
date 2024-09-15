@@ -22,7 +22,9 @@ export default defineNuxtConfig({
             qna: "q_and_a",
             rules: "rules",
             characters: "characters",
+            character_previews: "character_previews",
             maps: "maps",
+            skins: "skins"
         },
         rules: {
             databaseEntryId: "active_rules_de"

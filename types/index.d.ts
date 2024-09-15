@@ -8,7 +8,9 @@ declare module 'nuxt/schema' {
                 qna: string,
                 rules: string,
                 characters: string,
-                maps: string
+                character_previews: string,
+                maps: string,
+                skins: string,
             },
             rules: {
                 databaseEntryId: string
