@@ -13,7 +13,10 @@ steps:
     image: node:slim
     commands:
       - export VERSION=$(node -p "require('./package.json').version")
-      - echo $VERSION > .version
+      - echo $VERSION
+    when:
+      event:
+        - push
 
   - name: docker
     image: plugins/docker
@@ -26,9 +29,13 @@ steps:
       repo: registry.smashmc.eu/nuxt-website
       tags:
         - latest
+        - ${DRONE_COMMIT_BRANCH}-${DRONE_BUILD_NUMBER} # Default tag in case the version is empty
         - ${VERSION}
       dockerfile: ./Dockerfile
     depends_on:
       - get-version
     environment:
-      VERSION: $(cat .version)
+      VERSION: ${VERSION}
+    when:
+      event:
+        - push
