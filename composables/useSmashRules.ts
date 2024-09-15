@@ -10,7 +10,19 @@ export const useSmashRules = () => {
 
 
     async function getCurrentlyActiveRules(): Promise<Rules> {
-        return await pb.collection(rulesCollection).getOne<Rules>(activeRulesId);
+        try {
+            return await pb.collection(rulesCollection).getOne<Rules>(activeRulesId);
+        } catch (error) {
+            createError({
+                statusCode: 500,
+                message: "Failed to fetch rules! Please contact the site administrator immediately!",
+            });
+            showError({
+                statusCode: 500,
+                message: "Failed to fetch rules! Please contact the site administrator immediately!",
+            });
+            return {} as Rules;
+        }
     }
 
     return { getCurrentlyActiveRules }
