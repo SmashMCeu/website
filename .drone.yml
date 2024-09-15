@@ -18,8 +18,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      registry:
-        from_secret: registry.smashmc.eu
+      registry: registry.smashmc.eu
       username:
         from_secret: registry_username
       password:
