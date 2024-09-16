@@ -2,7 +2,7 @@
     <div class="markdown">
         <p class="text-4xl text-textColorLight font-bold underline">{{ guide.title }}</p>
         <div v-html="guide.content" class="mt-10"></div>
-        <p class="text-textColor/50">Last updated: {{ new Date(guide.updated).toLocaleString() }}</p>
+        <p class="text-textColor/50">Letzte Änderung: {{ getLastModified() }}</p>
     </div>
 </template>
 <script lang="ts" setup>
@@ -16,6 +16,17 @@
         throw createError({
             statusCode: 404,
             message: "Guide not found"
+        });
+    }
+
+    function getLastModified() {
+        if (guide === null) return "";
+        return new Date(guide.updated).toLocaleString("de-DE", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit"
         });
     }
 
