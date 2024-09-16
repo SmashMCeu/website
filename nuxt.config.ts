@@ -12,6 +12,14 @@ export default defineNuxtConfig({
     '@nuxt/image'
   ],
 
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "de"
+      }
+    }
+  },
+
   runtimeConfig: {
     public: {
       pocketbase: {
