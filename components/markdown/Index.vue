@@ -24,8 +24,10 @@
     }
 
     onBeforeMount(async () => {
-        if (props.local) setMarkdown(await $fetch("/md/" + props.path));
-        else {
+        if (props.local) {
+            const { data: localMarkdownString } = await useAsyncData<string>("getLocalMarkdown", () => $fetch("/md/" + props.path));
+            setMarkdown(localMarkdownString.value || "# Error while loading!");
+        } else {
             const rawContent: Response = await fetch(props.path);
             if (rawContent.ok) setMarkdown(await rawContent.text());
             else throw createError({
