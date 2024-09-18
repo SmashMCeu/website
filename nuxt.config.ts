@@ -21,6 +21,14 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    mongodb: {
+      dbUri: "",
+      dbName: "",
+      username: "",
+      password: "",
+      authSource: ""
+    },
+    
     public: {
       pocketbase: {
         apiBaseUrl: "https://pocket.smashmc.eu",
