@@ -45,7 +45,7 @@
                                 <Icon name="solar:alt-arrow-right-bold" :size="16" class="text-textColor/75" />
                             </SelectItemIndicator>
                             <SelectItemText class="ml-6 flex gap-4 items-center flex-grow">
-                                <UtilSkinHeadRenderer :skin-url="option.url" />
+                                <SkinHeadRenderer :skin-url="option.url" />
                                 <p v-html="useMinecraftFormatting().formatText(option.name)"></p>
                             </SelectItemText>
                         </SelectItem>

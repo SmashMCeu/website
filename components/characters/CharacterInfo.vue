@@ -34,7 +34,7 @@
                         <div class="flex-grow flex sm:flex-row sm:flex-nowrap flex-wrap gap-8">
                             <div class="flex flex-col w-[15rem] max-w-[15rem]">
                                 <div class="rounded-lg bg-backgroundColor/50 overflow-hidden p-4 relative">
-                                    <UtilSkinRenderer :skin-image="currentSkin.url" :is-slim="currentSkin.isSlim" :pause-animation="pauseAnimation" />
+                                    <SkinRenderer :skin-image="currentSkin.url" :is-slim="currentSkin.isSlim" :pause-animation="pauseAnimation" />
                                     <div @click="pauseAnimation = !pauseAnimation" class="absolute top-3 right-3 px-2 py-1 bg-backgroundColorLight hover:bg-backgroundColorLight/75 transition-colors rounded-md cursor-pointer">
                                         <Icon :size="15" :name="pauseAnimation ? 'solar:play-bold' : 'solar:pause-bold'" class="text-textColor"/>
                                     </div>

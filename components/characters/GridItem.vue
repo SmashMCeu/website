@@ -5,7 +5,7 @@
                 <p v-if="char.isPro" class="w-fit px-[6px] py-[1px] text-sm text-primary border-2 border-primary rounded-lg font-semibold">PRO</p>
                 <p class="text-base sm:text-lg md:text-xl font-semibold w-full truncate">{{ char.name }}</p>
             </div>
-            <UtilSkinRenderer2d class="" :skin-url="useSmashCharacters().getCharacterImgUrl(char, char.preview)" />
+            <SkinRenderer2d class="" :skin-url="useSmashCharacters().getCharacterImgUrl(char, char.preview)" />
         </div>
     </CharactersCharacterInfo>
 </template>
