@@ -21,13 +21,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    mongodb: {
-      dbUri: "",
-      dbName: "",
-      username: "",
-      password: "",
-      authSource: ""
-    },
+    statsApiBaseUrl: process.env.TOP_API_BASE_URL || "http://localhost:25003",
     
     public: {
       pocketbase: {
