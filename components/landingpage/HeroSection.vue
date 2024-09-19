@@ -1,41 +1,21 @@
 <template>
     <div>
-        <div class="w-screen lg:h-screen flex items-center justify-center relative">
-
-            <div class="mt-20 w-full h-full lg:p-20 px-4 py-8 grid
-                        lg:grid-cols-4 lg:grid-rows-2 lg:gap-4
-                        md:grid-cols-2 md:grid-rows-3 md:gap-4
-                        grid-cols-1 grid-rows-4 gap-4
-                        *:bg-backgroundColorLight *:rounded-lg *:overflow-hidden">
-
-                <div class="lg:col-span-2 lg:row-span-2
-                            md:col-span-2 row-span-full
-                            md:py-10 md:px-14 px-5 py-4">
-                    
-                    <p class="font-black md:text-5xl text-3xl text-textColorLight">SmashMC.eu</p>
-                    <p class="mt-2">SmashMC ist ein sehr sehr sehr sehr toller Server :D Also join bitti bitti! Und nochmal: SmashMC ist ein sehr sehr sehr sehr toller Server :D Also join bitti bittiSmashMC ist ein sehr sehr sehr sehr toller Server :D A</p>
-                    <div class="inline-flex flex-wrap gap-2 mt-10">
+        <div class="w-screen h-screen relative flex items-center justify-center">
+            <img src="/img/herosection/background.webp" alt="" class="brightness-50 -z-10 w-full h-full absolute object-cover pointer-events-none select-none">
+            
+            <div class="flex items-center">
+                <div class="md:w-[50%] max-w-[100rem] mx-10 md:mx-20">
+                    <p class="text-4xl sm:text-5xl font-black text-textColorLight">SMASHMC.EU IST KRASS</p>
+                    <p class="mt-2 text-lg sm:text-xl font-semibold text-textColor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vitae maxime, cupiditate illum ipsa nulla quos eligendi impedit dicta nostrum odio natus expedita nam consequatur fugit? Doloremque voluptas repudiandae soluta.</p>
+                    <div class="mt-8 flex flex-wrap gap-4">
                         <SocialCardMinecraft />
                         <SocialCardDiscord />
                     </div>
-
                 </div>
-
-                <div class="lg:row-start-1 lg:col-start-3">
-                    <img src="/img/herosection/img1.webp" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
-                </div>
-                <div class="lg:row-start-1 lg:col-start-4">
-                    <img src="/img/herosection/img2.webp" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
-                </div>
-                <div class="lg:row-start-2 lg:col-start-3 
-                            md:col-span-2 md:row-span-1">
-                    <img src="/img/herosection/img3.webp" class="object-cover w-full h-full transition-transform duration-300 hover:scale-110">
+                <div class="hidden md:block size-64 -mt-20">
+                    <img src="/img/herosection/skinRender.webp" alt="">
                 </div>
             </div>
-        
         </div>
     </div>
 </template>
-<script lang="ts" setup>
-    
-</script>
