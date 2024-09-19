@@ -8,6 +8,7 @@
             
         </div>
 
+        <UtilTitle subtitle="SMASH" title="Monthly Top 5" />
         <TopFivePlayers />
 
         <UtilTitle subtitle="SUBTITLE" title="Title Lorem Ipsum dolor sit amet" />

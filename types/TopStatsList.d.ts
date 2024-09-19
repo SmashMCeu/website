@@ -1,6 +1,4 @@
-import type {UUID} from "~/types/UUID";
-
-export interface TopStatsList {
+interface TopStatsList {
     gameType: string;
     limit: number;
     monthly: boolean;

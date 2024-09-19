@@ -1,35 +1,43 @@
-import type {TopStatsList} from "~/types/TopStatsList";
+import { RuntimeConfig } from "nuxt/schema";
 
 const config: RuntimeConfig = useRuntimeConfig();
 
-const testing: boolean = false;
+const isDevEnv: boolean = import.meta.dev || false;
+
+
 
 export default defineEventHandler(async (event): Promise<TopStatsList> => {
-    const query = getQuery(event);
-    const limit: number = parseInt(query.limit) as number;
+    let limit: number = 5;
+    const query = getQuery<{ limit: string }>(event);
+    
+    if (query && query.limit) {
+        const limitQuery: number = parseInt(query.limit);
 
-    if (isNaN(limit)) {
-        throw createError({
-            statusCode: 400,
-            statusMessage: 'Invalid limit',
-        });
+        if (isNaN(limitQuery)) {
+            throw createError({
+                statusCode: 400,
+                statusMessage: "Invalid limit",
+            });
+        }
+        if (limitQuery > 10) {
+            throw createError({
+                statusCode: 400,
+                statusMessage: "Limit too high",
+            });
+        }
+        if (limitQuery < 1) {
+            throw createError({
+                statusCode: 400,
+                statusMessage: "Limit too low",
+            });
+        }
+
+        limit = limitQuery;
     }
 
-    if (limit > 10) {
-        throw createError({
-            statusCode: 400,
-            statusMessage: 'Limit too high',
-        });
-    }
+    
 
-    if (limit < 1) {
-        throw createError({
-            statusCode: 400,
-            statusMessage: 'Limit too low',
-        });
-    }
-
-    if (testing) {
+    if (isDevEnv) {
         return Promise.resolve(
             {
                 gameType: "smash",
@@ -51,7 +59,7 @@ export default defineEventHandler(async (event): Promise<TopStatsList> => {
     } catch (error) {
         throw createError({
             statusCode: 500,
-            statusMessage: 'Failed to fetch data',
+            statusMessage: "Failed to fetch data",
         });
     }
 });
