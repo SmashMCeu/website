@@ -1,13 +1,26 @@
 <template>
-   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        <div class="flex justify-center" v-for="uuid in response?.result" :key="uuid">
-            <SkinVZGERenderer2d :playerUUID="uuid" />
+   <div class="flex w-fit justify-center bg-backgroundColorLight px-8 py-4 rounded-lg">
+        <div class="flex flex-col items-center gap-4" v-for="(player, index) of topFivePlayers" :key="player.uuid">
+            <p class="text-xl font-semibold text-nowrap">{{ index + 1 }}. {{ player.name }}</p>
+            <SkinRenderer :skin-image="player.texture" :is-slim="player.slimSkin" static :userRotate="false" />
         </div>
     </div>
 </template>
 <script lang="ts" setup>
 
     const limit: number = 5;
-    const { data: response  } = await useFetch(`/api/stats/top?limit=${limit}`);
+    const topFivePlayers: Ref<BasicMinecraftUser[]> = ref<BasicMinecraftUser[]>([]);
+
+    const { data: response } = await useFetch<TopStatsList>(`/api/stats/top?limit=${limit}`);
+    
+    if (response.value) {
+        topFivePlayers.value = await Promise.all(
+            response.value.result.map(async (uuid, index) => 
+                await useBasicMinecraftUser().uuidToBasicUser(uuid)
+            )
+        );
+    }
+        
+
 
 </script>

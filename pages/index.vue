@@ -1,15 +1,18 @@
 <template>
-    <div class="flex flex-col gap-24">
-    
-        <div class="flex flex-col gap-2">
-            <SocialCardPlayerCount />
-            <SocialCardMinecraft />
-            <SocialCardDiscord />
-            
-        </div>
+    <div class="flex flex-col gap-24 mt-20">
 
-        <UtilTitle subtitle="SMASH" title="Monthly Top 5" />
-        <TopFivePlayers />
+        <div class="w-full flex flex-col items-center">
+            <UtilTitle subtitle="SMASH" title="Monthly Top 5" />
+            <Suspense>
+                <template #default>
+                    <TopFivePlayers />
+                </template>
+                <template #fallback>
+                    <p class="text-xl">Loading...</p>
+                </template>
+            </Suspense>
+        </div>
+        
 
         <UtilTitle subtitle="SUBTITLE" title="Title Lorem Ipsum dolor sit amet" />
         <UtilTitle subtitle="SubTitle222" title="222Title Lorem Ipsum dolor sit amet" orientation="left"/>
