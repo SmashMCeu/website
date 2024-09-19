@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    statsApiBaseUrl: process.env.STATS_API_BASE_URL || "http://localhost:25003",
+    statsApiBaseUrl: "",
     
     public: {
       pocketbase: {
