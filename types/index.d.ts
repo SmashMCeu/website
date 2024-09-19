@@ -1,4 +1,15 @@
 declare module 'nuxt/schema' {
+
+    interface RuntimeConfig  {
+        mongodb: {
+            dbUri: string,
+            dbName: string,
+            username: string,
+            password: string
+            authSource: string
+        }
+    }
+
     interface PublicRuntimeConfig {
         pocketbase: {
             baseUrl: string

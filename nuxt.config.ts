@@ -21,6 +21,8 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    statsApiBaseUrl: process.env.TOP_API_BASE_URL || "http://localhost:25003",
+    
     public: {
       pocketbase: {
         apiBaseUrl: "https://pocket.smashmc.eu",
