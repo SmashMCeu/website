@@ -5,16 +5,18 @@
             model: props.isSlim ? 'slim' : 'default',
         }"
         :global-light="3"
-        :animation="defaultAnimation"
+        :animation="playerAnimation"
         :enable-zoom="false"
-        :auto-rotate="!props.pauseAnimation"
+        :auto-rotate="!props.pauseAnimation && !props.static"
         :auto-rotate-speed="0.5"
-        class="cursor-move"
+        :enable-rotate="userRotate"
+        :class="{ 'cursor-move': userRotate }"
         />
     </div>
 </template>
 <script lang="ts" setup>
     
+    import { PlayerAnimation } from "skinview3d"
     import { SkinView3d } from "vue-skinview3d";
     import { WalkingAnimation } from "vue-skinview3d/animations";
 
@@ -22,21 +24,30 @@
         defineProps<{
             skinImage: string,
             isSlim?: boolean,
-            pauseAnimation?: boolean
+            pauseAnimation?: boolean,
+            static?: boolean,
+            userRotate?: boolean,
         }>(),
         {
             isSlim: false,
-            pauseAnimation: false
+            pauseAnimation: false,
+            static: false,
+            userRotate: true,
         }
     );
 
-    const defaultAnimation = (new WalkingAnimation());
-    defaultAnimation.speed = 0.5;
-    defaultAnimation.paused = props.pauseAnimation;
 
-    watch(() => props.pauseAnimation, (newVal) => {
-        defaultAnimation.paused = newVal;
-    });
+    const playerAnimation: Ref<PlayerAnimation | null> = ref(null);
 
+    if (!props.static) {
+        playerAnimation.value = new WalkingAnimation();
+        playerAnimation.value.speed = 0.5;
+        playerAnimation.value.paused = props.pauseAnimation;
+
+        watch(() => props.pauseAnimation, (newVal) => {
+            if (playerAnimation.value) playerAnimation.value.paused = newVal;
+        });
+    }
+    
 
 </script>
