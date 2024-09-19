@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between">
             <div>
                 <a href="/">
-                    <img src="/img/logo.svg" alt="logo" class="h-12 hover:animate-spin">
+                    <img src="/img/logo.svg" alt="logo" class="h-10 hover:animate-spin">
                 </a>
             </div>
 
