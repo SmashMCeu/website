@@ -9,8 +9,8 @@
                     <p class="text-textColor/75 leading-3">© 2017 - 2024</p>
                 </div>
             </div>
-            <p class="max-w-[25rem] mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium necessitatibus, obcaecati ea sit</p>
-            <FooterSocialIcons class="mt-2"/>
+            <p class="max-w-[25rem] mt-4">We are not affiliated with Mojang or Microsoft</p>
+            <FooterSocialIcons class="mt-6"/>
         </div>
         
         <div class="flex md:gap-10 gap-4 md:flex-row flex-col *:flex *:flex-col">
