@@ -1,15 +1,22 @@
 <template>
     <div class="relative w-[8px] aspect-square scale-[250%]">
         
-        <div :style="{ backgroundImage: `url(${skinUrl})` }"
-            class="minecraftHead baseLayer w-[8px] aspect-square absolute">
-        </div>
-        <div :style="{ backgroundImage: `url(${skinUrl})` }"
-            class="minecraftHead secondLayer w-[8px] aspect-square absolute">
-        </div>
+        <div
+:style="{ backgroundImage: `url(${skinUrl})` }"
+            class="minecraftHead baseLayer w-[8px] aspect-square absolute"/>
+        <div
+:style="{ backgroundImage: `url(${skinUrl})` }"
+            class="minecraftHead secondLayer w-[8px] aspect-square absolute"/>
 
     </div>
 </template>
+<script lang="ts" setup>
+    
+    defineProps<{
+        skinUrl: string
+    }>();
+
+</script>
 <style scoped>
 
     .minecraftHead {
@@ -25,10 +32,3 @@
     }
 
 </style>
-<script lang="ts" setup>
-    
-    defineProps<{
-        skinUrl: string
-    }>();
-
-</script>

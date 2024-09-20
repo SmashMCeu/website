@@ -1,7 +1,7 @@
 <template>
     <div class="markdown">
         <p class="text-4xl text-textColorLight font-bold underline">{{ guide.title }}</p>
-        <div v-html="guide.content" class="mt-10"></div>
+        <div class="mt-10" v-html="guide.content"/>
         <p class="text-textColor/50">Letzte Änderung: {{ getLastModified() }}</p>
     </div>
 </template>

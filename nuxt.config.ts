@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     'radix-vue/nuxt',
     '@nuxt/icon',
     '@nuxtjs/mdc',
-    '@nuxt/image'
+    '@nuxt/image',
+    "@nuxt/eslint"
   ],
 
   app: {

@@ -1,8 +1,8 @@
 <template>
    <div class="flex w-fit justify-center bg-backgroundColorLight px-8 py-4 rounded-lg">
-        <div class="flex flex-col items-center gap-4" v-for="(player, index) of topFivePlayers" :key="player.uuid">
+        <div v-for="(player, index) of topFivePlayers" :key="player.uuid" class="flex flex-col items-center gap-4">
             <p class="text-xl font-semibold text-nowrap">{{ index + 1 }}. {{ player.name }}</p>
-            <SkinRenderer :skin-image="player.texture" :is-slim="player.slimSkin" static :userRotate="false" />
+            <SkinRenderer :skin-image="player.texture" :is-slim="player.slimSkin" static :user-rotate="false" />
         </div>
     </div>
 </template>
@@ -15,7 +15,7 @@
     
     if (response.value) {
         topFivePlayers.value = await Promise.all(
-            response.value.result.map(async (uuid, index) => 
+            response.value.result.map(async (uuid, _index) => 
                 await useBasicMinecraftUser().uuidToBasicUser(uuid)
             )
         );

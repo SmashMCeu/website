@@ -1,6 +1,7 @@
 <template>
     <div>
-        <SkinView3d :width="200" :height="250" :skin-url="skinImage" :skin-options="{
+        <SkinView3d
+:width="200" :height="250" :skin-url="skinImage" :skin-options="{
             ears: false,
             model: props.isSlim ? 'slim' : 'default',
         }"
@@ -16,7 +17,7 @@
 </template>
 <script lang="ts" setup>
     
-    import { PlayerAnimation } from "skinview3d"
+    import type { PlayerAnimation } from "skinview3d"
     import { SkinView3d } from "vue-skinview3d";
     import { WalkingAnimation } from "vue-skinview3d/animations";
 

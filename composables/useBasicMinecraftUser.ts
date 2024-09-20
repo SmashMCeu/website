@@ -6,7 +6,7 @@ export const useBasicMinecraftUser = () => {
 
     async function uuidToBasicUser(uuid: string): Promise<BasicMinecraftUser> {
 
-        let user: BasicMinecraftUser = {
+        const user: BasicMinecraftUser = {
             uuid: uuid,
             name: "Unknown",
             // Default Steve texture:
