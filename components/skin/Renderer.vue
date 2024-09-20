@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-[200px] h-[250px]">
         <SkinView3d :width="200" :height="250" :skin-url="skinImage" :skin-options="{
             ears: false,
             model: props.isSlim ? 'slim' : 'default',
@@ -35,7 +35,6 @@
             userRotate: true,
         }
     );
-
 
     const playerAnimation: Ref<PlayerAnimation | null> = ref(null);
 
