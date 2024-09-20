@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <p v-html="rules" class="markdown"></p>
+        <p class="markdown" v-html="rules"/>
 
     </div>
 </template>

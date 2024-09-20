@@ -9,7 +9,8 @@
                 </a>
             </div>
 
-            <div class="sm:flex hidden gap-4
+            <div
+class="sm:flex hidden gap-4
                 hover:*:bg-white/5 *:transition-colors *:py-3 md:*:px-6 *:px-3 *:rounded-lg *:flex *:items-center *:gap-2">
                 <NavbarLinks />
             </div>
@@ -18,7 +19,7 @@
 
 
 
-            <button title="menu" @click="mobileMenuOpen = !mobileMenuOpen" :class="{'hidden': !isMobile}" class="flex items-center justify-center text-primary">
+            <button title="menu" :class="{'hidden': !isMobile}" class="flex items-center justify-center text-primary" @click="mobileMenuOpen = !mobileMenuOpen">
                 <Icon v-if="!mobileMenuOpen" name="solar:hamburger-menu-bold" size="45" />
                 <Icon v-else name="solar:close-square-outline" size="45" />
             </button>

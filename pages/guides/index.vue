@@ -9,7 +9,7 @@
                         <QnaList />
                     </template>
                     <template #fallback>
-                        <div class="h-24 rounded-lg bg-backgroundColorLight animate-pulse"></div>
+                        <div class="h-24 rounded-lg bg-backgroundColorLight animate-pulse"/>
                     </template>
                 </Suspense>
             </div>
@@ -24,7 +24,7 @@
                     </template>
                     <template #fallback>
                         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-                            <div class="aspect-video rounded-lg bg-backgroundColorLight animate-pulse" v-for="n in 10"></div>
+                            <div v-for="n in 10" class="aspect-video rounded-lg bg-backgroundColorLight animate-pulse"/>
                         </div>
                     </template>
                 </Suspense>

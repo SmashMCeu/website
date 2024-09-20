@@ -6,16 +6,16 @@
         <DialogPortal>
             <DialogOverlay class="data-[state=open]:animate-dialogOverlayShow bg-black/50 fixed grid items-center inset-0 z-30 overflow-y-auto">
                 <DialogContent
+                    class="data-[state=open]:animate-dialogContentShow
+                            rounded-lg bg-backgroundColorLight fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[100]
+                            flex flex-col gap-6 mt-10 h-[80vh] md:h-[60vh] max-h-[85vh] w-[90vw] max-w-[45rem]"
                     @pointer-down-outside="(event) => {
                         const originalEvent = event.detail.originalEvent;
                         const target = originalEvent.target as HTMLElement;
                         if (originalEvent.offsetX > target.clientWidth || originalEvent.offsetY > target.clientHeight) {
                         event.preventDefault();
                         }
-                    }"
-                    class="data-[state=open]:animate-dialogContentShow
-                            rounded-lg bg-backgroundColorLight fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[100]
-                            flex flex-col gap-6 mt-10 h-[80vh] md:h-[60vh] max-h-[85vh] w-[90vw] max-w-[45rem]">
+                    }">
 
                     <VisuallyHidden>
                         <DialogTitle>{{ character.name }}</DialogTitle>
@@ -35,12 +35,12 @@
                             <div class="flex flex-col w-[15rem] max-w-[15rem]">
                                 <div class="rounded-lg bg-backgroundColor/50 overflow-hidden p-4 relative">
                                     <SkinRenderer :skin-image="currentSkin.url" :is-slim="currentSkin.isSlim" :pause-animation="pauseAnimation" />
-                                    <div @click="pauseAnimation = !pauseAnimation" class="absolute top-3 right-3 px-2 py-1 bg-backgroundColorLight hover:bg-backgroundColorLight/75 transition-colors rounded-md cursor-pointer">
+                                    <div class="absolute top-3 right-3 px-2 py-1 bg-backgroundColorLight hover:bg-backgroundColorLight/75 transition-colors rounded-md cursor-pointer" @click="pauseAnimation = !pauseAnimation">
                                         <Icon :size="15" :name="pauseAnimation ? 'solar:play-bold' : 'solar:pause-bold'" class="text-textColor"/>
                                     </div>
                                 </div>
                                 <div class="mt-2">
-                                    <CharactersSkinsDropdown @update:value="val => switchSkin(val)" :skins="characterSkins" />
+                                    <CharactersSkinsDropdown :skins="characterSkins" @update:value="val => switchSkin(val)" />
                                 </div>
                             </div> 
                             <div class="flex-grow">

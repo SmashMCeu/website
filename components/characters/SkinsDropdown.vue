@@ -46,7 +46,7 @@
                             </SelectItemIndicator>
                             <SelectItemText class="ml-6 flex gap-4 items-center flex-grow">
                                 <SkinHeadRenderer :skin-url="option.url" />
-                                <p v-html="useMinecraftFormatting().formatText(option.name)"></p>
+                                <p v-html="useMinecraftFormatting().formatText(option.name)"/>
                             </SelectItemText>
                         </SelectItem>
                     </SelectGroup>
