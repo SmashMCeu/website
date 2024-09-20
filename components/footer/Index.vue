@@ -16,13 +16,13 @@
         <div class="flex md:gap-10 gap-4 md:flex-row flex-col *:flex *:flex-col">
             <div>
                 <p class="text-textColorLight font-bold text-lg">Nützliche Links</p>
-                <NuxtLink to="/guides/map_guide" class="text-textColor">Wie baut man eine Map</NuxtLink>
-                <NuxtLink to="/guides/entertainer_anforderungen" class="text-textColor">Bewerbung als Entertainer</NuxtLink>
-                <NuxtLink to="/guides/partner_anforderungen" class="text-textColor">Bewerbung als Partner</NuxtLink>
+                <FooterLink to="/guides/map_guide">Wie baut man eine Map</FooterLink>
+                <FooterLink to="/guides/entertainer_anforderungen">Bewerbung als Entertainer</FooterLink>
+                <FooterLink to="/guides/partner_anforderungen">Bewerbung als Partner</FooterLink>
             </div>
             <div>
                 <p class="text-textColorLight font-bold text-lg">Rechtliches</p>
-                <NuxtLink to="/imprint" class="text-textColor">Impressum & Datenschutz</NuxtLink>
+                <FooterLink to="/imprint">Impressum & Datenschutz</FooterLink>
             </div>
         </div>
 
