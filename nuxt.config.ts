@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         collections: {
             guides: "guides",
             activeGuides: "active_guides",
-            qna: "q_and_a",
+            faq: "faq",
             rules: "rules",
             characters: "characters",
             character_previews: "character_previews",

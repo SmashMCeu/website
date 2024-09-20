@@ -1,4 +1,4 @@
-interface QnA {
+interface FAQ {
     collectionId: string,
     collectionName: string,
     id: string,

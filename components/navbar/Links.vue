@@ -11,9 +11,9 @@
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:earth-outline"/>
         Maps
     </NuxtLink>
-    <NuxtLink to="/guides">
+    <NuxtLink to="/faq">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:document-add-outline"/>
-        Guides
+        FAQ
     </NuxtLink>
     <NuxtLink to="/rules">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:book-bookmark-minimalistic-outline"/>

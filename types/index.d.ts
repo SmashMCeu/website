@@ -16,7 +16,7 @@ declare module 'nuxt/schema' {
             collections: {
                 guides: string
                 activeGuides: string
-                qna: string,
+                faq: string,
                 rules: string,
                 characters: string,
                 character_previews: string,

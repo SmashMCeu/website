@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <NuxtLink to="/guides" class="flex gap-2 w-fit items-center pl-4 pr-5 py-2 rounded-lg border-2 border-backgroundColorLight hover:bg-backgroundColorLight transition-colors">
+        <NuxtLink to="/faq" class="flex gap-2 w-fit items-center pl-4 pr-5 py-2 rounded-lg border-2 border-backgroundColorLight hover:bg-backgroundColorLight transition-colors">
             <Icon name="solar:alt-arrow-left-outline" class="mt-[3px]" />
             <p>Back</p>
         </NuxtLink>

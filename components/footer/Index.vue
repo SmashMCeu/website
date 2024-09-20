@@ -16,9 +16,9 @@
         <div class="flex md:gap-10 gap-4 md:flex-row flex-col *:flex *:flex-col">
             <div>
                 <p class="text-textColorLight font-bold text-lg">Nützliche Links</p>
-                <FooterLink to="/guides/map_guide">Wie baut man eine Map</FooterLink>
-                <FooterLink to="/guides/entertainer_anforderungen">Bewerbung als Entertainer</FooterLink>
-                <FooterLink to="/guides/partner_anforderungen">Bewerbung als Partner</FooterLink>
+                <FooterLink to="/faq/map_guide">Wie baut man eine Map</FooterLink>
+                <FooterLink to="/faq/entertainer_anforderungen">Bewerbung als Entertainer</FooterLink>
+                <FooterLink to="/faq/partner_anforderungen">Bewerbung als Partner</FooterLink>
             </div>
             <div>
                 <p class="text-textColorLight font-bold text-lg">Rechtliches</p>

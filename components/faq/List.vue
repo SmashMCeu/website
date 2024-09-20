@@ -28,7 +28,7 @@
 </template>
 <script lang="ts" setup>
     
-    const data: Ref<QnA[]> = ref(await useSmashQnA().getFullQnA());
+    const data: Ref<FAQ[]> = ref(await useSmashFAQ().getFullFAQ());
     const accordionItems = data.value.map((item, index) => {
         return {
             title: item.question,

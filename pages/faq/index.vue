@@ -2,11 +2,11 @@
     <div class="flex flex-col items-center gap-24 *:max-w-[75rem] *:w-full">
         
         <div>
-            <UtilTitle subtitle="Q&A" title="You have any questions? Here are the answers" />
+            <UtilTitle subtitle="FAQ" title="Du hast Fragen? Hier sind die Antworten!" />
             <div class="mt-10">
                 <Suspense>
                     <template #default>
-                        <QnaList />
+                        <FaqList />
                     </template>
                     <template #fallback>
                         <div class="h-24 rounded-lg bg-backgroundColorLight animate-pulse"></div>
@@ -16,7 +16,7 @@
         </div>
 
         <div>
-            <UtilTitle subtitle="GUIDES" title="Take a look at useful guides:" />
+            <UtilTitle subtitle="GUIDES" title="Ein paar nützliche Guides" />
             <div class="mt-10">
                 <Suspense>
                     <template #default>
@@ -35,9 +35,9 @@
 <script setup lang="ts">
 
     useSeoMeta({
-        title: "SmashMC | Q&A and Guides", 
-        ogTitle: "SmashMC | Q&A and Guides",
-        description: "Any questions? Here are the answers. Take a look at useful guides on SmashMC.",
+        title: "SmashMC | FAQ und Guides", 
+        ogTitle: "SmashMC | FAQ und Guides",
+        description: "Irgendwelche Fragen? Hier findest du eine Antwort. Take a look at useful guides on SmashMC.",
         ogDescription: "Any questions? Here are the answers. Take a look at useful guides on SmashMC.",
         ogType: "website",
         twitterCard: "summary_large_image",
