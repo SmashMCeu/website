@@ -1,6 +1,6 @@
 export const useBasicMinecraftUser = () => {
 
-    const mojangApi = "https://sessionserver.mojang.com/session/minecraft/profile/";
+    const mojangApi = "https://crafthead.net/profile/";
     
 
 
