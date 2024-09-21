@@ -6,5 +6,5 @@ const props = defineProps<{
 </script>
 
 <template>
-    <NuxtLink :to="to" class="text-textColor/80 transition hover:text-textColor/60"><slot /></NuxtLink>
+    <NuxtLink :to="to" class="text-textColor/80 transition-colors sm:hover:text-textColor/60"><slot /></NuxtLink>
 </template>
