@@ -1,6 +1,6 @@
 <template>
-    <div class="pb-12 flex flex-col" :class="orientation == 'left' ? 'items-start' : (orientation == 'middle' ? 'items-center' : 'items-end')">
-        <p class="text-primary font-bold tracking-wide">{{ subtitle }}</p>
+    <div class="pb-12 flex flex-col gap-1" :class="orientation == 'left' ? 'items-start' : (orientation == 'middle' ? 'items-center' : 'items-end')">
+        <p class="text-primary text-lg font-bold tracking-wide">{{ subtitle }}</p>
         <p class="text-textColorLight text-3xl font-bold"
             :class="orientation == 'left' ? 'text-start' : (orientation == 'middle' ? 'text-center' : 'text-end')">
             {{ title }}
