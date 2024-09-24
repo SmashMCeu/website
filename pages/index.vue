@@ -2,7 +2,7 @@
     <div class="flex flex-col gap-24 mt-20">
 
         <div class="w-full flex flex-col items-center">
-            <UtilTitle subtitle="SMASH" title="Monthly Top 5" />
+            <UtilTitle subtitle="SMASH" title="Top 5 Spieler - Monatlich" />
             <Suspense>
                 <template #default>
                     <TopFivePlayers />
@@ -13,11 +13,14 @@
             </Suspense>
         </div>
         
+        
+        <div>
+            <UtilTitle subtitle="MINISPIELE" title="Spielspaß garantiert" />
+            <Gamemodes />
+        </div>
 
-        <UtilTitle subtitle="SUBTITLE" title="Title Lorem Ipsum dolor sit amet" />
-        <UtilTitle subtitle="SubTitle222" title="222Title Lorem Ipsum dolor sit amet" orientation="left"/>
-        <UtilTitle subtitle="SubTitle333" title="333Title Lorem Ipsum dolor sit amet" orientation="right"/>
-    
+
+        <div class="mt-40"></div>
     </div>
 </template>
 <script setup lang=ts>
