@@ -22,6 +22,7 @@ declare module 'nuxt/schema' {
                 character_previews: string,
                 maps: string,
                 skins: string,
+                gamemodes: string,
             },
             rules: {
                 databaseEntryId: string

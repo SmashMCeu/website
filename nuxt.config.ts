@@ -35,7 +35,8 @@ export default defineNuxtConfig({
             characters: "characters",
             character_previews: "character_previews",
             maps: "maps",
-            skins: "skins"
+            skins: "skins",
+            gamemodes: "gamemodes",
         },
         rules: {
             databaseEntryId: "active_rules_de"
