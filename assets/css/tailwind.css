@@ -5,20 +5,24 @@
 @layer base {
   
     body {
-      @apply bg-backgroundColor text-textColor;
+        @apply bg-backgroundColor text-textColor;
     }
     code {
-      @apply before:hidden after:hidden bg-backgroundColorLight p-1 rounded;
+        @apply before:hidden after:hidden bg-backgroundColorLight p-1 rounded;
     }
 
 }
 @layer utilities {
 
     .markdown {
-      @apply max-w-full prose prose-invert prose-sm md:prose-base;
+        @apply max-w-full prose prose-invert prose-sm md:prose-base;
     }
     .center-content {
-      @apply flex items-center justify-center;
+        @apply flex items-center justify-center;
     }
 
+
+    .hide-scrollbar {
+        scrollbar-width: none;
+    }
 }

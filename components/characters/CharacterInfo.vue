@@ -10,7 +10,7 @@
                         const originalEvent = event.detail.originalEvent;
                         const target = originalEvent.target as HTMLElement;
                         if (originalEvent.offsetX > target.clientWidth || originalEvent.offsetY > target.clientHeight) {
-                        event.preventDefault();
+                            event.preventDefault();
                         }
                     }"
                     class="data-[state=open]:animate-dialogContentShow
@@ -31,7 +31,8 @@
                                 <Icon aria-hidden name="solar:close-square-outline" class="size-10"/>
                             </DialogClose>
                         </div>
-                        <div class="flex-grow flex sm:flex-row sm:flex-nowrap flex-wrap gap-8">
+                        <div class="overflow-y-scroll hide-scrollbar
+                                    flex-grow flex sm:flex-row sm:flex-nowrap flex-wrap gap-8">
                             <div class="flex flex-col w-[15rem] max-w-[15rem]">
                                 <div class="rounded-lg bg-backgroundColor/50 overflow-hidden p-4 relative">
                                     <SkinRenderer :skin-image="currentSkin.url" :is-slim="currentSkin.isSlim" :pause-animation="pauseAnimation" />
@@ -51,7 +52,7 @@
                                             <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" class="size-6"/>
                                         </p>
                                     </div>
-                                    <div>
+                                    <div class="pb-4">
                                         <p class="text-textColorLight font-semibold">Cooldown:</p>
                                         <p class="text-primary flex"><Icon name="solar:alarm-outline" class="size-6"/><span class="ml-1 -mt-[1px]">{{ character.cooldown ? character.cooldown : "/" }}</span></p>
                                     </div>
