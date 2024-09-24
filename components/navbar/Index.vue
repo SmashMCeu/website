@@ -1,6 +1,5 @@
 <template>
-    <div 
-        class="fixed z-40 bg-backgroundColorLight w-full lg:px-16 md:px-8 px-4 py-4 transition-all">
+    <div ref="mobileNavbarElement" class="fixed z-40 bg-backgroundColorLight w-full lg:px-16 md:px-8 px-4 py-4 transition-all">
 
         <div class="flex items-center justify-between">
             <div>
@@ -33,6 +32,11 @@
     </div>
 </template>
 <script lang="ts" setup>
+
+    const mobileNavbarElement = ref(null);
+    const t = onClickOutside(mobileNavbarElement, () => {
+        mobileMenuOpen.value = false;
+    })
 
     const maxMobileWidth: number = 640; // tailwindcss sm breakpoint
 
