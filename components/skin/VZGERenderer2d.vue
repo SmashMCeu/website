@@ -5,10 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-    import type { UUID } from '~/types/UUID';
 
     defineProps<{
-        playerUUID: UUID
+        playerUUID: string
     }>();
     
 </script>
