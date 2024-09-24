@@ -15,7 +15,6 @@
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/mdc": "^0.9.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "@vueuse/core": "^11.1.0",
     "nuxt": "^3.13.2",
     "pocketbase": "^0.21.5",
     "radix-vue": "^1.9.6",
@@ -24,6 +23,8 @@
   },
   "devDependencies": {
     "@iconify-json/solar": "^1.2.0",
-    "@tailwindcss/typography": "^0.5.15"
+    "@tailwindcss/typography": "^0.5.15",
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/nuxt": "^11.1.0"
   }
 }
