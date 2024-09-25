@@ -1,6 +1,6 @@
 <template>
    <div class="flex flex-wrap justify-center gap-4">
-        <div class="rounded-lg bg-backgroundColorLight py-4 flex flex-col items-center gap-4" v-for="(player, index) of topFivePlayers" :key="player.uuid">
+        <div data-aos="fade-up" :data-aos-delay="50*index"  class="rounded-lg bg-backgroundColorLight py-4 flex flex-col items-center gap-4" v-for="(player, index) of topFivePlayers" :key="player.uuid">
             <p class="text-xl font-semibold text-nowrap">{{ index + 1 }}. {{ player.name }}</p>
             <!--<LazySkinRenderer :skin-image="player.texture" :is-slim="player.slimSkin" static :userRotate="false" />-->
             <SkinVZGERenderer2d :playerUUID="player.uuid" class="w-[80%] h-[80%]"/>            
