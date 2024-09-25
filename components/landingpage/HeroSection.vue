@@ -5,8 +5,8 @@
             
             <div class="flex items-center">
                 <div data-aos="fade-right" class="md:w-[50%] max-w-[100rem] mx-10 md:mx-20">
-                    <p class="text-4xl sm:text-5xl font-black text-textColorLight">SMASHMC.EU IST KRASS</p>
-                    <p class="mt-2 text-lg sm:text-xl font-semibold text-textColor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vitae maxime, cupiditate illum ipsa nulla quos eligendi impedit dicta nostrum odio natus expedita nam consequatur fugit? Doloremque voluptas repudiandae soluta.</p>
+                    <p class="text-4xl sm:text-5xl font-black text-textColorLight">SMASHMC.EU</p>
+                    <p class="mt-2 text-lg sm:text-xl font-semibold text-textColor">Erlebe Super Smash Bros wie auf der Switch! Mit über 40 Charakteren und 50 einzigartigen Items kannst du in unserem einzigartigen Smash-Modus dein Können zeigen. Mit einer netten Community sowie Events und sogar Verlosungen wird der Spaß sicher kein Ende finden.</p>
                     <div class="mt-8 flex flex-wrap gap-4">
                         <SocialCardMinecraft />
                         <SocialCardDiscord />
