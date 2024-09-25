@@ -10,6 +10,9 @@
     code {
         @apply before:hidden after:hidden bg-backgroundColorLight p-1 rounded;
     }
+    *:focus {
+        @apply outline-none;
+    }
 
 }
 @layer utilities {
