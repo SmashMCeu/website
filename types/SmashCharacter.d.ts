@@ -2,6 +2,7 @@ interface SmashCharacter {
     id: string;
     collectionId: string;
     collectionName: string;
+    position: number;
     skin: string;
     preview: string;
     isSlimSkin: boolean;

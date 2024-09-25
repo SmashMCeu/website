@@ -33,7 +33,7 @@ export const useSmashCharacters = () => {
     async function getAllCharacters(withSkins: boolean): Promise<SmashCharacter[]> {
         try {
             return await pb.collection(charactersCollection).getFullList<SmashCharacter>({ 
-                sort: "name",
+                sort: "position",
                 expand: withSkins ? "skins_via_character" : undefined,
             });
         } catch (error) {
