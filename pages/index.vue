@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-24 mt-20">
+    <div class="flex flex-col gap-24 pt-20">
 
         <div class="w-full flex flex-col items-center">
             <UtilTitle subtitle="SMASH" title="Top 5 Spieler - Monatlich" />
