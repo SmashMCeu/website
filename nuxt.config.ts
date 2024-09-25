@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/mdc',
     '@nuxt/image',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    "nuxt-aos"
   ],
 
   app: {
@@ -54,5 +55,8 @@ export default defineNuxtConfig({
     headings: {
       anchorLinks: false,
     }
+  },
+  aos: {
+    once: true,
   }
 })
