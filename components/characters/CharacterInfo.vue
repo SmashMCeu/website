@@ -52,9 +52,9 @@
                                             <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" class="size-6"/>
                                         </p>
                                     </div>
-                                    <div class="pb-4">
+                                    <div v-if="character.cooldown" class="pb-4">
                                         <p class="text-textColorLight font-semibold">Cooldown:</p>
-                                        <p class="text-primary flex"><Icon name="solar:alarm-outline" class="size-6"/><span class="ml-1 -mt-[1px]">{{ character.cooldown ? character.cooldown : "/" }}</span></p>
+                                        <p class="text-primary flex"><Icon name="solar:alarm-outline" class="size-6"/><span class="ml-1 -mt-[1px]">{{ character.cooldown }}</span></p>
                                     </div>
                                 </div>
                                 <div class="pb-4">
