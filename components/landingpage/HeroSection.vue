@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <div class="w-screen h-screen relative flex items-center justify-center">
+        <div class="w-screen sm:h-screen sm:py-0 py-20 relative flex items-center justify-center">
             <img src="/img/herosection/background.webp" alt="" class="brightness-50 -z-10 w-full h-full fixed object-cover pointer-events-none select-none">
             
             <div class="flex items-center sm:mt-0 mt-10">
