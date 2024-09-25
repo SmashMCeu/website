@@ -2,7 +2,7 @@
     <div class="flex flex-col gap-24 pt-20">
 
         <div class="w-full flex flex-col items-center">
-            <UtilTitle subtitle="SMASH" title="Top 5 Spieler - Monatlich" />
+            <UtilTitle subtitle="SMASH" :title="$t('top_5_title')" />
             <Suspense>
                 <template #default>
                     <TopFivePlayers />
@@ -15,7 +15,7 @@
         
         
         <div>
-            <UtilTitle subtitle="MINISPIELE" title="Spielspaß garantiert" />
+            <UtilTitle subtitle="MINISPIELE" :title="$t('gamemodes_title')" />
             <Suspense>
                 <template #default>
                     <Gamemodes />

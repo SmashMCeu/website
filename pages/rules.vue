@@ -20,7 +20,6 @@
         ogType: "website",
     });
 
+    const { rules } = await useSmashRules().getCurrentlyActiveRules(useI18n().locale.value);
 
-    const { rules } = await useSmashRules().getCurrentlyActiveRules();
-    
 </script>

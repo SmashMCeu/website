@@ -9,9 +9,10 @@ export const useSmashRules = () => {
     const activeRulesId: string = useRuntimeConfig().public.pocketbase.rules.databaseEntryId;
 
 
-    async function getCurrentlyActiveRules(): Promise<Rules> {
+    async function getCurrentlyActiveRules(lang: string): Promise<Rules> {
+        console.log("active_rules_" + lang);
         try {
-            return await pb.collection(rulesCollection).getOne<Rules>(activeRulesId);
+            return await pb.collection(rulesCollection).getOne<Rules>("active_rules_" + lang, );
         } catch (error) {
             createError({
                 statusCode: 500,

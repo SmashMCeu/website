@@ -6,7 +6,7 @@
             <div class="flex items-center sm:mt-0 mt-10">
                 <div data-aos="fade-right" class="md:w-[50%] max-w-[100rem] mx-10 md:mx-20">
                     <p class="text-4xl sm:text-5xl font-black text-textColorLight">SMASHMC.EU</p>
-                    <p class="mt-2 text-lg sm:text-xl font-semibold text-textColor">Erlebe Super Smash Bros wie auf der Switch! Mit über 40 Charakteren und 50 einzigartigen Items kannst du in unserem einzigartigen Smash-Modus dein Können zeigen. Mit einer netten Community sowie Events und sogar Verlosungen wird der Spaß sicher kein Ende finden.</p>
+                    <p class="mt-2 text-lg sm:text-xl font-semibold text-textColor">{{ $t('hero_description') }}</p>
                     <div class="mt-8 flex flex-wrap gap-4">
                         <SocialCardMinecraft />
                         <SocialCardDiscord />

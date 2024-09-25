@@ -17,6 +17,6 @@
     </NuxtLink>
     <NuxtLink to="/rules">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:book-bookmark-minimalistic-outline"/>
-        Regeln
+        {{ $t('rules') }}
     </NuxtLink>
 </template>

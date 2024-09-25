@@ -6,7 +6,7 @@
         </div>
         <div class="px-6 py-4">
             <p class="text-textColorLight font-semibold text-2xl">{{ gamemode.name }}</p>
-            <p class="text-textColor mt-2">{{ gamemode.description }}</p>
+            <p class="text-textColor mt-2">{{ $t(gamemode.description) }}</p>
         </div>
     </div>
 </template>

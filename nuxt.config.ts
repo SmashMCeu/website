@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
     '@nuxt/image',
     '@vueuse/nuxt',
-    "nuxt-aos"
+    "nuxt-aos",
+    "@nuxtjs/i18n"
   ],
 
   app: {
@@ -58,5 +59,18 @@ export default defineNuxtConfig({
   },
   aos: {
     once: true,
+  },
+
+  i18n: {
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    locales: [
+      'de',
+      'en'
+    ],
+    detectBrowserLanguage: {
+      useCookie: false,
+      redirectOn: 'root' // recommended
+    }
   }
 })
