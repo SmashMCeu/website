@@ -16,7 +16,14 @@
         
         <div>
             <UtilTitle subtitle="MINISPIELE" title="Spielspaß garantiert" />
-            <Gamemodes />
+            <Suspense>
+                <template #default>
+                    <Gamemodes />
+                </template>
+                <template #fallback>
+                    <p class="text-xl">Loading...</p>
+                </template>
+            </Suspense>
         </div>
 
 
