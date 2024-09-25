@@ -28,7 +28,7 @@
                                 <p v-if="character.isBetaCharacter" class="mt-1 px-[8px] pt-[2px] pb-[3px] text-sm text-primary border-2 border-primary rounded-lg font-semibold">Beta</p>
                             </div>
                             <DialogClose aria-label="Close" class="text-textColor hover:text-primary transition-colors">
-                                <Icon aria-hidden name="solar:close-square-outline" class="size-10"/>
+                                <Icon aria-hidden name="solar:close-square-outline" class="w-10 h-10"/>
                             </DialogClose>
                         </div>
                         <div class="overflow-y-scroll hide-scrollbar
@@ -37,7 +37,7 @@
                                 <div class="rounded-lg bg-backgroundColor/50 overflow-hidden p-4 relative">
                                     <SkinRenderer :skin-image="currentSkin.url" :is-slim="currentSkin.isSlim" :pause-animation="pauseAnimation" />
                                     <div @click="pauseAnimation = !pauseAnimation" class="absolute top-3 right-3 px-2 py-1 bg-backgroundColorLight hover:bg-backgroundColorLight/75 transition-colors rounded-md cursor-pointer">
-                                        <Icon :size="15" :name="pauseAnimation ? 'solar:play-bold' : 'solar:pause-bold'" class="text-textColor"/>
+                                        <Icon :name="pauseAnimation ? 'solar:play-bold' : 'solar:pause-bold'" class="text-textColor w-4 h-4"/>
                                     </div>
                                 </div>
                                 <div class="mt-2">
@@ -49,12 +49,12 @@
                                     <div class="pb-4 pr-20">
                                         <p class="text-textColorLight font-semibold">Schwierigkeit:</p>
                                         <p class="text-primary">
-                                            <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" :class="[['text-green-400', 'text-yellow-300', 'text-red-500'].at(['easy', 'medium', 'hard'].indexOf(character.difficulty))]" class="size-6"/>
+                                            <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" :class="[['text-green-400', 'text-yellow-300', 'text-red-500'].at(['easy', 'medium', 'hard'].indexOf(character.difficulty))]" class="w-6 h-6"/>
                                         </p>
                                     </div>
                                     <div v-if="character.cooldown" class="pb-4">
                                         <p class="text-textColorLight font-semibold">Cooldown:</p>
-                                        <p class="text-primary flex"><Icon name="solar:alarm-outline" class="size-6"/><span class="ml-1 -mt-[1px]">{{ character.cooldown }}</span></p>
+                                        <p class="text-primary flex"><Icon name="solar:alarm-outline" class="w-6 h-6"/><span class="ml-1 -mt-[1px]">{{ character.cooldown }}</span></p>
                                     </div>
                                 </div>
                                 <div class="pb-4">
