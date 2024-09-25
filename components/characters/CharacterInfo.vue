@@ -49,7 +49,7 @@
                                     <div class="pb-4 pr-20">
                                         <p class="text-textColorLight font-semibold">Schwierigkeit:</p>
                                         <p class="text-primary">
-                                            <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" class="size-6"/>
+                                            <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" :class="[['text-green-400', 'text-yellow-300', 'text-red-500'].at(['easy', 'medium', 'hard'].indexOf(character.difficulty))]" class="size-6"/>
                                         </p>
                                     </div>
                                     <div v-if="character.cooldown" class="pb-4">
