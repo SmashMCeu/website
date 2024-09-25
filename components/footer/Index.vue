@@ -23,6 +23,7 @@
             <div>
                 <p class="text-textColorLight font-bold text-lg">Rechtliches</p>
                 <FooterLink to="/imprint">Impressum & Datenschutz</FooterLink>
+                <FooterLink to="mailto:support@smashmc.eu">Kontaktiere uns</FooterLink>
             </div>
         </div>
 
