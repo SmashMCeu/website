@@ -21,7 +21,7 @@
     <SelectRoot v-model="selected" @update:model-value="val => onUpdate(val)">
         <SelectTrigger class="w-full flex items-center justify-between rounded-lg px-[15px] leading-none bg-backgroundColor/50 hover:bg-backgroundColor/75 transition-colors">
             <SelectValue class="ml-2 select-none cursor-pointer flex items-center gap-4 py-4 relative hover:bg-backgroundColorLight/75 transition-colors rounded" />
-            <Icon name="solar:alt-arrow-down-bold" class="text-textColor/75"/>
+            <Icon size="16" name="solar:alt-arrow-down-bold" class="text-textColor/50"/>
         </SelectTrigger>
 
         <SelectPortal>
@@ -30,7 +30,7 @@
                 :side-offset="1"
             >
                 <SelectScrollUpButton class="flex items-center justify-center h-[25px] bg-backgroundColor text-textColor/75">
-                    <Icon name="solar:alt-arrow-up-bold" />
+                    <Icon size="16" name="solar:alt-arrow-up-bold" />
                 </SelectScrollUpButton>
 
                 <SelectViewport class="p-2">
@@ -42,7 +42,7 @@
                             class="select-none cursor-pointer flex gap-2 py-2 relative hover:bg-backgroundColorLight/75 transition-colors rounded"
                         >
                             <SelectItemIndicator class="absolute mt-[2px]">
-                                <Icon name="solar:alt-arrow-right-bold" :size="16" class="text-textColor/75" />
+                                <Icon name="solar:alt-arrow-right-bold" size="16" class="text-textColor/50" />
                             </SelectItemIndicator>
                             <SelectItemText class="ml-6 flex gap-4 items-center flex-grow">
                                 <SkinHeadRenderer :skin-url="option.url" />
@@ -53,7 +53,7 @@
                 </SelectViewport>
 
                 <SelectScrollDownButton class="flex items-center justify-center h-[25px] bg-backgroundColor text-textColor/75">
-                    <Icon name="solar:alt-arrow-down-bold" />
+                    <Icon size="16" name="solar:alt-arrow-down-bold" />
                 </SelectScrollDownButton>
             </SelectContent>
         </SelectPortal>

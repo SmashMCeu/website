@@ -72,5 +72,11 @@ export default defineNuxtConfig({
       useCookie: false,
       redirectOn: 'root' // recommended
     }
+  },
+  icon: {
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 256,
+    }
   }
 })

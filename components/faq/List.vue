@@ -12,8 +12,9 @@
                     <AccordionHeader class="flex">
                         <AccordionTrigger class="md:text-base text-sm text-start rounded data-[state=open]:text-primary text-textColorLight hover:bg-backgroundColorLight/75 transition-colors duration-300 flex flex-1 cursor-pointer items-center gap-2 bg-backgroundColorLight md:py-5 py-4 md:px-5 px-3 text-[15px] leading-none outline-none group">
                             <Icon
+                                size="20"
                                 name="solar:alt-arrow-down-outline"
-                                class="mt-[2px] w-5 h-5 text-green10 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-180"
+                                class="mt-[2px] text-green10 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-180"
                             />
                             <span>{{ item.title }}</span>
                         </AccordionTrigger>
