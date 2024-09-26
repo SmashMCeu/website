@@ -2,7 +2,7 @@ export default defineI18nConfig(() => ({
     legacy: false,
     messages: {
         de: {
-            hero_description: 'Erlebe Smash mit über 40 Charakteren und 50 einzigartigen Items kannst du in unserem einzigartigen Smash-Modus dein Können zeigen. Mit einer netten Community sowie Events und sogar Verlosungen wird der Spaß sicher kein Ende finden.',
+            hero_description: 'Erlebe Smash mit über 40 Charakteren und 50 einzigartigen Items! Kannst du in unserem einzigartigen Smash-Modus dein Können zeigen? Mit einer netten Community sowie Events und sogar Verlosungen wird der Spaß sicher kein Ende finden.',
             top_5_title: 'Top 5 Spieler - Monatlich',
             gamemodes_title: 'Spielspaß garantiert',
             "In diesem Spielmodus kannst du mit deinem Lieblingscharakteren gegen andere Spieler mit besonderen Items und Fähigkeiten kämpfen. Versuche deine Gegner von der Welt zu schlagen und nutze deine Fähigkeit und gesammelten Items zu deinem Vorteil!": "In diesem Spielmodus kannst du mit deinem Lieblingscharakteren gegen andere Spieler mit besonderen Items und Fähigkeiten kämpfen. Versuche deine Gegner von der Welt zu schlagen und nutze deine Fähigkeit und gesammelten Items zu deinem Vorteil!",
@@ -15,10 +15,13 @@ export default defineI18nConfig(() => ({
             useful_links_map_guide: "Wie baut man eine Map",
             useful_links_entertainer: "Bewerbung als Entertainer",
             useful_links_partner: "Bewerbung als Partner",
-            rules: "Regeln"
+            rules: "Regeln",
+            character_difficulty: "Schwierigkeit",
+            character_cooldown: "Abklingzeit",
+            character_description: "Beschreibung",
         },
         en: {
-            hero_description: 'Experience Smash with over 40 characters and 50 unique items, where you can showcase your skills in our exclusive Smash mode. With a friendly community, events, and even giveaways, the fun will never end.',
+            hero_description: 'Experience Smash with over 40 characters and 50 unique items! Can you prove your skills in our exclusive Smash mode? With a friendly community, events, and even giveaways, the fun is sure to never end.',
             top_5_title: 'Top 5 Player - Monthly',
             gamemodes_title: 'Fun guaranteed',
             "In diesem Spielmodus kannst du mit deinem Lieblingscharakteren gegen andere Spieler mit besonderen Items und Fähigkeiten kämpfen. Versuche deine Gegner von der Welt zu schlagen und nutze deine Fähigkeit und gesammelten Items zu deinem Vorteil!": "In this game mode, you can fight against other players with your favorite characters, using special items and abilities. Try to knock your opponents out of the world and use your abilities and collected items to your advantage!",
@@ -31,7 +34,10 @@ export default defineI18nConfig(() => ({
             useful_links_map_guide: "How to create a map",
             useful_links_entertainer: "Application as Entertainer",
             useful_links_partner: "Application as Partner",
-            rules: "Rules"
+            rules: "Rules",
+            character_difficulty: "Difficulty",
+            character_cooldown: "Cooldown",
+            character_description: "Description",
         }
     }
 }))

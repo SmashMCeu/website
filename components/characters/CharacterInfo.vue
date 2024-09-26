@@ -47,18 +47,18 @@
                             <div class="flex-grow">
                                 <div class="sm:pb-4 pb-0 flex sm:flex-col flex-row flex-wrap">
                                     <div class="pb-4 pr-20 flex flex-col gap-2">
-                                        <p class="text-textColorLight font-semibold">Schwierigkeit:</p>
+                                        <p class="text-textColorLight font-semibold">{{ $t('character_difficulty') }}:</p>
                                         <p class="text-primary">
                                             <Icon v-for="i in 3" :key="i" :name="i - 1 <= ['easy', 'medium', 'hard'].indexOf(character.difficulty) ? 'solar:star-bold' : 'solar:star-outline'" :class="[['text-green-400', 'text-yellow-300', 'text-red-500'].at(['easy', 'medium', 'hard'].indexOf(character.difficulty))]" size="24"/>
                                         </p>
                                     </div>
                                     <div v-if="character.cooldown" class="pb-4 flex flex-col gap-2">
-                                        <p class="text-textColorLight font-semibold">Cooldown:</p>
+                                        <p class="text-textColorLight font-semibold">{{ $t('character_cooldown') }}:</p>
                                         <p class="text-primary flex"><Icon name="solar:alarm-outline" size="24"/><span class="ml-1 -mt-[1px]">{{ character.cooldown }}</span></p>
                                     </div>
                                 </div>
                                 <div class="pb-4">
-                                    <p class="text-textColorLight font-semibold">Description:</p>
+                                    <p class="text-textColorLight font-semibold">{{ $t('character_description') }}:</p>
                                     <p class="text-textColor">{{ character.description }}</p>
                                 </div>
                             </div>
