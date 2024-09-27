@@ -21,7 +21,7 @@
 
     function getLastModified() {
         if (guide === null) return "";
-        return new Date(guide.updated).toLocaleString("de-DE", {
+        return new Date(guide.updated).toLocaleString(useI18n().locale.value, {
             year: "numeric",
             month: "2-digit",
             day: "2-digit",
