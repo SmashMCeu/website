@@ -6,21 +6,19 @@ export const useSmashRules = () => {
     const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
 
     const rulesCollection = useRuntimeConfig().public.pocketbase.collections.rules;
-    const activeRulesId: string = useRuntimeConfig().public.pocketbase.rules.databaseEntryId;
 
 
     async function getCurrentlyActiveRules(lang: string): Promise<Rules> {
-        console.log("active_rules_" + lang);
         try {
-            return await pb.collection(rulesCollection).getOne<Rules>("active_rules_" + lang, );
+            return await pb.collection(rulesCollection).getOne<Rules>("active_rules_" + lang);
         } catch (error) {
             createError({
                 statusCode: 500,
-                message: "Failed to fetch rules! Please contact the site administrator immediately!",
+                message: "Failed to fetch rules!",
             });
             showError({
                 statusCode: 500,
-                message: "Failed to fetch rules! Please contact the site administrator immediately!",
+                message: "Failed to fetch rules!",
             });
             return {} as Rules;
         }
