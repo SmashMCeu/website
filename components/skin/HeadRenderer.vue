@@ -1,11 +1,11 @@
 <template>
-    <div class="relative w-[8px] aspect-square scale-[250%]">
+    <div class="relative w-[64px] aspect-square">
         
         <div :style="{ backgroundImage: `url(${skinUrl})` }"
-            class="minecraftHead baseLayer w-[8px] aspect-square absolute">
+            class="minecraftHead baseLayer aspect-square absolute">
         </div>
         <div :style="{ backgroundImage: `url(${skinUrl})` }"
-            class="minecraftHead secondLayer w-[8px] aspect-square absolute">
+            class="minecraftHead secondLayer aspect-square absolute">
         </div>
 
     </div>
@@ -13,15 +13,17 @@
 <style scoped>
 
     .minecraftHead {
-        background-size: 64px;
+        width: 100%;
+        height: 100%;
+        background-size: 800%;
         image-rendering: pixelated;
         background-repeat: no-repeat;
     }
     .baseLayer {
-        background-position: -8px -8px;
+        background-position: calc(8/56 * 100%) calc(8/56 * 100%);
     }
     .secondLayer {
-        background-position: -40px -8px;
+        background-position: calc(40/56 * 100%) calc(8/56 * 100%);
     }
 
 </style>

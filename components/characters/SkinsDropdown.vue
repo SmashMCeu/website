@@ -20,7 +20,7 @@
 <template>
     <SelectRoot v-model="selected" @update:model-value="val => onUpdate(val)">
         <SelectTrigger class="w-full flex items-center justify-between rounded-lg px-[15px] leading-none bg-backgroundColor/50 hover:bg-backgroundColor/75 transition-colors">
-            <SelectValue class="ml-2 select-none cursor-pointer flex items-center gap-4 py-4 relative hover:bg-backgroundColorLight/75 transition-colors rounded" />
+            <SelectValue class="select-none cursor-pointer flex items-center gap-3 py-3 relative hover:bg-backgroundColorLight/75 transition-colors rounded" />
             <Icon size="16" name="solar:alt-arrow-down-bold" class="text-textColor/50"/>
         </SelectTrigger>
 
@@ -44,8 +44,8 @@
                             <SelectItemIndicator class="absolute mt-[2px]">
                                 <Icon name="solar:alt-arrow-right-bold" size="16" class="text-textColor/50" />
                             </SelectItemIndicator>
-                            <SelectItemText class="ml-6 flex gap-4 items-center flex-grow">
-                                <SkinHeadRenderer :skin-url="option.url" />
+                            <SelectItemText class="ml-6 flex gap-3 items-center flex-grow">
+                                <SkinHeadRenderer class="w-[24px] rounded-sm overflow-hidden" :skin-url="option.url" />
                                 <p v-html="useMinecraftFormatting().formatText(option.name)"></p>
                             </SelectItemText>
                         </SelectItem>
