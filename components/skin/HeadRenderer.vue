@@ -1,11 +1,11 @@
 <template>
     <div class="relative aspect-square">
         
-        <div :style="{ backgroundImage: `url(${skinUrl})` }"
-            class="minecraftHead baseLayer aspect-square absolute">
+        <div :style="baseLayerStyle"
+            class="minecraftHead aspect-square absolute">
         </div>
-        <div :style="{ backgroundImage: `url(${skinUrl})` }"
-            class="minecraftHead secondLayer aspect-square absolute">
+        <div :style="secondLayerStyle"
+            class="minecraftHead aspect-square absolute">
         </div>
 
     </div>
@@ -19,18 +19,41 @@
         image-rendering: pixelated;
         background-repeat: no-repeat;
     }
-    .baseLayer {
-        background-position: calc(8/56 * 100%) calc(8/56 * 100%);
-    }
-    .secondLayer {
-        background-position: calc(40/56 * 100%) calc(8/56 * 100%);
-    }
+    
 
 </style>
 <script lang="ts" setup>
     
-    defineProps<{
+    const props = defineProps<{
         skinUrl: string
     }>();
+
+    async function checkSlimSkin() {
+        const img = new Image();
+        img.src = props.skinUrl;
+        await img.decode();
+        console.log(img.src, img.width);
+        
+        isSlimSkin.value = img.height === 32;
+    }
+
+    const isSlimSkin = ref(false);
+    onMounted(() => checkSlimSkin());
+
+    
+    const baseLayerStyle = computed(() => {
+        return {
+            backgroundImage: `url(${props.skinUrl})`,
+            backgroundPosition: isSlimSkin.value ? 'calc(8/56 * 100%) calc(8/24 * 100%)' : 'calc(8/56 * 100%) calc(8/56 * 100%)',
+        }
+    });
+    const secondLayerStyle = computed(() => {
+        return {
+            backgroundImage: `url(${props.skinUrl})`,
+            backgroundPosition: isSlimSkin.value ? 'calc(40/56 * 100%) calc(8/24 * 100%)' : 'calc(40/56 * 100%) calc(8/56 * 100%)',
+        }
+    });
+
+
 
 </script>
