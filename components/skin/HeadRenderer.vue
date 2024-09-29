@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-[64px] aspect-square">
+    <div class="relative aspect-square">
         
         <div :style="{ backgroundImage: `url(${skinUrl})` }"
             class="minecraftHead baseLayer aspect-square absolute">
