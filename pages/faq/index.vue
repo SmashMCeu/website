@@ -37,7 +37,7 @@
     useSeoMeta({
         title: "SmashMC | FAQ und Guides", 
         ogTitle: "SmashMC | FAQ und Guides",
-        description: "Irgendwelche Fragen? Hier findest du eine Antwort. Take a look at useful guides on SmashMC.",
+        description: "Any questions? Here are the answers. Take a look at useful guides on SmashMC.",
         ogDescription: "Any questions? Here are the answers. Take a look at useful guides on SmashMC.",
         ogType: "website",
         twitterCard: "summary_large_image",

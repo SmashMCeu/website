@@ -21,4 +21,12 @@
     const admins = computed(() => team.value.filter(member => member.isAdmin));
     const staff = computed(() => team.value.filter(member => !member.isAdmin));
 
+    useSeoMeta({
+        title: "SmashMC | Team",
+        ogTitle: "SmashMC | Team",
+        description: "Meet the team behind SmashMC. Here you can find a list of all our staff members and administrators.",
+        ogDescription: "Meet the team behind SmashMC. Here you can find a list of all our staff members and administrators.",
+        ogType: "website",
+    });
+
 </script>
