@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        <UtilTitle title="Staff:" subtitle="" orientation="left" class="mt-24"/>
+        <UtilTitle title="Staffs:" subtitle="" orientation="left" class="mt-24"/>
         <div class="flex flex-col sm:items-start items-center gap-4">
             <div v-for="staff of staff" class="w-full">
                 <TeamCard :teamMember="staff" />
