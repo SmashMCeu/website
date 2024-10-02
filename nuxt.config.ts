@@ -38,7 +38,8 @@ export default defineNuxtConfig({
             character_previews: "character_previews",
             maps: "maps",
             skins: "skins",
-            gamemodes: "gamemodes"
+            gamemodes: "gamemodes",
+            teamMembers: "team_members"
         }
       }
     }

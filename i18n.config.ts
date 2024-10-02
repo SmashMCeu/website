@@ -19,6 +19,10 @@ export default defineI18nConfig(() => ({
             character_difficulty: "Schwierigkeit",
             character_cooldown: "Abklingzeit",
             character_description: "Beschreibung",
+            teamlist_joined_at: "Beigetreten:",
+            teamlist_inteam_since_years: "Jahre",
+            teamlist_inteam_since_months: "Monate",
+            teamlist_inteam_since_days: "Tage",
         },
         en: {
             hero_description: 'Experience Smash with over 40 characters and 50 unique items! Can you prove your skills in our exclusive Smash mode? With a friendly community, events, and even giveaways, the fun is sure to never end.',
@@ -38,6 +42,10 @@ export default defineI18nConfig(() => ({
             character_difficulty: "Difficulty",
             character_cooldown: "Cooldown",
             character_description: "Description",
+            teamlist_joined_at: "Joined at:",
+            teamlist_inteam_since_years: "Years",
+            teamlist_inteam_since_months: "Months",
+            teamlist_inteam_since_days: "Days",
         }
     }
 }))
