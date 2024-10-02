@@ -5,7 +5,7 @@
     </NuxtLink>
     <NuxtLink to="/characters">
         <Icon class="lg:inline hidden mt-[2px]" size="20" name="solar:people-nearby-linear"/>
-        Characters
+        {{ $t('characters') }}
     </NuxtLink>
     <NuxtLink to="/maps">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:earth-outline"/>
@@ -14,6 +14,10 @@
     <NuxtLink to="/faq">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:document-add-outline"/>
         FAQ
+    </NuxtLink>
+    <NuxtLink to="/team">
+        <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:users-group-rounded-outline"/>
+        Team
     </NuxtLink>
     <NuxtLink to="/rules">
         <Icon class="lg:inline hidden mt-[3px]" size="20" name="solar:book-bookmark-minimalistic-outline"/>
