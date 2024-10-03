@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-backgroundColorLight rounded-2xl flex justify-between gap-8 overflow-hidden relative w-full">
+    <div class="bg-backgroundColorLight rounded-2xl flex sm:justify-between justify-center gap-8 overflow-hidden relative w-full">
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-2">
             <SkinHeadRenderer class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden" :skin-url="minecraftUser.texture"/>
             <div class="flex flex-col items-center sm:items-start">
