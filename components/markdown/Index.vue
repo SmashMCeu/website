@@ -7,6 +7,8 @@
 <script lang="ts" setup>
     import type { MDCParserResult } from '@nuxtjs/mdc';
 
+
+    // Local markdown can cause errors! I don't know why, but it does sometimes.
     const props = withDefaults(
             defineProps<{
             path: string,
