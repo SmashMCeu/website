@@ -8,7 +8,7 @@
                 <div class="mt-2 flex flex-wrap sm:justify-start justify-center max-w-[20rem] gap-1">
                     <div v-for="domain of domains" class="text-backgroundColorLight flex items-center justify-center py-[4px] px-[8px] gap-1 bg-green-400/90 rounded-md">
                         <Icon :name="domain.icon" :size="15"/>
-                        <p class="text-sm -mt-[2px]">{{ domain.name }}</p>
+                        <p class="text-[12px] -mt-[2px]">{{ domain.name }}</p>
                     </div>
                 </div>
             </div>

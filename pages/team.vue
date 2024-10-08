@@ -1,14 +1,14 @@
 <template>
-    <div class="flex flex-col items-center sm:items-start">
+    <div class="flex flex-col items-center -ml-[5%] w-[110%]">
         <UtilTitle title="Admins:" subtitle="" orientation="left"/>
-        <div class="flex flex-col sm:items-start items-center gap-4">
+        <div class="grid 2xl:grid-cols-2 sm:items-start items-center gap-4">
             <div v-for="admin of admins" class="w-full">
                 <TeamCard :teamMember="admin" />
             </div>
         </div>
 
         <UtilTitle title="Staffs:" subtitle="" orientation="left" class="mt-24"/>
-        <div class="flex flex-col sm:items-start items-center gap-4">
+        <div class="grid 2xl:grid-cols-2 sm:items-start items-center gap-4">
             <div v-for="staff of staff" class="w-full">
                 <TeamCard :teamMember="staff" />
             </div>
@@ -20,6 +20,7 @@
     const team = ref(await useTeamMembers().getAllTeamMembers());
     const admins = computed(() => team.value.filter(member => member.isAdmin));
     const staff = computed(() => team.value.filter(member => !member.isAdmin));
+
 
     useSeoMeta({
         title: "SmashMC | Team",
