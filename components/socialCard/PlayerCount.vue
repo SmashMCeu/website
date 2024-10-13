@@ -5,7 +5,28 @@
         </template>
         <template #content>
             <p class="text-textColor">Players:</p>
-            <p class="font-bold text-xl leading-3 text-textColorLight">35 online</p>
+            <p class="font-bold text-xl leading-3 text-textColorLight">{{ onlinePlayers }} online</p>
         </template>
     </SocialCardBase>
 </template>
+<script lang="ts" setup>
+
+    const onlinePlayers: Ref<number> = ref(0);
+
+    
+    async function getPlayerCount(): Promise<number> {
+        return await useMinecraftServerStatus().getPlayerCount();
+    }
+
+    function updatePlayerCount() {
+        getPlayerCount().then((count) => {
+            onlinePlayers.value = count;
+        });
+    }
+
+    onMounted(() => {
+        updatePlayerCount();
+        setInterval(updatePlayerCount, 10 * 1000);
+    });
+
+</script>

@@ -16,6 +16,7 @@
     "@nuxtjs/i18n": "^8.5.5",
     "@nuxtjs/mdc": "^0.9.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "node-mcstatus": "^1.2.1",
     "nuxt": "^3.13.2",
     "nuxt-aos": "^1.2.5",
     "pocketbase": "^0.21.5",

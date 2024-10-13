@@ -9,6 +9,7 @@
                     <p class="mt-2 text-lg sm:text-xl font-semibold text-textColor">{{ $t('hero_description') }}</p>
                     <div class="mt-8 flex flex-wrap gap-4">
                         <SocialCardMinecraft />
+                        <SocialCardPlayerCount />
                         <SocialCardDiscord />
                     </div>
                 </div>
