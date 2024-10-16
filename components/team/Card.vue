@@ -1,11 +1,11 @@
 <template>
-    <div class="bg-backgroundColorLight rounded-2xl flex sm:justify-between justify-center gap-8 overflow-hidden relative w-full">
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-2">
+    <div class="bg-backgroundColorLight rounded-2xl flex flex-col sm:flex-row sm:justify-between justify-center gap-3 sm:gap-8 overflow-hidden relative w-full">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 py-3 sm:p-2">
             <SkinHeadRenderer class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden" :skin-url="minecraftUser.texture"/>
             <div class="flex flex-col items-center sm:items-start">
-                <p class="text-xl text-textColorLight font-bold">{{ minecraftUser.name }}</p>
-                <p class="text-sm text-textColor/75 font-medium">{{ $t("teamlist_joined_at") }} {{ useUtils().formatDateWithoutTime(joinDate) }}</p>
-                <div class="mt-2 flex flex-wrap sm:justify-start justify-center max-w-[20rem] gap-1">
+                <p class="text-xl text-textColorLight text-center font-bold">{{ minecraftUser.name }}</p>
+                <p class="text-sm -mt-1 text-textColor/75 text-center font-medium">{{ $t("teamlist_joined_at") }} {{ useUtils().formatDateWithoutTime(joinDate) }}</p>
+                <div class="mt-3 flex flex-wrap sm:justify-start justify-center max-w-[15rem] sm:max-w-[20rem] gap-1">
                     <div v-for="domain of domains" class="text-backgroundColorLight flex items-center justify-center py-[4px] px-[8px] gap-1 bg-green-400/90 rounded-md">
                         <Icon :name="domain.icon" :size="15"/>
                         <p class="text-[12px] -mt-[2px]">{{ domain.name }}</p>
@@ -13,8 +13,8 @@
                 </div>
             </div>
         </div>
-        <div class="self-end backdrop-brightness-150 rounded-tl-2xl p-1 px-3
-                    hidden sm:flex items-center justify-center gap-4">
+        <div class="self-end backdrop-brightness-150 rounded-t-xl sm:rounded-tl-2xl sm:rounded-tr-none py-[6px] sm:py-1 px-6 w-full sm:w-fit
+                    flex items-center justify-center gap-4">
             <div class="flex flex-col items-center">
                 <p class="font-bold text-xl">{{ inTeamSinceYears }}</p>
                 <p class="font-medium text-sm -mt-1">{{ $t("teamlist_inteam_since_years") }}</p>
