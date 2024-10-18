@@ -32,7 +32,6 @@
         const img = new Image();
         img.src = props.skinUrl;
         await img.decode();
-        console.log(img.src, img.width);
         
         isSlimSkin.value = img.height === 32;
     }
