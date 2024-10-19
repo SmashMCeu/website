@@ -6,10 +6,7 @@
                 <p class="text-xl text-textColorLight text-center font-bold">{{ minecraftUser.name }}</p>
                 <p class="text-sm -mt-1 text-textColor/75 text-center font-medium">{{ $t("teamlist_joined_at") }} {{ useUtils().formatDateWithoutTime(joinDate) }}</p>
                 <div class="mt-3 flex flex-wrap sm:justify-start justify-center max-w-[15rem] sm:max-w-[20rem] gap-1">
-                    <div v-for="domain of domains" class="text-backgroundColorLight flex items-center justify-center py-[4px] px-[8px] gap-1 bg-green-400/90 rounded-md">
-                        <Icon :name="domain.icon" :size="15"/>
-                        <p class="text-[12px] -mt-[2px]">{{ domain.name }}</p>
-                    </div>
+                    <TeamDomainTag v-for="domain of domains" :domain="domain" />
                 </div>
             </div>
         </div>
