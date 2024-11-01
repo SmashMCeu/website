@@ -12,12 +12,12 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      registry: registry.smashmc.eu
+      registry: ghcr.io
       username:
-        from_secret: registry_username
+        from_secret: new_registry_username
       password:
-        from_secret: registry_password
-      repo: registry.smashmc.eu/nuxt-website
+        from_secret: new_registry_password
+      repo: ghcr.io/smashmceu/nuxt-website
       tags:
         - latest
       dockerfile: ./Dockerfile
