@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 
 export const useSmashGuides = () => {
 
-    // vs doesn't always import the type correctly...
+    // vsc doesn't always import the type correctly...
     const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
     
     const activeGuidesCollection = useRuntimeConfig().public.pocketbase.collections.activeGuides;

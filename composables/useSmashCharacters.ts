@@ -3,7 +3,7 @@ import PocketBase from "pocketbase";
 export const useSmashCharacters = () => {
 
 
-    // vs doesn't always import the type correctly...
+    // vsc doesn't always import the type correctly...
     const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
 
     const charactersCollection = useRuntimeConfig().public.pocketbase.collections.characters;

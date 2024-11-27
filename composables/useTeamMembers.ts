@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 
 export const useTeamMembers = () => {
 
-    // vs doesn't always import the type correctly...
+    // vsc doesn't always import the type correctly...
     const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
 
     const teamMembersCollection = useRuntimeConfig().public.pocketbase.collections.teamMembers;
