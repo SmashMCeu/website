@@ -24,6 +24,14 @@ export default {
           from: { opacity: 0, transform: 'translate(-50%, -50%) scale(0.96)' },
           to: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
         },
+        dialogOverlayHide: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
+        dialogContentHide: {
+          from: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
+          to: { opacity: 0, transform: 'translate(-50%, -50%) scale(0.96)' },
+        },
         
         accordionSlideDown: {
           from: { height: 0 },
@@ -35,8 +43,10 @@ export default {
         },
       },
       animation: {
-        dialogOverlayShow: 'dialogOverlayShow 150ms ease-out',
-        dialogContentShow: 'dialogContentShow 150ms ease-out',
+        dialogOverlayShow: 'dialogOverlayShow 200ms ease-out',
+        dialogContentShow: 'dialogContentShow 200ms ease-out',
+        dialogOverlayHide: 'dialogOverlayHide 200ms ease-in',
+        dialogContentHide: 'dialogContentHide 200ms ease-in',
 
         accordionSlideDown: 'accordionSlideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
         accordionSlideUp: 'accordionSlideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
