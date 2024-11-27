@@ -2,7 +2,7 @@
     <div>
         <Suspense>
             <template #default>
-                <CharactersGird />
+                <CharactersGrid />
             </template>
             <template #fallback>
                 <div class="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
