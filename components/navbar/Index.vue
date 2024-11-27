@@ -9,7 +9,7 @@
             </div>
 
             <div class="sm:flex hidden gap-4
-                hover:*:bg-white/5 *:transition-colors *:py-3 md:*:px-6 *:px-3 *:rounded-lg *:flex *:items-center *:gap-2">
+                hover:*:bg-white/5 *:transition-colors md:*:py-3 *:py-2 md:*:px-4 *:px-3 *:rounded-lg *:flex *:items-center *:gap-2">
                 <NavbarLinks />
             </div>
         
