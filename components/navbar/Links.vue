@@ -8,7 +8,7 @@
         {{ $t('characters') }}
     </NuxtLink>
     <NuxtLink to="/items">
-        <Icon class="lg:inline hidden mt-[2px]" size="20" name="solar:people-nearby-linear"/>
+        <Icon class="lg:inline hidden mt-[2px]" size="20" name="solar:case-round-linear"/>
         Items
     </NuxtLink>
     <NuxtLink to="/maps">

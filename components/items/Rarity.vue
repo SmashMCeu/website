@@ -1,5 +1,5 @@
 <template>
-    <span :class="rarityColor" class="rounded text-sm font-semibold px-3 py-1">{{ props.rarity.toUpperCase() }}</span>
+    <span :class="rarityColor" class="rounded text-sm font-semibold px-3 flex items-center pb-1 pt-[2px] capitalize">{{ props.rarity }}</span>
 </template>
 <script lang="ts" setup>
     

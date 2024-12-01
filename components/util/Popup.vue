@@ -18,7 +18,7 @@
                 class="data-[state=open]:animate-dialogContentShow
                         data-[state=closed]:animate-dialogContentHide
                         rounded-lg bg-backgroundColorLight fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[100]
-                        flex flex-col gap-6 mt-10 h-[80vh] md:h-[60vh] max-h-[85vh] w-[90vw] max-w-[45rem]">
+                        flex flex-col gap-6 mt-10 h-fit pb-3 max-h-[85vh] w-[90vw] max-w-[45rem]">
 
                 <VisuallyHidden>
                     <DialogTitle>{{ title }}</DialogTitle>
