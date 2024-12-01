@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center -ml-[5%] w-[110%]">
+    <div class="flex flex-col items-center -ml-[5%] w-[115%]">
         <UtilTitle title="Admins:" subtitle="" orientation="left"/>
         <div class="grid 2xl:grid-cols-2 sm:items-start items-center gap-4">
             <div v-for="admin of admins" class="w-full">
