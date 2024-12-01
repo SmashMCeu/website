@@ -1,30 +1,43 @@
 <template>
-    <div class="flex items-center justify-center py-[4px] px-[8px] gap-1 rounded-md" :class="getTagStyle()">
+    <div :class="tagClass" :style="tagStyle" class="flex items-center justify-center py-[4px] px-[8px] gap-1 rounded-md">
 
         <Icon :name="domain.icon" :size="15"/>
         <p class="text-[12px] -mt-[2px]">{{ domain.name }}</p>
 
-
-
     </div>
 </template>
 <script lang="ts" setup>
+    import type { StyleValue } from 'vue';
+
     
     const props = defineProps<{
         domain: TeamDomain
     }>();
 
+    const tagClass = computed(() => {
+        const styles = {
+            "outline": `border`,
+            "solid": `text-backgroundColorLight`
+        };
+        return styles[props.domain.display_style];
+    });
 
-    // text-backgroundColorLight bg-primary/90
+    const tagStyle = computed((): StyleValue => {
+        const color = props.domain.color;
+        switch (props.domain.display_style) {
+            case "outline":
+                return {
+                    color: color,
+                    borderColor: color
+                }
+            case "solid":
+                return {
+                    backgroundColor: color,
+                }
+        }
+    });
 
-    const tagStyles: { [key in TeamDomain["display_style"]]: string } = {
-        "outline": "text-primary/90 border border-primary/90",
-        "solid": "text-backgroundColorLight bg-primary/90"
-    }
 
-    function getTagStyle() {
-        return tagStyles[props.domain.display_style]
-    }
 
 </script>
 <style scoped>
