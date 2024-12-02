@@ -12,7 +12,7 @@
             case "common":
                 return "bg-green-500";
             case "rare":
-                return "bg-blue-500";
+                return "bg-amber-500";
             case "epic":
                 return "bg-purple-500";
         }
