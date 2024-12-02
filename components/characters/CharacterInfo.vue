@@ -1,5 +1,5 @@
 <template>
-    <UtilPopup title="Test" v-on:menu-open="() => onMenuLoad()">
+    <UtilPopup :title="character.name" v-on:menu-open="() => onMenuLoad()">
         <template #trigger>
             <slot />
         </template>
