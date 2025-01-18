@@ -7,6 +7,6 @@
 </template>
 <script lang="ts" setup>
     
-    const items: Ref<SmashItem[]> = ref(await useSmashItems().getAllItems());
+    const items = defineModel<SmashItem[]>();
 
 </script>

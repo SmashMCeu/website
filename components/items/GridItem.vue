@@ -2,7 +2,10 @@
     <UtilPopup :title="item.name">
         <template #trigger>
             <div class="flex flex-col items-center justify-between gap-4 bg-backgroundColorLight hover:scale-105 transition-transform rounded-lg px-4 py-4 h-full">
-                <p class="font-bold text-sm md:text-base my-auto">{{ item.name }}</p>
+                <div class="flex flex-col items-center">
+                    <p v-if="item.is_advanced" class="text-[13px] border-cyan-500 text-cyan-500 border rounded-lg px-2 py-1">Advanced Item</p>
+                    <p class="font-bold text-sm md:text-base my-auto">{{ item.name }}</p>
+                </div>
                 <img class="px-2 w-full" :src="useSmashItems().getItemImageUrl(item)" loading="lazy">
             </div>
         </template>

@@ -1,8 +1,9 @@
 <template>
     <div>
+        <ItemsSearchBar @update="(searchSettings: ItemsSearchSettings) => updateItems(searchSettings)" class="mb-10" />
         <Suspense>
             <template #default>
-                <ItemsGrid />
+                <ItemsGrid v-model="items"/>
             </template>
             <template #fallback>
                 <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
@@ -23,5 +24,40 @@
         twitterCard: "summary_large_image",
         ogImage: "https://smashmc.eu/img/ogImage.webp",
     });
+
+    const allItems: Ref<SmashItem[]> = ref(await useSmashItems().getAllItems());
+    const items = ref<SmashItem[]>(allItems.value);
+
+    function rarityToInt(rarity: SmashItem["rarity"]) {
+        switch (rarity) {
+            case "common":
+                return 0;
+            case "rare":
+                return 1;
+            case "epic":
+                return 2;
+        }
+    }
+
+    function updateItems(searchSettings: ItemsSearchSettings) {
+        if (searchSettings === undefined) return;
+
+        items.value = allItems.value.filter(item => {
+            if (searchSettings.name && !item.name.toLowerCase().includes(searchSettings.name.toLowerCase())) return false;
+            if (!searchSettings.includeAdvanced && item.is_advanced) return false;
+            return true;
+        }).sort((a, b) => {
+            switch (searchSettings.order) {
+                case "name-asc":
+                    return a.name.localeCompare(b.name);
+                case "name-desc":
+                    return b.name.localeCompare(a.name);
+                case "rarity-asc":
+                    return rarityToInt(a.rarity) - rarityToInt(b.rarity);
+                case "rarity-desc":
+                    return rarityToInt(b.rarity) - rarityToInt(a.rarity);
+            }
+        });
+    }
 
 </script>
