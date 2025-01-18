@@ -19,6 +19,7 @@
                         <SwitchRoot
                             id="hide-advanced"
                             v-model:checked="hideAdvanced"
+                            @update:checked="e => emit('updateHideAdvanced', e)"
                             class="cursor-pointer w-[42px] h-[25px] flex bg-backgroundColor/50 shadow-sm rounded-full relative data-[state=checked]:bg-primary"
                         >
                             <SwitchThumb
@@ -38,5 +39,9 @@
 <script lang="ts" setup>
     
     const hideAdvanced = ref<boolean>(true);
+
+    const emit = defineEmits<{
+        (e: 'updateHideAdvanced', hideAdvanced: boolean): void;
+    }>();
 
 </script>

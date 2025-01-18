@@ -4,7 +4,7 @@
         <input @input="update()" v-model="searchSettings.name" type="text" placeholder="Search items..." class="flex-grow px-4 py-2 bg-backgroundColorLight rounded-lg focus:ring-2 focus:ring-primary">
 
         <ItemsSearchSort @update="sort => setSort(sort)" />
-        <ItemsSearchSettings />
+        <ItemsSearchSettings @update-hide-advanced="state => setHideAdvanced(state)" />
 
     </div>
 </template>
@@ -22,6 +22,11 @@
 
     function setSort(sort: ItemsSearchSettings["order"]) {
         searchSettings.value.order = sort;
+        update();
+    }
+
+    function setHideAdvanced(hideAdvanced: boolean) {
+        searchSettings.value.includeAdvanced = !hideAdvanced;
         update();
     }
 
