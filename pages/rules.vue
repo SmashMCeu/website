@@ -1,7 +1,8 @@
 <template>
     <div>
 
-        <p v-html="rules" class="markdown"></p>
+        <p v-if="rules === null">Loading...</p>
+        <p v-else v-html="rules.rules" class="markdown"></p>
 
     </div>
 </template>
@@ -20,6 +21,12 @@
         ogType: "website",
     });
 
-    const { rules } = await useSmashRules().getCurrentlyActiveRules(useI18n().locale.value);
+    const rules = ref<Rules | null>(null);
+
+    onMounted(async () => {
+        rules.value = await useSmashRules().getCurrentlyActiveRules(useI18n().locale.value);
+    });
+
+        
 
 </script>
