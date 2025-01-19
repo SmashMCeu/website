@@ -8,6 +8,8 @@ interface Guide {
     title: string;
     description: string;
     content: string;
+    markdownContent: string;
+    isMarkdown: boolean;
     author: string;
     created: string;
     updated: string;
