@@ -18,8 +18,8 @@
                     <div class="flex gap-2 items-center">
                         <SwitchRoot
                             id="hide-advanced"
-                            v-model:checked="hideAdvanced"
-                            @update:checked="e => emit('updateHideAdvanced', e)"
+                            v-model:checked="includeAdvanced"
+                            @update:checked="e => emit('updateIncludeAdvanced', e)"
                             class="cursor-pointer w-[42px] h-[25px] flex bg-backgroundColor/50 shadow-sm rounded-full relative data-[state=checked]:bg-primary"
                         >
                             <SwitchThumb
@@ -27,7 +27,7 @@
                             />
                         </SwitchRoot>
                         <label for="hide-advanced" class="text-white text-[15px] leading-none pr-[15px] select-none">
-                            Hide advanced items
+                            Include advanced items
                         </label>
                     </div>
                 </DropdownMenuItem>
@@ -38,10 +38,10 @@
 </template>
 <script lang="ts" setup>
     
-    const hideAdvanced = ref<boolean>(true);
+    const includeAdvanced = ref<boolean>(true);
 
     const emit = defineEmits<{
-        (e: 'updateHideAdvanced', hideAdvanced: boolean): void;
+        (e: 'updateIncludeAdvanced', includeAdvanced: boolean): void;
     }>();
 
 </script>

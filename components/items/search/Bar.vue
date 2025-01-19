@@ -4,7 +4,7 @@
         <input @input="update()" v-model="searchSettings.name" type="text" placeholder="Search items..." class="flex-grow px-4 py-2 bg-backgroundColorLight rounded-lg focus:ring-2 focus:ring-primary">
 
         <ItemsSearchSort @update="sort => setSort(sort)" />
-        <ItemsSearchSettings @update-hide-advanced="state => setHideAdvanced(state)" />
+        <ItemsSearchSettings @update-include-advanced="state => setHideAdvanced(state)" />
 
     </div>
 </template>
@@ -16,6 +16,10 @@
         includeAdvanced: true,
     });
 
+    onMounted(() => {
+        emit('update', searchSettings.value);
+    });
+
     const emit = defineEmits<{
         (e: 'update', searchSettings: ItemsSearchSettings): void;
     }>();
@@ -25,8 +29,8 @@
         update();
     }
 
-    function setHideAdvanced(hideAdvanced: boolean) {
-        searchSettings.value.includeAdvanced = !hideAdvanced;
+    function setHideAdvanced(includeAdvanced: boolean) {
+        searchSettings.value.includeAdvanced = includeAdvanced;
         update();
     }
 
