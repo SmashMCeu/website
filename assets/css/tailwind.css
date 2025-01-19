@@ -5,7 +5,7 @@
 @layer base {
   
     body {
-        @apply bg-backgroundColor text-textColor;
+        @apply bg-backgroundColor text-textColor !pr-0;
     }
     code {
         @apply before:hidden after:hidden bg-backgroundColorLight p-1 rounded;
