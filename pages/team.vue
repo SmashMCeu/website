@@ -1,14 +1,13 @@
 <template>
     <div class="flex flex-col items-center -ml-[5%] w-[115%]">
-        <UtilTitle title="Admins:" subtitle="" orientation="left"/>
+        
         <div class="grid 2xl:grid-cols-2 sm:items-start items-center gap-4">
             <div v-for="admin of admins" class="w-full">
                 <TeamCard :teamMember="admin" />
             </div>
         </div>
 
-        <UtilTitle title="Staffs:" subtitle="" orientation="left" class="mt-24"/>
-        <div class="grid 2xl:grid-cols-2 sm:items-start items-center gap-4">
+        <div class="grid 2xl:grid-cols-2 sm:items-start items-center gap-4 mt-12">
             <div v-for="staff of staff" class="w-full">
                 <TeamCard :teamMember="staff" />
             </div>

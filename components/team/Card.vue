@@ -3,8 +3,13 @@
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 py-3 sm:p-2">
             <SkinHeadRenderer class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden" :skin-url="minecraftUser.texture"/>
             <div class="flex flex-col items-center sm:items-start">
-                <p class="text-xl text-textColorLight text-center font-bold">{{ minecraftUser.name }}</p>
-                <p class="text-sm -mt-1 text-textColor/75 text-center font-medium">{{ $t("teamlist_joined_at") }} {{ useUtils().formatDateWithoutTime(joinDate) }}</p>
+                <div class="flex items-center gap-2">
+                    <p :class="teamMember.isAdmin ? 'text-[#AA0000]' : 'text-[#FF5555]'" class="text-xl text-center font-bold">{{ minecraftUser.name }}</p>
+                    <p class="px-2 py-[3px] rounded-md text-xs font-semibold border" :class="teamMember.isAdmin ? 'text-[#AA0000] border-[#AA0000]' : 'text-[#FF5555] border-[#FF5555]'">
+                        {{ teamMember.isAdmin ? "Admin" : "Staff" }}
+                    </p>
+                </div>
+                <p class="text-sm text-textColor/75 text-center font-medium">{{ $t("teamlist_joined_at") }} {{ useUtils().formatDateWithoutTime(joinDate) }}</p>
                 <div class="mt-3 flex flex-wrap sm:justify-start justify-center max-w-[15rem] sm:max-w-[20rem] gap-1">
                     <TeamDomainTag v-for="domain of domains" :domain="domain" />
                 </div>
