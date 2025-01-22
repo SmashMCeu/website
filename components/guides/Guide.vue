@@ -1,6 +1,5 @@
 <template>
     <div class="markdown" v-if="guide !== null">
-        <p>{{ guide.content }}</p>
         <p class="text-4xl text-textColorLight font-bold underline">{{ guide.title }}</p>
         <div v-if="guide.isMarkdown && markdown === null" class="mt-10">Loading...</div>
         <MDCRenderer v-else-if="guide.isMarkdown && markdown !== null" :data="markdown.data" :body="markdown.body"/>
