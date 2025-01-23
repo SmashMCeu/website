@@ -1,7 +1,7 @@
 <template>
-    <div class="flex gap-4">
+    <div class="flex gap-4 md:flex-nowrap flex-wrap">
         
-        <input @input="update()" v-model="searchSettings.name" type="text" placeholder="Search items..." class="flex-grow px-4 py-2 bg-backgroundColorLight rounded-lg focus:ring-2 focus:ring-primary">
+        <input @input="update()" v-model="searchSettings.name" type="text" placeholder="Search items..." class="md:flex-grow w-full px-4 py-2 md:h-auto h-14 bg-backgroundColorLight rounded-lg focus:ring-2 focus:ring-primary">
 
         <ItemsSearchSort @update="sort => setSort(sort)" />
         <ItemsSearchSettings @update-include-advanced="state => setHideAdvanced(state)" />

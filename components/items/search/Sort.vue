@@ -1,7 +1,7 @@
 <template>
     <SelectRoot v-model="sort" @update:model-value="emit('update', sort)">
     <SelectTrigger class="flex items-center gap-2 justify-between rounded-lg px-[15px] leading-none bg-backgroundColorLight hover:bg-backgroundColorLight/75 transition-colors">
-        <SelectValue class="select-none cursor-pointer flex items-center gap-3 py-4 relative hover:bg-backgroundColorLight/75 transition-colors rounded" />
+        <SelectValue class="text-nowrap select-none cursor-pointer flex items-center gap-3 py-4 relative hover:bg-backgroundColorLight/75 transition-colors rounded" />
         <Icon size="16" name="solar:alt-arrow-down-bold" class="text-textColor/50 mt-1"/>
     </SelectTrigger>
 
