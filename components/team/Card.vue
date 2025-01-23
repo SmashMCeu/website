@@ -4,7 +4,7 @@
             <SkinHeadRenderer class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden" :skin-url="minecraftUser.texture"/>
             <div class="flex flex-col items-center sm:items-start">
                 <div class="flex items-center gap-2">
-                    <p :class="teamMember.isAdmin ? 'text-[#AA0000]' : 'text-[#FF5555]'" class="text-xl text-center font-bold">{{ minecraftUser.name }}</p>
+                    <p class="text-xl text-center font-bold">{{ minecraftUser.name }}</p>
                     <p class="px-2 py-[3px] rounded-md text-xs font-semibold border" :class="teamMember.isAdmin ? 'text-[#AA0000] border-[#AA0000]' : 'text-[#FF5555] border-[#FF5555]'">
                         {{ teamMember.isAdmin ? "Admin" : "Staff" }}
                     </p>
