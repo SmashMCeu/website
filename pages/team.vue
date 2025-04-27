@@ -16,7 +16,12 @@
 </template>
 <script lang="ts" setup>
     
-    const team = ref(await useTeamMembers().getAllTeamMembers());
+    const team = ref([] as TeamMember[]);
+    await useTeamMembers().getAllTeamMembers().then((response) => {
+        team.value = response.sort((a, b) => {
+            return new Date(a.joinedAt) > new Date(b.joinedAt) ? 1 : -1;
+        });
+    });
     const admins = computed(() => team.value.filter(member => member.isAdmin));
     const staff = computed(() => team.value.filter(member => !member.isAdmin));
 
