@@ -26,6 +26,29 @@ export const useTeamMembers = () => {
         }
     }
 
-    return { getAllTeamMembers }
+    async function getAllTeamMembersWithMCIdentity(): Promise<TeamMemberWithMCIdentity[]> {
+        try {
+            const teamMembers = await getAllTeamMembers();
+
+            return Promise.all(
+                teamMembers.map(async (member) => ({
+                    member,
+                    mcIdentity: await useBasicMinecraftUser().uuidToBasicUser(member.minecraftUuid),
+                }))
+            );
+        } catch (error) {
+            createError({
+                statusCode: 500,
+                message: "Failed to fetch Team Members with MC Identity!",
+            });
+            showError({
+                statusCode: 500,
+                message: "Failed to fetch Team Members with MC Identity!",
+            });
+            return [] as TeamMemberWithMCIdentity[];
+        }
+    }
+
+    return { getAllTeamMembers, getAllTeamMembersWithMCIdentity }
 
 }
