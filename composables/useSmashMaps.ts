@@ -25,7 +25,7 @@ export const useSmashMaps = () => {
     }
 
     function getMapImageUrl(map: SmashMap): string {
-        return pb.files.getUrl({
+        return pb.files.getURL({
             collectionId: map.collectionId,
             id: map.id
         }, map.map);

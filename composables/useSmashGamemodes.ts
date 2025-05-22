@@ -25,14 +25,14 @@ export const useSmashGamemodes = () => {
     }
 
     function getGamemodeBackgroundUrl(gamemode: Gamemode): string {
-        return pb.files.getUrl({
+        return pb.files.getURL({
             collectionId: gamemode.collectionId,
             id: gamemode.id
         }, gamemode.background);
     }
 
     function getGamemodeIconUrl(gamemode: Gamemode): string {
-        return pb.files.getUrl({
+        return pb.files.getURL({
             collectionId: gamemode.collectionId,
             id: gamemode.id
         }, gamemode.icon);
