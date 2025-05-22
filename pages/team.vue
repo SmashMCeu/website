@@ -22,9 +22,12 @@
 
 
     function sortFunction(a: TeamMemberWithMCIdentity, b: TeamMemberWithMCIdentity): number {
-        if (new Date(a.member.joinedAt) > new Date(b.member.joinedAt)) {
+        const dateA = new Date(a.member.joinedAt);
+        const dateB = new Date(b.member.joinedAt);
+
+        if (dateA > dateB) {
             return 1;
-        } else if (new Date(a.member.joinedAt) < new Date(b.member.joinedAt)) {
+        } else if (dateA < dateB) {
             return -1;
         }
 
