@@ -51,7 +51,7 @@ export const useSmashCharacters = () => {
 
 
     function getCharacterImgUrl(character: SmashCharacter, key: string): string {
-        return pb.files.getUrl({
+        return pb.files.getURL({
             collectionId: character.collectionId,
             id: character.id
         }, key);

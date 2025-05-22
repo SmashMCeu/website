@@ -1,12 +1,12 @@
 <template>
     <div class="bg-backgroundColorLight rounded-2xl flex flex-col sm:flex-row sm:justify-between justify-center gap-3 sm:gap-8 overflow-hidden relative w-full">
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 py-3 sm:p-2">
-            <SkinHeadRenderer class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden" :skin-url="minecraftUser.texture"/>
+            <SkinHeadRenderer class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden" :skin-url="teamMember.mcIdentity.texture" />
             <div class="flex flex-col items-center sm:items-start">
                 <div class="flex items-center gap-2">
-                    <p class="text-xl text-center font-bold">{{ minecraftUser.name }}</p>
-                    <p class="px-2 py-[3px] rounded-md text-xs font-semibold border" :class="teamMember.isAdmin ? 'text-[#AA0000] border-[#AA0000]' : 'text-[#FF5555] border-[#FF5555]'">
-                        {{ teamMember.isAdmin ? "Admin" : "Staff" }}
+                    <p class="text-xl text-center font-bold">{{ teamMember.mcIdentity.name }}</p>
+                    <p class="px-2 py-[3px] rounded-md text-xs font-semibold border" :class="teamMember.member.isAdmin ? 'text-[#AA0000] border-[#AA0000]' : 'text-[#FF5555] border-[#FF5555]'">
+                        {{ teamMember.member.isAdmin ? "Admin" : "Staff" }}
                     </p>
                 </div>
                 <p class="text-sm text-textColor/75 text-center font-medium">{{ $t("teamlist_joined_at") }} {{ useUtils().formatDateWithoutTime(joinDate) }}</p>
@@ -35,14 +35,13 @@
 <script lang="ts" setup>
     
     const props = defineProps<{
-        teamMember: TeamMember
+        teamMember: TeamMemberWithMCIdentity
     }>();
 
-    const minecraftUser = await useBasicMinecraftUser().uuidToBasicUser(props.teamMember.minecraftUuid);
-    const domains = computed(() => props.teamMember.expand?.domains.sort((a, b) => a.position - b.position));
+    const domains = computed(() => props.teamMember.member.expand?.domains.sort((a, b) => a.position - b.position));
 
     
-    const joinDate = new Date(props.teamMember.joinedAt);
+    const joinDate = new Date(props.teamMember.member.joinedAt);
 
     const inTeamSinceYears = computed(() => {
     const now = new Date();

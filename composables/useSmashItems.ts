@@ -25,7 +25,7 @@ export const useSmashItems = () => {
     }
 
     function getItemImageUrl(item: SmashItem): string {
-        return pb.files.getUrl({
+        return pb.files.getURL({
             collectionId: item.collectionId,
             id: item.id
         }, item.image);
