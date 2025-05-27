@@ -25,6 +25,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     statsApiBaseUrl: "",
+    sekaiDataBaseUrl: "",
     
     public: {
       pocketbase: {
@@ -37,6 +38,7 @@ export default defineNuxtConfig({
             characters: "characters",
             character_previews: "character_previews",
             maps: "maps",
+            map_images: "map_images",
             items: "items",
             skins: "skins",
             gamemodes: "gamemodes",
