@@ -1,20 +1,19 @@
 import { RuntimeConfig } from "nuxt/schema";
-import PocketBase from "pocketbase";
+import pb from "../../utils/pocketbase";
 
-
-const isDevEnv: boolean = import.meta.dev || false;
 export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
     const config: RuntimeConfig = useRuntimeConfig(event);
     try {
         // TODO: Not all maps are displayed when there are more the 50 maps in the map pool
-        const sekaiMapModels: Array<SekaiDataMapModel> = await $fetch(`${config.sekaiDataBaseUrl}/play?type=smash&pageSize=50&sort=POPULARITY`);
-
-        // data mapping
-        const pb: PocketBase = useNuxtApp().$pocketbase as PocketBase;
-    
+        const sekaiMapModels: Array<SekaiDataMapModel> = await $fetch(
+            `${config.sekaiDataBaseUrl}/play?type=smash&pageSize=50&sort=POPULARITY`
+        );
+   
         const mapsImagesCollection = useRuntimeConfig().public.pocketbase.collections.map_images;
 
         const images = await pb.collection(mapsImagesCollection).getFullList<MapImage>();
+
+        console.log(sekaiMapModels);
         
         return sekaiMapModels
           .map((m)=> {
@@ -32,6 +31,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
           })
           .filter((i) => i !== null);
     } catch (error) {
+        console.log(error);
         throw createError({
             statusCode: 500,
             statusMessage: "Failed to fetch data",
