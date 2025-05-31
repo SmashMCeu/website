@@ -13,37 +13,49 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
 
         const images = await pb.collection(mapsImagesCollection).getFullList<MapImage>();
 
-        const result = resp
-            .maps
-            .map((m) => {
-                const map = images.find((i) => i.sekai_id == m.id);
-                if (map == null) {
-                    return {
-                        id: m.id,
-                        name: m.name,
-                        builtBy: m.owner,
-                        map: "https://pocket.smashmc.eu/api/files/5ks36qdysvzyhpz/k8v22d8tiwjp9la/k8v22d8tiwjp9la_gAv6VPxypp.webp",
-                        created: m.dateCreated,
-                        updated: m.dateUpdated,
-                        timesPlayed: m.timesPlayed,
-                    };
+        const out: Array<SmashMap> = [];
+
+        for (const m of resp.maps) {
+            const map = images.find((i) => i.sekai_id == m.id);
+            let name = undefined;
+            try {
+                const identity: Array<Identity> = await $fetch(
+                    `${config.identityBaseUrl}/minecraft/${m.owner}`
+                );
+                if (identity?.length) {
+                    if (identity.length > 0) {
+                        name = identity[0].name;
+                    }
                 }
-                const mapUrl = pb.files.getURL({ collectionId: map.collectionId, id: map.id }, map.image);
-                return {
+            } catch (error) {
+                console.log(`Identity check failed for user ${m.owner}`);
+            }
+
+            if (map == null) {
+                out.push({
                     id: m.id,
                     name: m.name,
-                    builtBy: m.owner,
+                    builtBy: name as string,
+                    map: "https://pocket.smashmc.eu/api/files/5ks36qdysvzyhpz/k8v22d8tiwjp9la/k8v22d8tiwjp9la_gAv6VPxypp.webp",
+                    created: m.dateCreated,
+                    updated: m.dateUpdated,
+                    timesPlayed: m.timesPlayed,
+                });
+            } else {
+                const mapUrl = pb.files.getURL({ collectionId: map.collectionId, id: map.id }, map.image);
+                out.push({
+                    id: m.id,
+                    name: m.name,
+                    builtBy: name as string,
                     map: mapUrl,
                     created: m.dateCreated,
                     updated: m.dateUpdated,
                     timesPlayed: m.timesPlayed,
-                };
-            })
-            .filter((i) => i !== null);
+                });
+            }
+        }
 
-        console.log(result);
-
-        return result;
+        return out;
     } catch (error) {
         console.log(error);
         throw createError({
@@ -54,6 +66,9 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
 
 });
 
+interface Identity {
+    name: string
+}
 
 interface PlayResponse {
     maps: Array<SekaiDataMapModel>, page: number

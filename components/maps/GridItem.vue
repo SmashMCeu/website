@@ -3,7 +3,7 @@
         <img loading="lazy" class="bg-backgroundColorLight w-full aspect-video group-hover:brightness-[35%] group-hover:scale-105 transition-all rounded-xl" :src="map.map"/>
         <div class="group-hover:scale-150 group-hover:opacity-100 opacity-0 transition-all absolute text-center">
             <p class="text-textColorLight text-xl font-bold" @click.alt="copyId">{{ map.name }}</p>
-            <p class="text-textColor text-sm font-semibold">von {{ map.builtBy }}</p>
+            <p class="text-textColor text-sm font-semibold" v-if="map.builtBy">von {{ map.builtBy }}</p>
         </div>
     </div>
 </template>

@@ -1,7 +1,8 @@
 declare module 'nuxt/schema' {
 
-    interface RuntimeConfig  {
+    interface RuntimeConfig {
         statsApiBaseUrl: string,
+        identityBaseUrl: string,
         sekaiDataBaseUrl: string
     }
 

@@ -29,6 +29,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     statsApiBaseUrl: "",
+    identityBaseUrl: "",
     sekaiDataBaseUrl: "",
 
     public: {
