@@ -19,6 +19,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
                 const map = images.find((i) => i.sekai_id == m.id);
                 if (map == null) {
                     return {
+                        id: m.id,
                         name: m.name,
                         builtBy: m.owner,
                         map: "https://pocket.smashmc.eu/api/files/5ks36qdysvzyhpz/k8v22d8tiwjp9la/k8v22d8tiwjp9la_gAv6VPxypp.webp",
@@ -29,6 +30,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
                 }
                 const mapUrl = pb.files.getURL({ collectionId: map.collectionId, id: map.id }, map.image);
                 return {
+                    id: m.id,
                     name: m.name,
                     builtBy: m.owner,
                     map: mapUrl,
