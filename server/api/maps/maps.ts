@@ -6,7 +6,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
     try {
         // TODO: Not all maps are displayed when there are more the 50 maps in the map pool
         const resp: PlayResponse = await $fetch(
-            `${config.sekaiDataBaseUrl}/play?type=smash&pageSize=50&sort=POPULARITY`
+            `https://api.smashmc.eu/sekai-data/play?type=smash&pageSize=50`
         );
 
         const mapsImagesCollection = useRuntimeConfig().public.pocketbase.collections.map_images;
@@ -19,8 +19,9 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
             const map = images.find((i) => i.sekai_id == m.id);
             let name = undefined;
             try {
+                // TDOD: Batch request
                 const identity: Array<Identity> = await $fetch(
-                    `${config.identityBaseUrl}/minecraft/${m.owner}`
+                    `https://api.smashmc.eu/identity/minecraft/${m.owner}`
                 );
                 if (identity?.length) {
                     if (identity.length > 0) {
