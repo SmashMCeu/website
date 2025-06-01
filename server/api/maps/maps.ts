@@ -1,12 +1,13 @@
 import { RuntimeConfig } from "nuxt/schema";
 import pb from "../../utils/pocketbase";
+import { fetchIdentities, Identity } from "~/server/utils/identity";
 
 export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
     const config: RuntimeConfig = useRuntimeConfig(event);
     try {
         // TODO: Not all maps are displayed when there are more the 50 maps in the map pool
         const resp: PlayResponse = await $fetch(
-            `https://api.smashmc.eu/sekai-data/play?type=smash&pageSize=50`
+            `https://api.smashmc.eu/sekai-data/play?type=smash&pageSize=50&pageIndex=0`
         );
 
         const mapsImagesCollection = useRuntimeConfig().public.pocketbase.collections.map_images;
@@ -14,14 +15,11 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
 
         // Resolver owner names
         const out: Array<SmashMap> = [];
-        const set = new Set();
+        const set: Set<string> = new Set();
         for (const i of resp.maps) {
             set.add(i.owner);
         }
-        const ids = Array.from(set).join(",");
-        const identitys: Array<Identity> = await $fetch(
-            `https://api.smashmc.eu/identity/minecraft/${ids}`
-        );
+        const identitys: Array<Identity> = await fetchIdentities(set);
 
         for (const m of resp.maps) {
             let name = "";
@@ -56,16 +54,6 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
 
 });
 
-interface Identity {
-    name: string;
-    uuid: string;
-    texture: IdentityTexture;
-}
-
-interface IdentityTexture {
-    signature: string;
-    value: string
-}
 
 interface PlayResponse {
     maps: Array<SekaiDataMapModel>;
@@ -81,3 +69,4 @@ interface SekaiDataMapModel {
     dateUpdated: string;
     timesPlayed: number;
 }
+

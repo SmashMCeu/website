@@ -8,21 +8,14 @@
     </div> 
 </template>
 <script lang="ts" setup>
+    import type { TopUser } from '~/types/TopUser';
 
-    const limit: number = 5;
-    const topFivePlayers: Ref<BasicMinecraftUser[]> = ref<BasicMinecraftUser[]>([]);
+    const topFivePlayers: Ref<TopUser[]> = ref<TopUser[]>([]);
 
-    const { data: response } = await useFetch<TopStatsList>(`/api/stats/top?limit=${limit}`);
+    const { data: response } = await useFetch<Array<TopUser>>(`/api/stats/top`);
     
     if (response.value) {
-        let promise = Promise.all(
-            response.value.result.map(async (uuid, index) => 
-                await useBasicMinecraftUser().uuidToBasicUser(uuid)
-            )
-        )
-        topFivePlayers.value = await promise;
+        topFivePlayers.value = response.value;
     }
         
-
-
 </script>
