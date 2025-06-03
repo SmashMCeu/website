@@ -1,10 +1,6 @@
 declare module 'nuxt/schema' {
 
-    interface RuntimeConfig {
-        statsApiBaseUrl: string,
-        identityBaseUrl: string,
-        sekaiDataBaseUrl: string
-    }
+    interface RuntimeConfig { }
 
     interface PublicRuntimeConfig {
         pocketbase: {

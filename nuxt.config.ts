@@ -28,10 +28,6 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    statsApiBaseUrl: "",
-    identityBaseUrl: "",
-    sekaiDataBaseUrl: "",
-
     public: {
       pocketbase: {
         apiBaseUrl: "https://pocket.smashmc.eu",
