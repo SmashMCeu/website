@@ -1,17 +1,17 @@
 import { RuntimeConfig } from "nuxt/schema";
-import { fetchIdentities, Identity } from "~/server/utils/identity";
+import { Identity, useIdentity } from "~/composables/useIdentity";
 import { TopUser } from "~/types/TopUser";
 
 export default defineEventHandler(async (event): Promise<Array<TopUser>> => {
 
     try {
         const top: TopStatsList = await $fetch(`https://api.smashmc.eu/statistics/users/top?limit=5&type=smash&monthly=true`);
-        const set = new Set();
+        const set: Set<string> = new Set();
         for (const i of top.result) {
             set.add(i)
         }
 
-        const identitys: Array<Identity> = await fetchIdentities(set);
+        const identitys: Array<Identity> = await useIdentity().fetchIdentities(set);
         const out: Array<TopUser> = [];
 
         for (const topUser of top.result) {

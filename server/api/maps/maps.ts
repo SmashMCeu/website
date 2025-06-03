@@ -1,13 +1,11 @@
-import { RuntimeConfig } from "nuxt/schema";
 import pb from "../../utils/pocketbase";
-import { fetchIdentities, Identity } from "~/server/utils/identity";
+import { Identity, useIdentity } from "~/composables/useIdentity";
 
 export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
-    const config: RuntimeConfig = useRuntimeConfig(event);
     try {
         // TODO: Not all maps are displayed when there are more the 50 maps in the map pool
         const resp: PlayResponse = await $fetch(
-            `https://api.smashmc.eu/sekai-data/play?type=smash&pageSize=50&pageIndex=0`
+            `https://api.smashmc.eu/sekai-data/play?type=smash&pageSize=50&tags=approved&pageIndex=0`
         );
 
         const mapsImagesCollection = useRuntimeConfig().public.pocketbase.collections.map_images;
@@ -19,7 +17,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
         for (const i of resp.maps) {
             set.add(i.owner);
         }
-        const identitys: Array<Identity> = await fetchIdentities(set);
+        const identitys: Array<Identity> = await useIdentity().fetchIdentities(set);
 
         for (const m of resp.maps) {
             let name = "";
