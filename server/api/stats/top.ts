@@ -1,4 +1,3 @@
-import { RuntimeConfig } from "nuxt/schema";
 import { Identity, useIdentity } from "~/composables/useIdentity";
 import { TopUser } from "~/types/TopUser";
 
@@ -15,7 +14,6 @@ export default defineEventHandler(async (event): Promise<Array<TopUser>> => {
         const out: Array<TopUser> = [];
 
         for (const topUser of top.result) {
-            let name = "";
             const user = identitys.find(i => i.uuid === topUser);
             if (user === undefined) {
                 continue
