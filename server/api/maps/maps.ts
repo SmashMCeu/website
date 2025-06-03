@@ -1,5 +1,5 @@
+import { fetchIdentities, Identity } from "~/server/utils/identity";
 import pb from "../../utils/pocketbase";
-import { Identity, useIdentity } from "~/composables/useIdentity";
 
 export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
     try {
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
             `https://api.smashmc.eu/sekai-data/play?type=smash&pageSize=50&tags=approved&pageIndex=0`
         );
 
-        const mapsImagesCollection = useRuntimeConfig().public.pocketbase.collections.map_images;
+        const mapsImagesCollection = useRuntimeConfig(event).public.pocketbase.collections.map_images;
         const images = await pb.collection(mapsImagesCollection).getFullList<MapImage>();
 
         // Resolver owner names
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
         for (const i of resp.maps) {
             set.add(i.owner);
         }
-        const identitys: Array<Identity> = await useIdentity().fetchIdentities(set);
+        const identitys: Array<Identity> = await fetchIdentities(set);
 
         for (const m of resp.maps) {
             let name = "";

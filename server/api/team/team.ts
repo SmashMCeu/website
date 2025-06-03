@@ -1,9 +1,9 @@
-import { Identity, useIdentity } from "~/composables/useIdentity";
+import { fetchIdentities, Identity } from "~/server/utils/identity";
 import pb from "../../utils/pocketbase";
 
 export default defineEventHandler(async (event): Promise<Array<TeamMemberWithMCIdentity>> => {
     try {
-        const teamCollection = useRuntimeConfig().public.pocketbase.collections.teamMembers;
+        const teamCollection = useRuntimeConfig(event).public.pocketbase.collections.teamMembers;
         const teamMembers = await pb.collection(teamCollection).getFullList<TeamMember>({
             expand: "domains",
         });
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event): Promise<Array<TeamMemberWithMCI
         for (const i of teamMembers) {
             set.add(i.minecraftUuid);
         }
-        const identitys: Array<Identity> = await useIdentity().fetchIdentities(set);
+        const identitys: Array<Identity> = await fetchIdentities(set);
 
         return teamMembers
             .map((member) => {

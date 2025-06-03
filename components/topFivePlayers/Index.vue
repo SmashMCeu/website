@@ -8,14 +8,7 @@
     </div> 
 </template>
 <script lang="ts" setup>
-    import type { TopUser } from '~/types/TopUser';
+    const { data } = await useFetch<Array<TopUser>>(`/api/stats/top`);
 
-    const topFivePlayers: Ref<TopUser[]> = ref<TopUser[]>([]);
-
-    const { data: response } = await useFetch<Array<TopUser>>(`/api/stats/top`);
-    
-    if (response.value) {
-        topFivePlayers.value = response.value;
-    }
-        
+    const topFivePlayers: Ref<TopUser[] | null> = data;
 </script>

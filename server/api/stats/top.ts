@@ -1,4 +1,4 @@
-import { Identity, useIdentity } from "~/composables/useIdentity";
+import { fetchIdentities, Identity } from "~/server/utils/identity";
 import { TopUser } from "~/types/TopUser";
 
 export default defineEventHandler(async (event): Promise<Array<TopUser>> => {
@@ -10,7 +10,7 @@ export default defineEventHandler(async (event): Promise<Array<TopUser>> => {
             set.add(i)
         }
 
-        const identitys: Array<Identity> = await useIdentity().fetchIdentities(set);
+        const identitys: Array<Identity> = await fetchIdentities(set);
         const out: Array<TopUser> = [];
 
         for (const topUser of top.result) {
