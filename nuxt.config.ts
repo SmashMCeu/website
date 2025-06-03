@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   tailwindcss: { viewer: false },
-  
+
   modules: [
     '@nuxtjs/tailwindcss',
     'radix-vue/nuxt',
@@ -25,22 +25,22 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     statsApiBaseUrl: "",
-    
+
     public: {
       pocketbase: {
         apiBaseUrl: "https://pocket.smashmc.eu",
         collections: {
-            guides: "guides",
-            activeGuides: "active_guides",
-            faq: "faq",
-            rules: "rules",
-            characters: "characters",
-            character_previews: "character_previews",
-            maps: "maps",
-            items: "items",
-            skins: "skins",
-            gamemodes: "gamemodes",
-            teamMembers: "team_members"
+          guides: "guides",
+          activeGuides: "active_guides",
+          faq: "faq",
+          rules: "rules",
+          characters: "characters",
+          character_previews: "character_previews",
+          maps: "maps",
+          items: "items",
+          skins: "skins",
+          gamemodes: "gamemodes",
+          teamMembers: "team_members"
         }
       }
     }
@@ -64,9 +64,12 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     defaultLocale: 'en',
     locales: [
-      'de',
-      'en'
+      { code: 'de', name: "Deutsch", file: "de.json" },
+      { code: 'en', name: "English", file: "en.json" }
     ],
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
     detectBrowserLanguage: {
       useCookie: false,
       redirectOn: 'root' // recommended
