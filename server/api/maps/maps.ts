@@ -26,7 +26,7 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
                 name = user.name;
             }
             const imageMap = images.find((i) => i.sekai_id == m.id);
-            let mapUrl = "https://pocket.smashmc.eu/api/files/5ks36qdysvzyhpz/k8v22d8tiwjp9la/k8v22d8tiwjp9la_gAv6VPxypp.webp";
+            let mapUrl = "https://pocket.smashmc.eu/api/files/m3jdcbgppibfsan/UNKNOWN-MAP-IMG/unknown_52crufWpsk.webp";
             if (imageMap !== undefined) {
                 mapUrl = pb.files.getURL({ collectionId: imageMap.collectionId, id: imageMap.id }, imageMap.image);
             }
