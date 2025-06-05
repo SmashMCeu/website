@@ -8,21 +8,7 @@
     </div> 
 </template>
 <script lang="ts" setup>
+    const { data } = await useFetch<Array<TopUser>>(`/api/stats/top`);
 
-    const limit: number = 5;
-    const topFivePlayers: Ref<BasicMinecraftUser[]> = ref<BasicMinecraftUser[]>([]);
-
-    const { data: response } = await useFetch<TopStatsList>(`/api/stats/top?limit=${limit}`);
-    
-    if (response.value) {
-        let promise = Promise.all(
-            response.value.result.map(async (uuid, index) => 
-                await useBasicMinecraftUser().uuidToBasicUser(uuid)
-            )
-        )
-        topFivePlayers.value = await promise;
-    }
-        
-
-
+    const topFivePlayers: Ref<TopUser[] | null> = data;
 </script>

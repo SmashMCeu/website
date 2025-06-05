@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   tailwindcss: { viewer: false },
-  
+
   modules: [
     '@nuxtjs/tailwindcss',
     'radix-vue/nuxt',
@@ -23,24 +23,27 @@ export default defineNuxtConfig({
     }
   },
 
+  routeRules: {
+    '/api/*': { cache: { maxAge: 3600 } } // Cache for 1 hour
+  },
+
   runtimeConfig: {
-    statsApiBaseUrl: "",
-    
     public: {
       pocketbase: {
         apiBaseUrl: "https://pocket.smashmc.eu",
         collections: {
-            guides: "guides",
-            activeGuides: "active_guides",
-            faq: "faq",
-            rules: "rules",
-            characters: "characters",
-            character_previews: "character_previews",
-            maps: "maps",
-            items: "items",
-            skins: "skins",
-            gamemodes: "gamemodes",
-            teamMembers: "team_members"
+          guides: "guides",
+          activeGuides: "active_guides",
+          faq: "faq",
+          rules: "rules",
+          characters: "characters",
+          character_previews: "character_previews",
+          maps: "maps",
+          map_images: "map_images",
+          items: "items",
+          skins: "skins",
+          gamemodes: "gamemodes",
+          teamMembers: "team_members"
         }
       }
     }

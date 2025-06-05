@@ -31,7 +31,7 @@
             return -1;
         }
 
-        return a.mcIdentity.name.localeCompare(b.mcIdentity.name);
+        return a.name.localeCompare(b.name);
     }
 
     useSeoMeta({

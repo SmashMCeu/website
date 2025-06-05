@@ -1,14 +1,6 @@
 declare module 'nuxt/schema' {
 
-    interface RuntimeConfig  {
-        mongodb: {
-            dbUri: string,
-            dbName: string,
-            username: string,
-            password: string
-            authSource: string
-        }
-    }
+    interface RuntimeConfig { }
 
     interface PublicRuntimeConfig {
         pocketbase: {
@@ -21,6 +13,7 @@ declare module 'nuxt/schema' {
                 characters: string,
                 character_previews: string,
                 maps: string,
+                map_images: string,
                 items: string,
                 skins: string,
                 gamemodes: string,
@@ -29,5 +22,3 @@ declare module 'nuxt/schema' {
         }
     }
 }
-
-export {}

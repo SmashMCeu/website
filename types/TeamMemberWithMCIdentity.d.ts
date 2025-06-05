@@ -1,4 +1,5 @@
 interface TeamMemberWithMCIdentity {
     member: TeamMember;
-    mcIdentity: BasicMinecraftUser;
+    name: string;
+    skinUrl: string;
 }
