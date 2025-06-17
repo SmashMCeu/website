@@ -1,7 +1,7 @@
 import { fetchIdentities, Identity } from "~/server/utils/identity";
 import pb from "../../utils/pocketbase";
 
-export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
+export default defineEventHandler(cachedEventHandler((async (event): Promise<Array<SmashMap>> => {
     try {
         // TODO: Not all maps are displayed when there are more the 50 maps in the map pool
         const resp: PlayResponse = await $fetch(
@@ -50,7 +50,10 @@ export default defineEventHandler(async (event): Promise<Array<SmashMap>> => {
         });
     }
 
-});
+}), {
+    maxAge: 60 * 60, // Cache for 1 hour
+    getKey: (event) => event.path, // Use the request path as the cache key
+}));
 
 
 interface PlayResponse {

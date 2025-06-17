@@ -23,9 +23,6 @@ export default defineNuxtConfig({
     }
   },
 
-  routeRules: {
-    '/api/*': { cache: { maxAge: 3600 } } // Cache for 1 hour
-  },
 
   runtimeConfig: {
     public: {

@@ -28,7 +28,7 @@
     "@iconify-json/solar": "^1.2.1",
     "@tailwindcss/typography": "^0.5.15",
     "@vueuse/core": "^11.1.0",
-    "@vueuse/nuxt": "^11.1.0",
+    "@vueuse/nuxt": "^11.3.0",
     "typescript": "^5.8.3"
   }
 }
