@@ -1,8 +1,7 @@
 import { fetchIdentities, Identity } from "~/server/utils/identity";
 import { TopUser } from "~/types/TopUser";
 
-export default defineEventHandler(async (event): Promise<Array<TopUser>> => {
-
+export default defineEventHandler(cachedEventHandler((async (event): Promise<Array<TopUser>> => {
     try {
         const top: TopStatsList = await $fetch(`https://api.smashmc.eu/statistics/users/top?limit=5&type=smash&monthly=true`);
         const set: Set<string> = new Set();
@@ -36,4 +35,7 @@ export default defineEventHandler(async (event): Promise<Array<TopUser>> => {
             statusMessage: "Failed to fetch data",
         });
     }
-});
+}), {
+    maxAge: 60 * 60, // Cache for 1 hour
+    getKey: (event) => event.path, // Use the request path as the cache key
+}));

@@ -1,7 +1,7 @@
 import { fetchIdentities, Identity } from "~/server/utils/identity";
 import pb from "../../utils/pocketbase";
 
-export default defineEventHandler(async (event): Promise<Array<TeamMemberWithMCIdentity>> => {
+export default defineEventHandler(cachedEventHandler((async (event): Promise<Array<TeamMemberWithMCIdentity>> => {
     try {
         const teamCollection = useRuntimeConfig(event).public.pocketbase.collections.teamMembers;
         const teamMembers = await pb.collection(teamCollection).getFullList<TeamMember>({
@@ -35,4 +35,7 @@ export default defineEventHandler(async (event): Promise<Array<TeamMemberWithMCI
         });
     }
 
-});
+}), {
+    maxAge: 60 * 60, // Cache for 1 hour
+    getKey: (event) => event.path, // Use the request path as the cache key
+}));
