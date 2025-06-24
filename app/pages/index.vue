@@ -1,11 +1,15 @@
 <template>
-    <div class="">
+    <div class="space-y-16">
         <p>{{ $t("welcome") }}</p>
 
         <UiButton @click="onBtnClick">
             <Icon name="lucide:box" />
             Click Me
         </UiButton>
+
+        <AppSectionTopFivePlayers />
+
+        <TestTable />
     </div>
 </template>
 
