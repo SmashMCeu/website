@@ -122,3 +122,21 @@
       @apply bg-background text-foreground;
     }
 }
+
+
+
+@theme {
+    --animate-smash-logo: hue 1.5s linear infinite;
+}
+
+
+@-webkit-keyframes hue {
+    from { -webkit-filter:hue-rotate(10deg); }
+    to { -webkit-filter:hue-rotate(360deg); }
+}
+
+@keyframes hue {
+    from { filter:hue-rotate(10deg); }
+    to { filter:hue-rotate(360deg); }
+}
+

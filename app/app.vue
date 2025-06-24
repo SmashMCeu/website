@@ -16,10 +16,13 @@
 <script lang="ts" setup>
 useLocaleHead()
 useHead({
-    titleTemplate: t => t ? `${t} - My Cool Site` : "That is a Cool Site",
+    titleTemplate: t => t ? `${t} - SmashMC.eu` : "SmashMC.eu - The Ultimate Minecraft Network!",
 })
 useSchemaOrg([
-    // definePerson({ ... })
-    // or other -> https://nuxtseo.com/docs/schema-org/guides/nodes
+    defineOrganization({
+        name: "SmashMC",
+        logo: "/img/logo.png",
+        url: "https://smashmc.eu",
+    }),
 ])
 </script>

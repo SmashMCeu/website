@@ -1,18 +1,11 @@
 <template>
-    <div class="flex flex-col items-center justify-center h-screen gap-8">
+    <div class="">
         <p>{{ $t("welcome") }}</p>
-
-        <NuxtLinkLocale to="/loading">
-            Go to loading site
-        </NuxtLinkLocale>
-
-        <LanguageSwitchButton />
 
         <UiButton @click="onBtnClick">
             <Icon name="lucide:box" />
             Click Me
         </UiButton>
-        <ColorSchemeSwitchButton />
     </div>
 </template>
 
@@ -26,7 +19,7 @@ function onBtnClick() {
 
 defineOgImageComponent("Main")
 useSeoMeta({
-    title: "Home Page",
-    description: "This is the home page of the application.",
+    title: "",
+    description: "SmashMC is a unique Minecraft network with exciting mini-games. Our unique Smash mode is offering the best gameplay experience around. You can also explore different styles of Smash, such as GunGame and Teams, adding new twists to the game!",
 })
 </script>

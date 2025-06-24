@@ -9,6 +9,7 @@
 
 <script lang="ts" setup>
 import type { ToasterProps } from "vue-sonner"
+import "vue-sonner/style.css"
 
 const toastTheme = computed<ToasterProps["theme"]>(() => {
     const colorMode = useColorMode()
