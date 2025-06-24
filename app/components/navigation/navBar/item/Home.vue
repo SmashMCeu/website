@@ -1,8 +1,8 @@
 <template>
     <UiNavigationMenuItem>
-        <AppNavigationNavBarLink to="/">
+        <NavigationNavBarLink to="/">
             <Icon name="lucide:house" />
             Home
-        </AppNavigationNavBarLink>
+        </NavigationNavBarLink>
     </UiNavigationMenuItem>
 </template>

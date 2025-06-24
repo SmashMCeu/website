@@ -1,6 +1,6 @@
 <template>
-    <AppNavigationNavBarLink to="/">
+    <NavigationNavBarLink to="/">
         <Icon name="lucide:message-circle-question-mark" />
         Q&A
-    </AppNavigationNavBarLink>
+    </NavigationNavBarLink>
 </template>

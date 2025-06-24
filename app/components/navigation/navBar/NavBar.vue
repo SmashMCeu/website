@@ -13,18 +13,18 @@
                 :viewport="false"
             >
                 <UiNavigationMenuList class="gap-4">
-                    <AppNavigationNavBarItemHome />
-                    <AppNavigationNavBarItemSmash />
-                    <AppNavigationNavBarItemStats />
-                    <AppNavigationNavBarItemHelp />
-                    <AppNavigationNavBarItemRules />
+                    <NavigationNavBarItemHome />
+                    <NavigationNavBarItemSmash />
+                    <NavigationNavBarItemStats />
+                    <NavigationNavBarItemHelp />
+                    <NavigationNavBarItemRules />
                 </UiNavigationMenuList>
             </UiNavigationMenu>
         </div>
         <div class="flex-1 flex gap-4 justify-end items-center pl-8">
             <ColorSchemeSwitchButton />
             <LanguageSwitchButton />
-            <AppNavigationNavBarItemShop />
+            <NavigationNavBarItemShop />
         </div>
     </nav>
 </template>

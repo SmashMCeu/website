@@ -1,8 +1,8 @@
 <template>
     <UiNavigationMenuItem>
-        <AppNavigationNavBarLink to="/">
+        <NavigationNavBarLink to="/">
             <Icon name="lucide:book-open-text" />
             Rules
-        </AppNavigationNavBarLink>
+        </NavigationNavBarLink>
     </UiNavigationMenuItem>
 </template>

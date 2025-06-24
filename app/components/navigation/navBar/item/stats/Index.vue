@@ -1,14 +1,13 @@
 <template>
     <UiNavigationMenuItem>
         <UiNavigationMenuTrigger>
-            <Icon name="lucide:swords" />
-            Smash
+            <Icon name="lucide:crown" />
+            Stats
         </UiNavigationMenuTrigger>
         <UiNavigationMenuContent>
             <ul class="flex flex-col gap-2">
-                <AppNavigationNavBarItemSmashCharacters />
-                <AppNavigationNavBarItemSmashItems />
-                <AppNavigationNavBarItemSmashMaps />
+                <NavigationNavBarItemStatsLeaderboard />
+                <NavigationNavBarItemStatsSearch />
             </ul>
         </UiNavigationMenuContent>
     </UiNavigationMenuItem>

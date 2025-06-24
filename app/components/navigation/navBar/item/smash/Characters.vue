@@ -1,6 +1,6 @@
 <template>
-    <AppNavigationNavBarLink to="/">
+    <NavigationNavBarLink to="/">
         <Icon name="lucide:person-standing" />
         Characters
-    </AppNavigationNavBarLink>
+    </NavigationNavBarLink>
 </template>

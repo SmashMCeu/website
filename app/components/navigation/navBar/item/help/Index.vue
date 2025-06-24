@@ -6,9 +6,9 @@
         </UiNavigationMenuTrigger>
         <UiNavigationMenuContent>
             <ul class="flex flex-col gap-2">
-                <AppNavigationNavBarItemHelpQaA />
-                <AppNavigationNavBarItemHelpGuides />
-                <AppNavigationNavBarItemHelpTeam />
+                <NavigationNavBarItemHelpQaA />
+                <NavigationNavBarItemHelpGuides />
+                <NavigationNavBarItemHelpTeam />
 
                 <UiButton
                     size="sm"
