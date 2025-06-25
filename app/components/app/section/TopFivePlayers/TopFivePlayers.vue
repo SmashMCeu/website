@@ -22,16 +22,24 @@
                             <UiTableCell class="font-semibold w-2!">
                                 4.
                             </UiTableCell>
-                            <UiTableCell>
-                                PlayerNumber4
+                            <UiTableCell class="flex items-center gap-2">
+                                <McSkinRender2dHead
+                                    class="size-5"
+                                    skin-url="https://textures.minecraft.net/texture/aceb62db810aa71befebb0b520261734a3a31028ac79139a999e75d99ba98ac3"
+                                />
+                                <p>PlayerNumber4</p>
                             </UiTableCell>
                         </UiTableRow>
                         <UiTableRow>
                             <UiTableCell class="font-semibold w-2!">
                                 5.
                             </UiTableCell>
-                            <UiTableCell>
-                                PlayerNumber5
+                            <UiTableCell class="flex items-center gap-2">
+                                <McSkinRender2dHead
+                                    class="size-5"
+                                    skin-url="https://textures.minecraft.net/texture/aceb62db810aa71befebb0b520261734a3a31028ac79139a999e75d99ba98ac3"
+                                />
+                                <p>PlayerNumber5</p>
                             </UiTableCell>
                         </UiTableRow>
                     </UiTableBody>
