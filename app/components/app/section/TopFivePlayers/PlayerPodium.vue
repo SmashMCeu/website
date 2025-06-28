@@ -1,15 +1,13 @@
 <template>
-    <div class="flex flex-col items-center gap-2 w-32">
+    <div class="flex flex-col items-center w-40">
         <div>
             <McSkinRender3d
                 ref="skinViewer"
                 :width="140"
                 :height="200"
                 :animation="animation"
-                :auto-rotate="autoRotateSkin"
-                :auto-rotate-speed="Math.PI"
-                skin-url="http://textures.minecraft.net/texture/aceb62db810aa71befebb0b520261734a3a31028ac79139a999e75d99ba98ac3"
-                cape-url="http://textures.minecraft.net/texture/afd553b39358a24edfe3b8a9a939fa5fa4faa4d9a9c3d6af8eafb377fa05c2bb"
+                :skin-url="skinUrl"
+                :cape-url="capeUrl"
                 @click="triggerAnimation"
             />
         </div>
@@ -34,40 +32,83 @@
                 {{ place }}
             </p>
             <p class="text-foreground">
-                Player Name
+                {{ playerIdentity.name }}
             </p>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { CrouchAnimation, type PlayerAnimation } from "skinview3d"
+import { type PlayerObject, type PlayerAnimation, CrouchAnimation, RunningAnimation } from "skinview3d"
+
 import type { HTMLAttributes } from "vue"
 
-const autoRotateSkin = ref(false)
+const props = defineProps<{
+    place: 1 | 2 | 3
+    playerIdentity: McIdentity
+}>()
+
+const skinUrl = computed(() => {
+    return useMcIdentity().getTexture(props.playerIdentity).textures.SKIN?.url
+})
+
+const capeUrl = computed(() => {
+    return useMcIdentity().getTexture(props.playerIdentity).textures.CAPE?.url || undefined
+})
+
+let animationTime = 2000
+const secretAnimationProbability = 0.1
 const animation: Ref<PlayerAnimation | undefined> = ref(undefined)
 const animTimeout: Ref<NodeJS.Timeout | undefined> = ref(undefined)
 
 function triggerAnimation() {
     if (animTimeout.value) return
 
-    const anim = new CrouchAnimation()
-    anim.addHitAnimation()
-
-    animation.value = anim
-    autoRotateSkin.value = true
+    if (Math.random() < secretAnimationProbability) {
+        applySecretAnimation()
+    } else {
+        applyDefaultAnimation()
+    }
 
     animTimeout.value = setTimeout(() => {
         animation.value = undefined
         animTimeout.value = undefined
-        autoRotateSkin.value = false
-    }, 2000)
+    }, animationTime)
 }
 
-const props = defineProps<{
-    place: 1 | 2 | 3
-    playerUuid: string
-}>()
+function applyDefaultAnimation() {
+    const anim = new CrouchAnimation()
+    anim.addHitAnimation()
+    anim.addAnimation((player: PlayerObject, progress: number) => {
+        player.rotation.y = progress * 2 * Math.PI * (1000 / animationTime)
+    })
+
+    animation.value = anim
+    animationTime = 2000
+}
+
+function applySecretAnimation() {
+    const anim = new RunningAnimation()
+    anim.addAnimation((player: PlayerObject, progress: number) => {
+        // player.rotation.y = progress * 2 * Math.PI * (1000 / animationTime)
+        // flip upside down
+        player.rotation.x = Math.PI * 2 * progress
+    })
+    anim.speed = 0.5
+
+    animation.value = anim
+    animationTime = 4000
+}
+
+watch(skinUrl, (newValue) => {
+    if (newValue) {
+        animation.value = undefined
+        if (animTimeout.value) {
+            clearTimeout(animTimeout.value)
+            animTimeout.value = undefined
+        }
+    }
+})
 
 const podiumHeight: Ref<string> = computed(() => {
     return (3 - props.place) * 1.5 + "rem"

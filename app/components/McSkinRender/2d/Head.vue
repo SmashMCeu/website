@@ -9,10 +9,13 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-    skinUrl: string
+    skinUrl?: string
 }>()
 
 const canvasRef = ref<HTMLCanvasElement>()
+
+// TODO: fallback skin URL
+const fallbackSkinUrl = ""
 
 const renderHead = async () => {
     if (!canvasRef.value) return
@@ -30,7 +33,7 @@ const renderHead = async () => {
         await new Promise<void>((resolve, reject) => {
             img.onload = () => resolve()
             img.onerror = () => reject(new Error("Failed to load skin texture"))
-            img.src = props.skinUrl
+            img.src = props.skinUrl || fallbackSkinUrl
         })
 
         ctx.imageSmoothingEnabled = false

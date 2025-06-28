@@ -8,11 +8,6 @@
         </UiButton>
 
         <AppSectionTopFivePlayers />
-
-        <McSkinRender2dHead
-            class="size-32"
-            skin-url="http://textures.minecraft.net/texture/aceb62db810aa71befebb0b520261734a3a31028ac79139a999e75d99ba98ac3"
-        />
     </div>
 </template>
 
