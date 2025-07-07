@@ -8,7 +8,7 @@ export default function () {
         }
 
         try {
-            return await $fetch("/api/smash/stats/top", {
+            return await $fetch("/api/smash/stats/ranking/top", {
                 query: {
                     monthly,
                     limit,
@@ -48,8 +48,50 @@ export default function () {
         return identities
     }
 
+    async function getPlayerStats(uuid: string, start: string | undefined, end: string | undefined): Promise<SmashUserStats> {
+        if (!uuid) {
+            throw createError({
+                statusCode: 400,
+                statusMessage: "UUID is required",
+            })
+        }
+
+        try {
+            return await $fetch(`/api/smash/stats/user/${uuid}`, {
+                query: {
+                    start,
+                    end,
+                },
+            })
+        } catch (error) {
+            throw createError({
+                statusCode: 500,
+                statusMessage: "Failed to fetch player stats",
+                cause: error,
+            })
+        }
+    }
+
+    async function getPlayerAlltimeStats(uuid: string): Promise<SmashUserStats> {
+        return await getPlayerStats(uuid, "1970-01-01", toDateString(new Date()))
+    }
+
+    async function getPlayerMonthlyStats(uuid: string): Promise<SmashUserStats> {
+        const start = new Date()
+        start.setMonth(start.getMonth() - 1)
+        return await getPlayerStats(uuid, toDateString(start), toDateString(new Date()))
+    }
+
+    function toDateString(date: Date): string | undefined {
+        if (!date) return undefined
+        return date.toISOString().split("T")[0] // Format as YYYY-MM-DD
+    }
+
     return {
         getTopPlayers,
         getTopPlayersWithIdentities,
+        getPlayerStats,
+        getPlayerAlltimeStats,
+        getPlayerMonthlyStats,
     }
 }

@@ -1,5 +1,5 @@
 <template>
     <div>
-        <p>Leaderboard</p>
+        <AppSectionStatsLeaderboard />
     </div>
 </template>

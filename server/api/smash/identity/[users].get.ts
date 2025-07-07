@@ -22,7 +22,7 @@ export default defineCachedEventHandler(async (event) => {
     const uuidsOrNamesString = req.data.users.join(",")
 
     try {
-        const identity: McIdentity[] = await $fetch("https://api.smashmc.eu/identity/minecraft/" + uuidsOrNamesString)
+        const identity: McIdentity[] = await $fetch(`https://api.smashmc.eu/identity/minecraft/${uuidsOrNamesString}`)
 
         return identity
     } catch {

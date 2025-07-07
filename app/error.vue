@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>Error</p>
-        <p v-html="error.message" />
+        <p>{{ error.message }}</p>
         <UiButton @click="handleError">
             Go to Home
         </UiButton>
