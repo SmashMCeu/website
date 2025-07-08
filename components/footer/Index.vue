@@ -19,6 +19,7 @@
                 <FooterLink to="/faq/map_guide">{{ $t('useful_links_map_guide') }}</FooterLink>
                 <FooterLink to="/faq/entertainer_anforderungen">{{ $t('useful_links_entertainer') }}</FooterLink>
                 <FooterLink to="/faq/partner_anforderungen">{{ $t('useful_links_partner') }}</FooterLink>
+                <FooterLink to="/teamspeak">{{ $t('useful_links_teamspeak') }}</FooterLink>
             </div>
             <div>
                 <p class="text-textColorLight font-bold text-lg">{{ $t('legal_title') }}</p>
