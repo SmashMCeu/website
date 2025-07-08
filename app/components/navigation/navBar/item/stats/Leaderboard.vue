@@ -1,5 +1,5 @@
 <template>
-    <NavigationNavBarLink to="/">
+    <NavigationNavBarLink to="/stats/leaderboard">
         <Icon name="lucide:house" />
         Leaderboard
     </NavigationNavBarLink>
