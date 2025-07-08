@@ -22,7 +22,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <AppPlayerStatsDialogIntCard
                         name="Wins"
-                        :stats="stats?.stats.wins == undefined ? 0 : stats.stats.wins.count"
+                        :stats="stats?.stats.wins == undefined ? 0 : stats.stats.wins.sum"
                     >
                         <Icon
                             name="lucide:crown"
@@ -31,7 +31,7 @@
                     </AppPlayerStatsDialogIntCard>
                     <AppPlayerStatsDialogIntCard
                         name="Losses"
-                        :stats="(stats?.stats.games == undefined ? 0 : stats.stats.games.count) - (stats?.stats.wins == undefined ? 0 : stats.stats.wins.count)"
+                        :stats="(stats?.stats.games == undefined ? 0 : stats.stats.games.sum) - (stats?.stats.wins == undefined ? 0 : stats.stats.wins.sum)"
                     >
                         <Icon
                             name="lucide:frown"
@@ -40,7 +40,7 @@
                     </AppPlayerStatsDialogIntCard>
                     <AppPlayerStatsDialogIntCard
                         name="Kills"
-                        :stats="stats?.stats.kills == undefined ? 0 : stats.stats.kills.count"
+                        :stats="stats?.stats.kills == undefined ? 0 : stats.stats.kills.sum"
                     >
                         <Icon
                             name="lucide:sword"
@@ -49,7 +49,7 @@
                     </AppPlayerStatsDialogIntCard>
                     <AppPlayerStatsDialogIntCard
                         name="Deaths"
-                        :stats="stats?.stats.deaths == undefined ? 0 : stats.stats.deaths.count"
+                        :stats="stats?.stats.deaths == undefined ? 0 : stats.stats.deaths.sum"
                     >
                         <Icon
                             name="lucide:skull"
@@ -58,7 +58,7 @@
                     </AppPlayerStatsDialogIntCard>
                     <AppPlayerStatsDialogIntCard
                         name="Damage Dealt"
-                        :stats="stats?.stats.damage_dealt == undefined ? 0 : stats.stats.damage_dealt.count"
+                        :stats="stats?.stats.damage_dealt == undefined ? 0 : stats.stats.damage_dealt.sum"
                     >
                         <Icon
                             name="lucide:biceps-flexed"
@@ -67,7 +67,7 @@
                     </AppPlayerStatsDialogIntCard>
                     <AppPlayerStatsDialogIntCard
                         name="Damage Received"
-                        :stats="stats?.stats.damage_received == undefined ? 0 : stats.stats.damage_received.count"
+                        :stats="stats?.stats.damage_received == undefined ? 0 : stats.stats.damage_received.sum"
                     >
                         <Icon
                             name="lucide:ambulance"
@@ -76,7 +76,7 @@
                     </AppPlayerStatsDialogIntCard>
                     <AppPlayerStatsDialogIntCard
                         name="Items Used"
-                        :stats="stats?.stats.items_used == undefined ? 0 : stats.stats.items_used.count"
+                        :stats="stats?.stats.items_used == undefined ? 0 : stats.stats.items_used.sum"
                     >
                         <Icon
                             name="lucide:pickaxe"
@@ -88,7 +88,7 @@
                     <AppPlayerStatsDialogCharacterCard
                         name="Most Played Character"
                         :char-name="mostPlayedCharacter?.[0]"
-                        :count="mostPlayedCharacter?.[1]"
+                        :sum="mostPlayedCharacter?.[1]"
                     >
                         <Icon
                             name="lucide:person-standing"
@@ -98,7 +98,7 @@
                     <AppPlayerStatsDialogCharacterCard
                         name="Most Wins with Character"
                         :char-name="mostWinsWithCharacter?.[0]"
-                        :count="mostWinsWithCharacter?.[1]"
+                        :sum="mostWinsWithCharacter?.[1]"
                     >
                         <Icon
                             name="lucide:crown"
