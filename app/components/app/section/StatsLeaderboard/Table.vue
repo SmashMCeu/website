@@ -28,7 +28,7 @@
                         </div>
                     </UiTableCell>
                     <UiTableCell>
-                        <AppPlayerStatsOverlay :player-identity="player.identity">
+                        <AppPlayerStatsDialogOverlay :player-identity="player.identity">
                             <UiButton
                                 variant="outline"
                                 size="sm"
@@ -36,7 +36,7 @@
                                 <Icon name="lucide:bar-chart-2" />
                                 Show Stats
                             </UiButton>
-                        </AppPlayerStatsOverlay>
+                        </AppPlayerStatsDialogOverlay>
                     </UiTableCell>
                 </UiTableRow>
             </UiTableBody>

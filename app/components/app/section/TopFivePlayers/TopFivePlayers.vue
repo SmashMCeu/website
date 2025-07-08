@@ -4,7 +4,7 @@
         title="Top 5 Players"
     >
         <div class="flex flex-col gap-16 items-center">
-            <AppSectionTopFivePlayersMonthlyAlltimeToggle v-model:model-value="state" />
+            <AppPlayerStatsMonthlyAlltimeToggle v-model:model-value="state" />
 
             <div class="space-y-8">
                 <div class="flex gap-4 items-end">
@@ -65,7 +65,7 @@
 <script lang="ts" setup>
 // TODO: fallbvak skin url / texture for 2d and 3d renderers
 
-const state: Ref<"monthly" | "alltime"> = ref("monthly")
+const state = ref<"monthly" | "alltime">("monthly")
 
 interface TopPlayer {
     place: 1 | 2 | 3 | 4 | 5

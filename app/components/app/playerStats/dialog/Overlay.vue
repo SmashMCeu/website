@@ -3,7 +3,12 @@
         <UiDialogTrigger as-child>
             <slot />
         </UiDialogTrigger>
-        <UiDialogContent class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh]">
+
+        <!-- TODO: describedby NOT WORING?! Still get warning -->
+        <UiDialogContent
+            aria-describedby="Player Stats"
+            class="grid-rows-[auto_minmax(0,1fr)_auto] p-0 max-h-[90dvh]"
+        >
             <UiDialogHeader class="p-6 pb-0">
                 <UiDialogTitle class="flex items-center justify-center gap-2">
                     <Icon
@@ -14,7 +19,7 @@
                 </UiDialogTitle>
             </UiDialogHeader>
             <Suspense>
-                <AppPlayerStatsView :player-identity="playerIdentity" />
+                <AppPlayerStatsDialogView :player-identity="playerIdentity" />
 
                 <template #fallback>
                     <div class="px-6 py-4 flex justify-center">

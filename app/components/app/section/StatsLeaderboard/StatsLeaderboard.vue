@@ -4,7 +4,7 @@
         title="Top 100 Leaderboard"
     >
         <div class="flex flex-col gap-4 items-center">
-            <AppSectionStatsLeaderboardMonthlyAlltimeToggle v-model:model-value="state" />
+            <AppPlayerStatsMonthlyAlltimeToggle v-model:model-value="state" />
 
             <Suspense>
                 <AppSectionStatsLeaderboardTable :state="state" />
