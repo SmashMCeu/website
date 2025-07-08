@@ -18,9 +18,10 @@ import type { HTMLAttributes } from "vue"
 import { reactiveOmit } from "@vueuse/core"
 import {
     NavigationMenuTrigger,
-    type NavigationMenuTriggerProps,
+
     useForwardProps,
 } from "reka-ui"
+import type { NavigationMenuTriggerProps } from "reka-ui"
 import { navigationMenuTriggerStyle } from "."
 import { cn } from "@/lib/utils"
 

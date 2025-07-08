@@ -19,7 +19,7 @@
                         {{ player.place }}.
                     </UiTableCell>
                     <UiTableCell>
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 min-w-48">
                             <McSkinRender2dHead
                                 class="size-5"
                                 :skin-url="useMcIdentity().getTexture(player.identity).textures.SKIN?.url"
@@ -45,11 +45,15 @@
 </template>
 
 <script lang="ts" setup>
+const props = defineProps<{
+    state: "monthly" | "alltime"
+}>()
+
 const { data: top100Players } = await useAsyncData(async () => {
-    const identities = await useSmashStats().getTopPlayersWithIdentities(true, 100)
+    const identities = await useSmashStats().getTopPlayersWithIdentities(props.state == "monthly", 100)
     return identities.map((identity, index) => ({
         place: index + 1,
         identity,
     }))
-})
+}, { watch: [() => props.state] })
 </script>

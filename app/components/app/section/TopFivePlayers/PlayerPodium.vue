@@ -39,7 +39,8 @@
 </template>
 
 <script lang="ts" setup>
-import { type PlayerObject, type PlayerAnimation, CrouchAnimation, RunningAnimation } from "skinview3d"
+import { CrouchAnimation, RunningAnimation } from "skinview3d"
+import type { PlayerObject, PlayerAnimation } from "skinview3d"
 
 import type { HTMLAttributes } from "vue"
 

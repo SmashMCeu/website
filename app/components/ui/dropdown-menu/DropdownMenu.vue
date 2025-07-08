@@ -8,7 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { DropdownMenuRoot, type DropdownMenuRootEmits, type DropdownMenuRootProps, useForwardPropsEmits } from "reka-ui"
+import { DropdownMenuRoot, useForwardPropsEmits } from "reka-ui"
+import type { DropdownMenuRootEmits, DropdownMenuRootProps } from "reka-ui"
 
 const props = defineProps<DropdownMenuRootProps>()
 const emits = defineEmits<DropdownMenuRootEmits>()

@@ -8,7 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { DialogClose, type DialogCloseProps } from "reka-ui"
+import { DialogClose } from "reka-ui"
+import type { DialogCloseProps } from "reka-ui"
 
 const props = defineProps<DialogCloseProps>()
 </script>

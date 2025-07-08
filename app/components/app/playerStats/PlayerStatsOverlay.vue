@@ -12,38 +12,24 @@
                     />
                     Stats - {{ playerIdentity.name }}
                 </UiDialogTitle>
-                <UiDialogDescription>
-                    View the stats of {{ playerIdentity.name }} in detail. <br>
-                </UiDialogDescription>
             </UiDialogHeader>
-            <div class="grid gap-4 py-4 overflow-y-auto px-6">
-                <div class="flex flex-col h-[300dvh]">
-                    <p>Haha loil some text ger here</p>
+            <Suspense>
+                <AppPlayerStatsView :player-identity="playerIdentity" />
 
-                    <div class="flex flex-col gap-8">
-                        <div
-                            v-for="(catStats, catKey) in stats?.stats"
-                            :key="catKey"
-                            as-child
-                        >
-                            <AppPlayerStatsIntCard
-                                :category-key="catKey"
-                                :stats-category="catStats"
-                            />
-                        </div>
+                <template #fallback>
+                    <div class="px-6 py-4 flex justify-center">
+                        <p class="text-muted-foreground">
+                            Loading...
+                        </p>
                     </div>
-                </div>
-            </div>
+                </template>
+            </Suspense>
         </UiDialogContent>
     </UiDialog>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
     playerIdentity: McIdentity
 }>()
-
-const { data: stats } = await useAsyncData(() => {
-    return useSmashStats().getPlayerAlltimeStats(props.playerIdentity.uuid)
-})
 </script>

@@ -39,24 +39,24 @@
                 <p class="text-muted-foreground text-sm text-center">
                     The Top 5 Players of the month get the PRO RANK for FREE!
                 </p>
-            </div>
 
-            <div>
-                <NuxtLink
-                    as-child
-                    to="/stats/leaderboard"
-                >
-                    <UiButton
-                        variant="secondary"
-                        class="w-full max-w-xs"
+                <div class="flex justify-center">
+                    <NuxtLink
+                        as-child
+                        to="/stats/leaderboard"
                     >
-                        <Icon
-                            name="lucide:list-ordered"
-                            :size="20"
-                        />
-                        View Leaderboard
-                    </UiButton>
-                </NuxtLink>
+                        <UiButton
+                            variant="secondary"
+                            class="w-full max-w-xs"
+                        >
+                            <Icon
+                                name="lucide:list-ordered"
+                                :size="20"
+                            />
+                            View Leaderboard
+                        </UiButton>
+                    </NuxtLink>
+                </div>
             </div>
         </div>
     </AppSection>

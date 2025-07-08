@@ -7,9 +7,9 @@
             <p class="text-sm whitespace-nowrap text-muted-foreground leading-3">
                 {{ name }}:
             </p>
-            <p class="text-xl font-semibold">
-                <span v-if="stats">
-                    {{ stats }}
+            <p class="text-lg font-semibold">
+                <span v-if="charName && count">
+                    {{ charName }} ({{ count }})
                 </span>
                 <span v-else>
                     ?
@@ -22,6 +22,7 @@
 <script lang="ts" setup>
 defineProps<{
     name: string
-    stats?: number
+    charName?: string
+    count?: number
 }>()
 </script>

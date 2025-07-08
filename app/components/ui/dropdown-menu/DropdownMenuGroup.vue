@@ -8,7 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { DropdownMenuGroup, type DropdownMenuGroupProps } from "reka-ui"
+import { DropdownMenuGroup } from "reka-ui"
+import type { DropdownMenuGroupProps } from "reka-ui"
 
 const props = defineProps<DropdownMenuGroupProps>()
 </script>

@@ -13,7 +13,7 @@ const routerParamsSchema = z.object({
 
 const queryParamsSchema = z.object({
     start: z.string().optional().default("1970-01-01"),
-    end: z.string().optional().default(new Date().toISOString().split("T")[0]),
+    end: z.string().optional().default(() => new Date().toISOString().split("T")[0]),
 })
 
 export default defineCachedEventHandler(async (event) => {
@@ -34,7 +34,7 @@ export default defineCachedEventHandler(async (event) => {
             query: {
                 start: query.data.start,
                 end: query.data.end,
-                type: "smash", // Assuming "smash" is the type for Smash stats
+                type: "smash",
             },
         })
 
