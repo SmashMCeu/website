@@ -61,15 +61,18 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    strategy: 'no_prefix',
-    defaultLocale: 'en',
+    strategy: "no_prefix",
+    defaultLocale: "en",
     locales: [
-      'de',
-      'en'
+      { code: "en", name: "English", file: "en.json" },
+      { code: "de", name: "Deutsch", file: "de.json" },
     ],
     detectBrowserLanguage: {
       useCookie: false,
       redirectOn: 'root' // recommended
+    },
+    bundle: {
+      optimizeTranslationDirective: false
     }
   },
   icon: {
