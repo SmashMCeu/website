@@ -88,7 +88,7 @@
                     <AppPlayerStatsDialogCharacterCard
                         name="Most Played Character"
                         :char-name="mostPlayedCharacter?.[0]"
-                        :sum="mostPlayedCharacter?.[1]"
+                        :count="mostPlayedCharacter?.[1]"
                     >
                         <Icon
                             name="lucide:person-standing"
@@ -98,7 +98,7 @@
                     <AppPlayerStatsDialogCharacterCard
                         name="Most Wins with Character"
                         :char-name="mostWinsWithCharacter?.[0]"
-                        :sum="mostWinsWithCharacter?.[1]"
+                        :count="mostWinsWithCharacter?.[1]"
                     >
                         <Icon
                             name="lucide:crown"
