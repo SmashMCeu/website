@@ -5,3 +5,4 @@
 - Setup OG Image
 - Setup Seo
 - Set baseUrl for i18n
+- Outsource zod schemas like uuid and username
