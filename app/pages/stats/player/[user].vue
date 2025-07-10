@@ -25,11 +25,11 @@
 </template>
 
 <script lang="ts" setup>
-import { z } from "zod"
+import * as z from "zod"
 
 const paramSchema = z.object({
     user: z.union([
-        z.string().uuid(),
+        z.uuid(),
         z.string().regex(/^[a-zA-Z0-9_]{3,16}$/),
     ]),
 })

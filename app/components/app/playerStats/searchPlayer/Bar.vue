@@ -20,14 +20,14 @@
 </template>
 
 <script setup lang="ts">
-import { z } from "zod"
+import * as z from "zod"
 
 const emit = defineEmits<{
     (e: "search", payload: string): void
 }>()
 
 const uuidOrUsernameSchema = z.union([
-    z.string().uuid(),
+    z.uuid(),
     z.string().regex(/^[a-zA-Z0-9_]{3,16}$/),
 ])
 

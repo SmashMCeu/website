@@ -1,4 +1,4 @@
-import { z } from "zod"
+import * as z from "zod"
 
 const queryParamsSchema = z.object({
     // using z.coerce.boolean() => "false" = true so this workaround is needed!

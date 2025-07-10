@@ -1,8 +1,8 @@
-import { z } from "zod"
+import * as z from "zod"
 
 const routerParamsSchema = z.object({
     user: z.union([
-        z.string().uuid(),
+        z.uuid(),
         z.string().regex(/^[a-zA-Z0-9_]{3,16}$/),
     ]),
 })
