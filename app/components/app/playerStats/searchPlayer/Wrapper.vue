@@ -62,7 +62,7 @@ const props = defineProps<{
 
 const { data: playerIdentity, pending, error } = useAsyncData(async () => {
     return await useMcIdentity().getByUuidOrName(props.uuidOrName)
-}, { watch: [() => props.uuidOrName] })
+}, { watch: [() => props.uuidOrName], immediate: false })
 
 if (error.value && props.uuidOrName.length > 0) {
     useToast().error("Failed to load player stats.")
