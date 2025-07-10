@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@iconify-json/circle-flags": "^1.2.6",
-    "@iconify-json/lucide": "^1.2.56",
+    "@iconify-json/lucide": "^1.2.57",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2"
   },
