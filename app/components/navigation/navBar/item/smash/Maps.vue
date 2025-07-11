@@ -1,5 +1,5 @@
 <template>
-    <NavigationNavBarLink to="/">
+    <NavigationNavBarLink to="/maps">
         <Icon name="lucide:earth" />
         Maps
     </NavigationNavBarLink>
