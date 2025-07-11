@@ -48,4 +48,9 @@ const uuidOrName = user.data.user
 const { data: playerIdentity } = await useAsyncData(async () => {
     return await useMcIdentity().getByUuidOrName(uuidOrName)
 })
+
+useSeoMeta({
+    title: "Player Stats - " + (playerIdentity.value?.name || "Unknown Player"),
+    description: `View detailed statistics of player ${playerIdentity.value?.name || "Unknown Player"} on SmashMC.`,
+})
 </script>
