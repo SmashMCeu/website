@@ -19,7 +19,10 @@
             </div>
 
             <div class="flex flex-col gap-8 items-center sm:items-start">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    :class="{ '*:animate-pulse *:blur-[2px]': pending }"
+                >
                     <AppPlayerStatsDialogIntCard
                         name="Wins"
                         :stats="stats?.stats.wins == undefined ? 0 : stats.stats.wins.sum"
@@ -84,7 +87,10 @@
                         />
                     </AppPlayerStatsDialogIntCard>
                 </div>
-                <div class="grid grid-cols-1 gap-4">
+                <div
+                    class="grid grid-cols-1 gap-4"
+                    :class="{ '*:animate-pulse *:blur-[2px]': pending }"
+                >
                     <AppPlayerStatsDialogCharacterCard
                         name="Most Played Character"
                         :char-name="mostPlayedCharacter?.[0]"
@@ -118,7 +124,7 @@ const props = defineProps<{
 
 const state = ref<"monthly" | "alltime">("alltime")
 
-const { data: stats } = await useAsyncData(async () => {
+const { data: stats, pending } = await useAsyncData(async () => {
     if (state.value === "monthly") {
         return useSmashStats().getPlayerMonthlyStats(props.playerIdentity.uuid)
     } else {
