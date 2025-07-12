@@ -17,7 +17,7 @@ export default function () {
     }
 
     async function getThumbnail(_mapId: MaybeRefOrGetter<string>): Promise<string> {
-        // Fetch the thumbnail from pocketbase cms
+        // TODO: Fetch the thumbnail from pocketbase cms
         return Promise.resolve("https://pocket.smashmc.eu/api/files/m3jdcbgppibfsan/a1tytvbmp2hxda2/i30mf5t7wvh6jsb_ai7yn_ghq_op_4uhUiF4zhA.webp")
     }
 

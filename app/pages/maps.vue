@@ -1,6 +1,5 @@
 <template>
     <div>
-        <p>Note extra features with pro</p>
         <AppSectionMapsGrid />
     </div>
 </template>

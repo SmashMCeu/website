@@ -1,7 +1,8 @@
 <template>
-    <div class="space-y-16">
+    <div class="space-y-16 pb-16">
         <AppSectionMapsGridPage :maps="maps" />
         <AppSectionMapsGridPagination
+            v-if="totalPages > 1"
             :items-per-page="1"
             :total="totalPages"
             @page-change="(page) => pageIndex = page"
