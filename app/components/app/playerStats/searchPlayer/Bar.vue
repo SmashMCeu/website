@@ -8,6 +8,7 @@
             :class="{
                 'border-destructive': !validInput && inputValue.length > 0,
             }"
+            @keyup.enter="lookupStats"
         />
         <UiButton @click="lookupStats">
             <Icon name="lucide:search" />
