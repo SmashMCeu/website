@@ -6,7 +6,7 @@
             class="w-full"
         >
         <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-b from-50% from-transparent to-black/75 p-2">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 text-white">
                 <p class="text-xl font-semibold">
                     {{ map.name }}
                 </p>
