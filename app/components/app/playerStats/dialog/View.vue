@@ -12,7 +12,7 @@
                     :auto-rotate="true"
                     allow-rotate
                     allow-zoom
-                    class="bg-muted/50 rounded-lg border"
+                    class="bg-muted/50 rounded-lg border w-[125px] h-[200px]"
                 />
                 <AppPlayerStatsDialogPlaytimeInfo :player-identity="playerIdentity" />
             </div>
