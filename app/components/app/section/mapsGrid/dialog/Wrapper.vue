@@ -17,6 +17,7 @@
                     <Icon
                         name="lucide:info"
                         :size="20"
+                        class="mt-0.5"
                     />
                     {{ map.name }}
                 </UiDialogTitle>
