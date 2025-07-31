@@ -1,6 +1,6 @@
 <template>
     <NavigationNavBarLink to="/">
         <Icon name="lucide:users" />
-        Characters
+        Our Team
     </NavigationNavBarLink>
 </template>

@@ -6,7 +6,7 @@
         </UiNavigationMenuTrigger>
         <UiNavigationMenuContent>
             <ul class="flex flex-col gap-2">
-                <NavigationNavBarItemHelpQaA />
+                <NavigationNavBarItemHelpFAQ />
                 <NavigationNavBarItemHelpGuides />
                 <NavigationNavBarItemHelpTeam />
 
