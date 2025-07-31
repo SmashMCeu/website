@@ -10,7 +10,6 @@
                     :width="125"
                     :height="200"
                     :auto-rotate="true"
-                    allow-pan
                     allow-rotate
                     allow-zoom
                     class="bg-muted/50 rounded-lg border"
