@@ -18,9 +18,25 @@ export default defineCachedEventHandler(async (event) => {
     const pageSize = 20 // Max. 50 // TODO: Make this higher in production
 
     try {
-        const maps: SmashMapsReqWrapper = await $fetch<SmashMapsReqWrapper>(`https://api.smashmc.eu/sekai-data/play?pageIndex=${pageIndex}&pageSize=${pageSize}&type=smash&tags=approved`)
+        const mapsRes: SmashMapsReqWrapper = await $fetch<SmashMapsReqWrapper>(`https://api.smashmc.eu/sekai-data/play?pageIndex=${pageIndex}&pageSize=${pageSize}&type=smash&tags=approved`)
+        const images = await usePocketbase()
+            .collection(useRuntimeConfig().pocketbase.collections.map_images)
+            .getFullList<MapImage>()
 
-        return maps
+        const mapsWithImgRes: SmashMapsReqWrapper = {
+            ...mapsRes,
+            maps: mapsRes.maps.map((map: SmashMap) => {
+                const pbImg = images.find(img => img.sekai_id === map.id)
+                const imageUrl = pbImg ? usePocketbase().files.getURL({ id: pbImg.id, collectionId: pbImg.collectionId }, pbImg.image) : map.image
+
+                return {
+                    ...map,
+                    image: imageUrl,
+                }
+            }),
+        }
+
+        return mapsWithImgRes // must include page infos like plain mapsRes
     } catch (error) {
         throw createError({
             statusCode: 500,
@@ -31,3 +47,10 @@ export default defineCachedEventHandler(async (event) => {
 }, {
     maxAge: 0, // TODO: Make this higher in production
 })
+
+interface MapImage {
+    id: string
+    sekai_id: string
+    collectionId: string
+    image: string
+}

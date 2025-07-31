@@ -15,4 +15,6 @@ interface SmashMap {
     timesPlayed: number
     approved: boolean
     contributorCount: number
+
+    image?: string
 }

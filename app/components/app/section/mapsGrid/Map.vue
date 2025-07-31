@@ -1,7 +1,7 @@
 <template>
     <div class="bg-accent relative rounded-lg overflow-hidden select-none hover:scale-105 transition-transform duration-200 cursor-pointer">
         <img
-            :src="img"
+            :src="map.image || fallbackImageUrl"
             alt="Map Thumbnail"
             class="w-full"
         >
@@ -21,11 +21,9 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
     map: SmashMap
 }>()
 
-const { data: img } = await useAsyncData(`map-thumbnail-${props.map.id}`, async () => {
-    return await useSmashMaps().getThumbnail(props.map.id)
-}, { watch: [() => props.map.id] })
+const fallbackImageUrl = "https://pocket.smashmc.eu/api/files/m3jdcbgppibfsan/UNKNOWN-MAP-IMG/unknown_52crufWpsk.webp"
 </script>

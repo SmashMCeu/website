@@ -9,13 +9,15 @@
                     name="lucide:badge-info"
                     :size="25"
                 />
-                <p class="-mt-0.5">
-                    With the <strong>PRO Rank</strong> you have following <strong>benefits</strong>:
+                <div>
+                    <p class="-mt-0.5">
+                        With the <strong>PRO Rank</strong> you have following <strong>benefits</strong>:
+                    </p>
                     <ul class="list-disc pl-4">
                         <li>Force maps in Smash rounds</li>
                         <li>Play with exclusive items</li>
                     </ul>
-                </p>
+                </div>
             </div>
 
             <Suspense>

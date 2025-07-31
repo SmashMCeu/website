@@ -1,8 +1,7 @@
 <template>
     <div class="flex flex-col gap-4 items-center px-8 mt-4">
         <img
-            v-if="img"
-            :src="img"
+            :src="map.image || fallbackImageUrl"
             alt="Map Thumbnail"
             class="w-full rounded-lg"
         >
@@ -25,11 +24,9 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
     map: SmashMap
 }>()
 
-const { data: img } = await useAsyncData(`map-thumbnail-${props.map.id}`, async () => {
-    return await useSmashMaps().getThumbnail(props.map.id)
-}, { watch: [() => props.map.id] })
+const fallbackImageUrl = "https://pocket.smashmc.eu/api/files/m3jdcbgppibfsan/UNKNOWN-MAP-IMG/unknown_52crufWpsk.webp"
 </script>

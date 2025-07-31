@@ -18,6 +18,15 @@ export default defineNuxtConfig({
         "vue-sonner/nuxt",
     ],
 
+    runtimeConfig: {
+        pocketbase: {
+            baseUrl: "https://pocket.smashmc.eu",
+            collections: {
+                map_images: "map_images",
+            },
+        },
+    },
+
     colorMode: {
         classSuffix: "",
     },
