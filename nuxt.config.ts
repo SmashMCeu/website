@@ -22,7 +22,8 @@ export default defineNuxtConfig({
         pocketbase: {
             baseUrl: "https://pocket.smashmc.eu",
             collections: {
-                map_images: "map_images",
+                mapImages: "map_images",
+                teamMembers: "team_members",
             },
         },
     },

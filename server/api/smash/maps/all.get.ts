@@ -20,7 +20,7 @@ export default defineCachedEventHandler(async (event) => {
     try {
         const mapsRes: SmashMapsReqWrapper = await $fetch<SmashMapsReqWrapper>(`https://api.smashmc.eu/sekai-data/play?pageIndex=${pageIndex}&pageSize=${pageSize}&type=smash&tags=approved`)
         const images = await usePocketbase()
-            .collection(useRuntimeConfig().pocketbase.collections.map_images)
+            .collection(useRuntimeConfig().pocketbase.collections.mapImages)
             .getFullList<MapImage>()
 
         const mapsWithImgRes: SmashMapsReqWrapper = {
@@ -36,7 +36,7 @@ export default defineCachedEventHandler(async (event) => {
             }),
         }
 
-        return mapsWithImgRes // must include page infos like plain mapsRes
+        return mapsWithImgRes
     } catch (error) {
         throw createError({
             statusCode: 500,

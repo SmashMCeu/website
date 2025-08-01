@@ -4,7 +4,8 @@ declare module "nuxt/schema" {
         pocketbase: {
             baseUrl: string
             collections: {
-                map_images: string
+                mapImages: string
+                teamMembers: string
             }
         }
     }
