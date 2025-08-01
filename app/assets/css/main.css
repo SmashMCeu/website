@@ -168,3 +168,24 @@
     }
 
 }
+
+
+@utility left-right-hover-underline {
+    @apply relative inline-block;
+
+    @variant after {
+        @apply absolute bg-current w-0 h-[1.5px] top-full left-0 transition-all duration-300 ease-in-out;
+        content: "";
+    }
+
+    @variant hover {
+        @variant after {
+            @apply w-full;
+        }
+    }
+    @variant not-hover {
+        @variant after {
+            @apply right-0 left-auto;
+        }
+    }
+}
