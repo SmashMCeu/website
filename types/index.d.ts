@@ -6,6 +6,7 @@ declare module "nuxt/schema" {
             collections: {
                 mapImages: string
                 teamMembers: string
+                faq: string
             }
         }
     }

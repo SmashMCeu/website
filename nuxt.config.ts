@@ -24,6 +24,7 @@ export default defineNuxtConfig({
             collections: {
                 mapImages: "map_images",
                 teamMembers: "team_members",
+                faq: "faq",
             },
         },
     },
