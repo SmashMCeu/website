@@ -1,0 +1,23 @@
+kind: pipeline
+type: docker
+name: push-docker
+
+trigger:
+  branch:
+    - new-website
+  event:
+    - push
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      registry: ghcr.io
+      username:
+        from_secret: new_registry_username
+      password:
+        from_secret: new_registry_password
+      repo: ghcr.io/smashmceu/nuxt-website
+      tags:
+        - beta
+      dockerfile: ./Dockerfile
