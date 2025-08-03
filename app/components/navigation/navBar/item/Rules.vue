@@ -1,6 +1,6 @@
 <template>
     <UiNavigationMenuItem>
-        <NavigationNavBarLink to="/">
+        <NavigationNavBarLink to="/rules">
             <Icon name="lucide:book-open-text" />
             Rules
         </NavigationNavBarLink>

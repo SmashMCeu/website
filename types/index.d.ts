@@ -7,6 +7,7 @@ declare module "nuxt/schema" {
                 mapImages: string
                 teamMembers: string
                 faq: string
+                rules: string
             }
         }
     }
