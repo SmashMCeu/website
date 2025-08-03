@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     },
 
     i18n: {
+        baseUrl: "https://smashmc.eu",
         defaultLocale: "en",
         locales: [
             {
