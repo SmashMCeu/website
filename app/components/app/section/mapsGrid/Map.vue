@@ -3,7 +3,7 @@
         <img
             :src="map.image || fallbackImageUrl"
             alt="Map Thumbnail"
-            class="w-full"
+            class="w-full aspect-video"
         >
         <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-b from-50% from-transparent to-black/75 p-2">
             <div class="flex items-center gap-2 text-white">

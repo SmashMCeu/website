@@ -7,34 +7,39 @@
             <AppPlayerStatsMonthlyAlltimeToggle v-model:model-value="state" />
 
             <div class="space-y-8">
-                <div class="flex gap-4 items-end">
-                    <AppSectionTopFivePlayersPlayerPodium
-                        v-for="player in topThreePodium"
-                        :key="player.place"
-                        :place="(player.place as 1 | 2 | 3)"
-                        :player-identity="player.identity"
-                    />
-                </div>
-
-                <UiTable>
-                    <UiTableBody>
-                        <UiTableRow
-                            v-for="player in remainingPlayers"
+                <div
+                    class="space-y-4 blur-none transition-all duration-500"
+                    :class="{ 'blur-xs animate-pulse pointer-events-none': pending }"
+                >
+                    <div class="flex gap-4 items-end">
+                        <AppSectionTopFivePlayersPlayerPodium
+                            v-for="player in topThreePodium"
                             :key="player.place"
-                        >
-                            <UiTableCell class="font-semibold w-2!">
-                                {{ player.place }}.
-                            </UiTableCell>
-                            <UiTableCell class="flex items-center gap-2">
-                                <McSkinRender2dHead
-                                    class="size-5"
-                                    :skin-url="useMcIdentity().getTexture(player.identity).textures.SKIN?.url"
-                                />
-                                <p>{{ player.identity.name }}</p>
-                            </UiTableCell>
-                        </UiTableRow>
-                    </UiTableBody>
-                </UiTable>
+                            :place="(player.place as 1 | 2 | 3)"
+                            :player-identity="player.identity"
+                        />
+                    </div>
+
+                    <UiTable>
+                        <UiTableBody>
+                            <UiTableRow
+                                v-for="player in remainingPlayers"
+                                :key="player.place"
+                            >
+                                <UiTableCell class="font-semibold w-2!">
+                                    {{ player.place }}.
+                                </UiTableCell>
+                                <UiTableCell class="flex items-center gap-2">
+                                    <McSkinRender2dHead
+                                        class="size-5"
+                                        :skin-url="useMcIdentity().getTexture(player.identity).textures.SKIN?.url"
+                                    />
+                                    <p>{{ player.identity.name }}</p>
+                                </UiTableCell>
+                            </UiTableRow>
+                        </UiTableBody>
+                    </UiTable>
+                </div>
 
                 <p class="text-muted-foreground text-sm text-center">
                     The Top 5 Players of the month get the PRO RANK for FREE!
@@ -74,7 +79,7 @@ interface TopPlayer {
 
 const podiumOrder = [2, 1, 3]
 
-const { data: topFivePlayers } = useAsyncData<TopPlayer[]>(async () => {
+const { data: topFivePlayers, pending } = useAsyncData<TopPlayer[]>(async () => {
     const identities: McIdentity[] = await useSmashStats().getTopPlayersWithIdentities(state.value == "monthly", 5)
 
     return identities.map((identity, index) => ({

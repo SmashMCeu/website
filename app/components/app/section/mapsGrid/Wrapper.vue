@@ -1,6 +1,10 @@
 <template>
     <div class="space-y-16 pb-16">
-        <AppSectionMapsGridPage :maps="maps" />
+        <AppSectionMapsGridPage
+            :maps="maps"
+            class="transition-all duration-1000 blur-none"
+            :class="{ 'blur-sm animate-pulse pointer-events-none!': pending }"
+        />
         <AppSectionMapsGridPagination
             v-if="totalPages > 1"
             :items-per-page="1"
@@ -13,14 +17,14 @@
 <script lang="ts" setup>
 const pageIndex = ref(1)
 
-const req = useAsyncData(`maps-${pageIndex.value}`, () => useSmashMaps().getAll(pageIndex), {
+const { data, pending } = await useAsyncData(`maps-${pageIndex.value}`, async () => await useSmashMaps().getAll(pageIndex), {
     watch: [pageIndex],
 })
 
 const totalPages = computed(() => {
-    return (req.data.value?.lastPage || 1) + 1
+    return (data.value?.lastPage || 0) + 1
 })
 const maps = computed(() => {
-    return req.data.value?.maps || []
+    return data.value?.maps || []
 })
 </script>

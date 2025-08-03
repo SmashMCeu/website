@@ -1,5 +1,8 @@
 <template>
-    <div>
+    <div
+        class="blur-none transition-all duration-500"
+        :class="{ 'blur-xs animate-pulse pointer-events-none': pending }"
+    >
         <UiTable>
             <UiTableHeader>
                 <UiTableRow>
@@ -49,7 +52,7 @@ const props = defineProps<{
     state: "monthly" | "alltime"
 }>()
 
-const { data: top100Players } = await useAsyncData(async () => {
+const { data: top100Players, pending } = await useAsyncData(async () => {
     const identities = await useSmashStats().getTopPlayersWithIdentities(props.state == "monthly", 100)
     return identities.map((identity, index) => ({
         place: index + 1,
