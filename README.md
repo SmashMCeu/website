@@ -13,3 +13,8 @@
 - Fix laggy/buggy nav dropdowns
 - i18n page url and locales buggy
 - use default loading indicator for everything instead of text loading... everywhere
+
+
+
+# Feature Requests:
+- 

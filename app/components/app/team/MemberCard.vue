@@ -10,6 +10,13 @@
                     <p class="text-xl text-center font-bold">
                         {{ member.identity.name }}
                     </p>
+                    <UiBadge
+                        v-if="member.member.isAdmin"
+                        variant="outline"
+                        class="border-red-500 text-red-500"
+                    >
+                        Admin
+                    </UiBadge>
                 </div>
                 <p class="text-sm text-muted-foreground text-center font-medium">
                     Joined on <NuxtTime
@@ -69,7 +76,8 @@ const domains = computed(() => {
 })
 
 const bcp47Locale = computed(() => {
-    const { locale, locales } = useI18n()
+    const { locale } = useI18n()
+    const locales = useNuxtApp().$i18n.locales
     const currentLocale = locales.value.find(l => l.code === locale.value)
     return currentLocale?.language || locale.value
 })
