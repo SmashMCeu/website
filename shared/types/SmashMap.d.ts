@@ -1,4 +1,4 @@
-interface SmashMap {
+export interface SmashMap {
     id: string
     name: string
     type: string | "smash" | "lobby"

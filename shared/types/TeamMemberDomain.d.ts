@@ -1,4 +1,4 @@
-interface TeamMemberDomain {
+export interface TeamMemberDomain {
     id: string
     position: number
     name: string

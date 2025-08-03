@@ -1,4 +1,4 @@
-interface FAQEntry {
+export interface FAQEntry {
     collectionId: string
     collectionName: string
     id: string

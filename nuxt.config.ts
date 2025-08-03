@@ -56,16 +56,13 @@ export default defineNuxtConfig({
             cookieKey: "i18n_redirected",
             redirectOn: "root",
         },
-        bundle: {
-            optimizeTranslationDirective: false,
-        },
     },
 
     css: ["~/assets/css/main.css"],
 
     vite: {
         plugins: [
-            tailwindcss(), // TODO: Use vite plugin until NuxtTailwind module v7 includes TailwindCSS v4
+            tailwindcss(), // TODO: Use vite plugin until NuxtTailwind module v7 (currently only pre-release) includes TailwindCSS v4
         ],
     },
 
@@ -75,8 +72,5 @@ export default defineNuxtConfig({
         },
     },
 
-    future: {
-        compatibilityVersion: 4,
-    },
     compatibilityDate: "2025-05-15",
 })

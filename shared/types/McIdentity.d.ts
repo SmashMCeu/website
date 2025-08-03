@@ -1,4 +1,4 @@
-interface McIdentity {
+export interface McIdentity {
     name: string
     uuid: string
     texture: McSkinTexture

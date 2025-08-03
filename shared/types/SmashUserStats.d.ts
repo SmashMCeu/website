@@ -1,4 +1,4 @@
-interface SmashUserStats {
+export interface SmashUserStats {
     playerId: string
     startDate: string
     endDate: string

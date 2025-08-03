@@ -1,4 +1,4 @@
-interface McSkinTexture {
+export interface McSkinTexture {
     signature: string
     value: string
 }

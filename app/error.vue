@@ -11,6 +11,10 @@
 <script lang="ts" setup>
 import type { NuxtError } from "#app"
 
+useHead({
+    titleTemplate: t => t ? `${t} - SmashMC.eu` : "Error - SmashMC.eu",
+})
+
 defineProps<{
     error: NuxtError
 }>()

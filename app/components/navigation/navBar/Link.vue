@@ -1,8 +1,7 @@
 <template>
-    <NuxtLink
+    <NuxtLinkLocale
         v-slot="{ isActive, href, navigate }"
         :to="to"
-        custom
         class="w-full justify-start"
     >
         <UiNavigationMenuLink
@@ -13,7 +12,7 @@
         >
             <slot />
         </UiNavigationMenuLink>
-    </NuxtLink>
+    </NuxtLinkLocale>
 </template>
 
 <script lang="ts" setup>

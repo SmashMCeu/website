@@ -1,4 +1,4 @@
-interface SmashUserPlaytime {
+export interface SmashUserPlaytime {
     uuid: string
     name: string
     playtime: number

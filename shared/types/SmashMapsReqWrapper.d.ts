@@ -1,4 +1,4 @@
-interface SmashMapsReqWrapper {
+export interface SmashMapsReqWrapper {
     maps: SmashMap[]
     page: number
     lastPage: number

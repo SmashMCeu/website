@@ -1,4 +1,4 @@
-interface TeamMember {
+export interface TeamMember {
     id: string
     minecraftUuid: string
     joinedAt: string

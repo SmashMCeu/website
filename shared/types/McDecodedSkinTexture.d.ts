@@ -1,4 +1,4 @@
-interface McDecodedSkinTexture {
+export interface McDecodedSkinTexture {
     timestamp: number
     profileId: string
     profileName: string

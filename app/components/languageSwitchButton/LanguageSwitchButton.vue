@@ -28,5 +28,6 @@
 </template>
 
 <script lang="ts" setup>
-const { locales, locale } = useI18n()
+const { locale } = useI18n()
+const locales = useNuxtApp().$i18n.locales
 </script>
