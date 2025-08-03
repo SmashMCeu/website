@@ -1,5 +1,5 @@
 <template>
-    <div class="prose dark:prose-invert py-10">
+    <div class="prose dark:prose-invert max-w-full py-10">
         <p>
             <b>Angaben gemäß § 5 TMG:</b>
         </p>

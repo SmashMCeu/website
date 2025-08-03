@@ -5,7 +5,7 @@
             v-bind="delegatedProps"
             :class="
                 cn(
-                    'bg-accent/50 focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 gap-4 rounded-md px-4 py-4 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>span]:rotate-180',
+                    'bg-accent/50 cursor-pointer focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 gap-4 rounded-md px-4 py-4 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>span]:rotate-180',
                     props.class,
                 )
             "
