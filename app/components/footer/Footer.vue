@@ -1,5 +1,5 @@
 <template>
-    <div class="border-t w-full pt-6 pb-10 flex lg:flex-row flex-col lg:gap-0 gap-10 lg:items-center justify-between">
+    <div class="mt-20 border-t w-full pt-6 pb-10 flex lg:flex-row flex-col lg:gap-0 gap-10 lg:items-center justify-between">
         <div>
             <div class="flex gap-3">
                 <img
