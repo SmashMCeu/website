@@ -44,8 +44,7 @@ export default defineNuxtConfig({
     },
 
     i18n: {
-        // baseUrl: "https://smashmc.eu",
-        baseUrl: "http://private.knoter.eu:3000",
+        baseUrl: "https://beta.smashmc.eu",
         defaultLocale: "en",
         locales: [
             {
@@ -75,9 +74,6 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(), // TODO: Use vite plugin until NuxtTailwind module v7 (currently only pre-release) includes TailwindCSS v4
         ],
-        server: {
-            allowedHosts: ["private.knoter.eu"],
-        },
     },
 
     eslint: {
