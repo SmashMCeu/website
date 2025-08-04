@@ -46,7 +46,7 @@
                 </p>
 
                 <div class="flex justify-center">
-                    <NuxtLink
+                    <NuxtLinkLocale
                         as-child
                         to="/stats/leaderboard"
                     >
@@ -60,7 +60,7 @@
                             />
                             View Leaderboard
                         </UiButton>
-                    </NuxtLink>
+                    </NuxtLinkLocale>
                 </div>
             </div>
         </div>
