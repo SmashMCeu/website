@@ -1,11 +1,8 @@
 <template>
-    <UiButton>
-        <NuxtLink
-            to="https://shop.smashmc.eu"
-            target="_blank"
-        >
+    <UiButton as-child>
+        <NuxtLinkLocale to="/shop">
             <Icon name="lucide:shopping-cart" />
             Shop
-        </NuxtLink>
+        </NuxtLinkLocale>
     </UiButton>
 </template>

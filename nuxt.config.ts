@@ -16,6 +16,8 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "shadcn-nuxt",
         "vue-sonner/nuxt",
+        "@nuxt/scripts",
+        "@pinia/nuxt",
     ],
 
     runtimeConfig: {
@@ -28,6 +30,13 @@ export default defineNuxtConfig({
                 rules: "rules",
             },
         },
+        public: {
+            tebex: {
+                apiBaseUrl: "https://headless.tebex.io",
+                token: "<NUXT_PUBLIC_TEBEX_TOKEN>", // Use .env file to set this value (NUXT_PUBLIC_TEBEX_TOKEN)
+            },
+        },
+
     },
 
     colorMode: {
@@ -35,7 +44,8 @@ export default defineNuxtConfig({
     },
 
     i18n: {
-        baseUrl: "https://smashmc.eu",
+        // baseUrl: "https://smashmc.eu",
+        baseUrl: "http://private.knoter.eu:3000",
         defaultLocale: "en",
         locales: [
             {
@@ -65,6 +75,9 @@ export default defineNuxtConfig({
         plugins: [
             tailwindcss(), // TODO: Use vite plugin until NuxtTailwind module v7 (currently only pre-release) includes TailwindCSS v4
         ],
+        server: {
+            allowedHosts: ["private.knoter.eu"],
+        },
     },
 
     eslint: {

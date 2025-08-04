@@ -11,6 +11,13 @@ declare module "nuxt/schema" {
             }
         }
     }
+
+    interface PublicRuntimeConfig {
+        tebex: {
+            apiBaseUrl: string
+            token: string
+        }
+    }
 }
 
 export { }
