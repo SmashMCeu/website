@@ -32,15 +32,48 @@ const uuidOrUsernameSchema = z.union([
     z.string().regex(/^[a-zA-Z0-9_]{3,16}$/),
 ])
 
-const inputValue = ref("")
+const queryParamSchema = z.object({
+    player: uuidOrUsernameSchema.optional(),
+})
+const query = queryParamSchema.safeParse(useRoute().query)
+if (!query.success) {
+    throw createError({
+        statusCode: 400,
+        statusMessage: "Invalid query parameter. Must be a valid UUID or username.",
+    })
+}
+const inputValue = ref(query.data.player || "")
 
 const validInput = computed(() => {
     return uuidOrUsernameSchema.safeParse(inputValue.value).success
 })
+
+// Update query parameter when input changes
+const debouncedUpdate = useDebounceFn((newValue: string) => {
+    const router = useRouter()
+    const route = useRoute()
+
+    if (newValue) {
+        router.push({
+            query: { ...route.query, player: newValue },
+        })
+    } else {
+        const { player, ...restQuery } = route.query
+        router.push({
+            query: restQuery,
+        })
+    }
+}, 500)
+
+watch(inputValue, debouncedUpdate)
 
 function lookupStats() {
     if (validInput.value) {
         emit("search", inputValue.value)
     }
 }
+
+onMounted(() => {
+    lookupStats()
+})
 </script>

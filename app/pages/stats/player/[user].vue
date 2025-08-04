@@ -4,6 +4,7 @@
             <AppPlayerStatsDialogView
                 v-if="playerIdentity"
                 :player-identity="playerIdentity"
+                :state="state"
             />
             <p
                 v-else
@@ -14,10 +15,9 @@
             </p>
 
             <template #fallback>
-                <div class="px-6 py-4 flex justify-center">
-                    <p class="text-muted-foreground">
-                        Loading player stats...
-                    </p>
+                <div class="px-6 py-4 flex items-center gap-2 justify-center text-muted-foreground">
+                    <LoadingIndicator />
+                    <p>Loading player stats...</p>
                 </div>
             </template>
         </Suspense>
@@ -34,19 +34,30 @@ const paramSchema = z.object({
     ]),
 })
 
-const user = paramSchema.safeParse(useRoute().params)
+const queryParamSchema = z.object({
+    type: z.enum(["monthly", "alltime"]).optional().default("alltime"),
+})
 
-if (!user.success) {
+const user = paramSchema.safeParse(useRoute().params)
+const query = queryParamSchema.safeParse(useRoute().query)
+
+if (!user.success || !query.success) {
     throw createError({
         statusCode: 400,
-        statusMessage: "Invalid user parameter. Must be a valid UUID or username.",
+        statusMessage: "Invalid user or query parameter. User must be a valid UUID or username and query must be a valid type of 'monthly' or 'alltime'.",
     })
 }
 
 const uuidOrName = user.data.user
+const state = query.data.type
 
 const { data: playerIdentity } = await useAsyncData(async () => {
     return await useMcIdentity().getByUuidOrName(uuidOrName)
+})
+
+defineOgImageComponent("PlayerStats", {
+    playerIdentity: playerIdentity.value,
+    state: state,
 })
 
 useSeoMeta({

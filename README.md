@@ -8,13 +8,13 @@
 - rename components in other components - use name shortcut instaed of full path
 - Wall of Fame -> players who have bought a rank -> sort by max spent
 
-- maps loading states and pagination when loading showing 2 pages?!
-- remove focus of close btn in stats dialog
 - Fix laggy/buggy nav dropdowns
-- i18n page url and locales buggy
 - use default loading indicator for everything instead of text loading... everywhere
-
+- Are the toasts / sonner broken?!
 
 
 # Feature Requests:
-- 
+- Player Stats OG image
+
+# Keep in Mind:
+- https://bluemap.bluecolored.de/wiki/getting-started/Installation.html#using-bluemap-on-the-cli--standalone

@@ -4,14 +4,13 @@
 
         <div class="flex flex-col sm:flex-row justify-between sm:gap-4 gap-16 py-4 overflow-y-auto px-6">
             <div class="flex flex-col gap-4 grow items-center">
-                <McSkinRender3d
+                <LazyMcSkinRender3d
                     :skin-url="useMcIdentity().getTexture(playerIdentity).textures.SKIN?.url"
                     :cape-url="useMcIdentity().getTexture(playerIdentity).textures.CAPE?.url"
                     :width="125"
                     :height="200"
                     :auto-rotate="true"
                     allow-rotate
-                    allow-zoom
                     class="bg-muted/50 rounded-lg border w-[125px] h-[200px]"
                 />
                 <AppPlayerStatsDialogPlaytimeInfo :player-identity="playerIdentity" />
@@ -117,11 +116,16 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
-    playerIdentity: McIdentity
-}>()
+const props = withDefaults(
+    defineProps<{
+        playerIdentity: McIdentity
+        state?: "monthly" | "alltime"
+    }>(), {
+        state: "alltime",
+    },
+)
 
-const state = ref<"monthly" | "alltime">("alltime")
+const state = ref<"monthly" | "alltime">(props.state)
 
 const { data: stats, pending } = await useAsyncData(async () => {
     if (state.value === "monthly") {
