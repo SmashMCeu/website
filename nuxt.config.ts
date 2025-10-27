@@ -43,6 +43,15 @@ export default defineNuxtConfig({
         classSuffix: "",
     },
 
+    icon: {
+        customCollections: [
+            {
+                prefix: "custom",
+                dir: "./app/assets/icons",
+            },
+        ],
+    },
+
     i18n: {
         baseUrl: "https://beta.smashmc.eu",
         defaultLocale: "en",
