@@ -20,12 +20,16 @@
                         :size="48"
                     />
                 </div>
-                <div class="*:w-full">
+                <div class="*:w-full space-y-2">
                     <ShopProductVariantSelect
                         v-if="hasVariants"
                         v-model="currentVariant"
                         :variants="product.variants"
                     />
+                    <UiButton @click="addToCart">
+                        <Icon name="lucide:shopping-cart" />
+                        Add to cart
+                    </UiButton>
                 </div>
             </div>
             <div class="space-y-8">
@@ -67,6 +71,25 @@ const currentVariant = ref<TebexPackage | undefined>(
         ? product.variants.find(v => v.name.toLowerCase().replace(/ /g, "") === queryParamVariant?.toLowerCase().replace(/ /g, "")) || defaultVariant.value
         : defaultVariant.value,
 )
+
+function addToCart() {
+    if (!currentVariant.value) return
+
+    useShopStore().addToCart({
+        id: currentVariant.value.id.toString(),
+        quantity: 1,
+    })
+
+    const localePath = useLocalePath()
+    useToast().success(`Added ${currentVariant.value.name} to cart!`, {
+        action: {
+            label: "Checkout",
+            onClick: () => {
+                navigateTo(localePath("/shop/checkout"))
+            },
+        },
+    })
+}
 
 watch(currentVariant, (newVariant) => {
     if (

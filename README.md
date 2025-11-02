@@ -11,7 +11,7 @@
 - Fix laggy/buggy nav dropdowns
 - use default loading indicator for everything instead of text loading... everywhere
 - Are the toasts / sonner broken?!
-
+- add chaching to shop products. Also useAsyncData DOES NOT CACHE BY DEFAULT!!!
 
 # Feature Requests:
 - Player Stats OG image

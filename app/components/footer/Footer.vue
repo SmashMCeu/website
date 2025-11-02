@@ -17,7 +17,7 @@
                 </div>
             </div>
             <p class="max-w-[25rem] mt-4 text-muted-foreground">
-                We are not affiliated with Mojang or Microsoft
+                We are not affiliated with Mojang, AB or Microsoft.
             </p>
             <FooterSocialIcons class="mt-6" />
         </div>

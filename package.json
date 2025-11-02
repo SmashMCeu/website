@@ -34,7 +34,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.32.0",
     "isomorphic-dompurify": "^2.26.0",
-    "nuxt": "^4.0.2",
+    "nuxt": "^4.2.0",
     "pinia": "^3.0.3",
     "pocketbase": "^0.26.2",
     "reka-ui": "^2.4.1",

@@ -10,6 +10,10 @@ declare module "nuxt/schema" {
                 rules: string
             }
         }
+        tebex: {
+            projectId: string
+            privateKey: string
+        }
     }
 
     interface PublicRuntimeConfig {

@@ -58,6 +58,8 @@ const debouncedUpdate = useDebounceFn((newValue: string) => {
             query: { ...route.query, player: newValue },
         })
     } else {
+        // TODO: fix lint
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { player, ...restQuery } = route.query
         router.push({
             query: restQuery,

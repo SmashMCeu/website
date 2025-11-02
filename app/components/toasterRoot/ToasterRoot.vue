@@ -4,6 +4,13 @@
         position="bottom-right"
         rich-colors
         class="pointer-events-auto"
+        :toast-options="{
+            actionButtonStyle: {
+                backgroundColor: 'transparent',
+                border: '1px solid currentColor',
+                color: 'inherit',
+            },
+        }"
     />
 </template>
 

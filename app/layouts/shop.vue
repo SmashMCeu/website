@@ -1,15 +1,15 @@
 <template>
     <div class="px-16">
-        <div class="min-h-screen py-36 flex">
+        <div class="pt-28 flex">
             <NavigationNavBar />
-            <div class="flex gap-16 w-full">
-                <ShopSidebar />
+            <div class="flex flex-col gap-8 w-full">
+                <ShopNavigationBar />
 
-                <div class="px-10 grow">
+                <div class="mt-28 px-10 min-h-screen">
                     <slot />
                 </div>
+                <Footer />
             </div>
         </div>
-        <Footer />
     </div>
 </template>

@@ -20,5 +20,11 @@ export default withNuxt({
         "nuxt/nuxt-config-keys-order": "off",
 
         "vue/multi-word-component-names": "off", // TODO: Currently this does not respect the new folder structure of Nuxt 4 -> disable for now
+
+        "@typescript-eslint/no-unused-vars": ["error", {
+            caughtErrors: "none",
+        }],
+
+        "@typescript-eslint/unified-signatures": "off", // TODO: Temp fix
     },
 })

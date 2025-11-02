@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Checkout here:</p>
+        <ShopCheckout />
     </div>
 </template>
 
