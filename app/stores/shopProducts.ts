@@ -62,10 +62,10 @@ export const useShopProducts = defineStore("shopProducts", () => {
         return categories.value.filter(cat => cat.parent?.id === parentCategoryId)
     }
 
-    function getProductByUrlName(urlName: string): ShopPackage[] | undefined {
+    function findProductByUrlName(urlName: string): ShopCategory | undefined {
         return categories.value.find((cat) => {
             return getProductOrCategoryUrlName(cat.name) === getProductOrCategoryUrlName(urlName)
-        })?.packages
+        })
     }
 
     return {
@@ -79,7 +79,7 @@ export const useShopProducts = defineStore("shopProducts", () => {
         getProductOrCategoryUrlName,
         findCategoryByUrlName,
         getSubCategories,
-        getProductByUrlName,
+        findProductByUrlName,
     }
 })
 

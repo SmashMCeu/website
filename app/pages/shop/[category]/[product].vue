@@ -12,11 +12,11 @@
             </UiButton>
         </div>
         <div
-            v-if="categoryData"
+            v-if="productData"
             class="mt-10"
         >
             <ShopProductView
-                :product="categoryData"
+                :product="productData"
                 :variants="productVariants || []"
             />
         </div>
@@ -37,7 +37,8 @@ if (typeof category !== "string" || typeof product !== "string") {
 
 const shop = useShopProducts()
 const categoryData = shop.findCategoryByUrlName(category)
-const productVariants = shop.getProductByUrlName(product)
+const productData = shop.findProductByUrlName(product)
+const productVariants = productData?.packages || []
 
 definePageMeta({
     layout: "shop",

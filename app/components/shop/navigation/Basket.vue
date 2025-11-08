@@ -11,6 +11,6 @@
 <script setup lang="ts">
 const { packages } = storeToRefs(useShopBasket())
 const itemCount = computed(() => {
-    return packages.value.values.length
+    return packages.value.size
 })
 </script>

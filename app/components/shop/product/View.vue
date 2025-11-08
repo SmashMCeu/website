@@ -34,11 +34,18 @@
                     </div>
                     <UiButton
                         class="mt-4"
+                        :disabled="hasAlreadyRankVariantAddedInCart"
                         @click="addToCart"
                     >
                         <Icon name="lucide:shopping-cart" />
                         Add to cart
                     </UiButton>
+                    <p
+                        v-if="hasAlreadyRankVariantAddedInCart"
+                        class="text-sm text-muted-foreground"
+                    >
+                        You already have this rank in your cart.
+                    </p>
                 </div>
             </div>
             <div class="space-y-8">
@@ -53,7 +60,7 @@
 
 <script lang="ts" setup>
 import type { ShopCategory } from "~~/shared/types/ShopCategory"
-import type { ShopPackage } from "~~/shared/types/ShopPackage"
+import type { ShopPackage, ShopPackageVariableData } from "~~/shared/types/ShopPackage"
 
 const props = defineProps<{
     product: ShopCategory
@@ -77,13 +84,28 @@ const defaultVariant = computed<ShopPackage | undefined>(() => {
 
 const currentVariant = ref<ShopPackage | undefined>(props.variants.find(v => getProductOrCategoryUrlName(v.name) === queryParamVariant) || defaultVariant.value)
 
+// TODO: hard coded!
+const hasAlreadyRankVariantAddedInCart = computed(() => {
+    if (!currentVariant.value) return false
+    if (!getProductOrCategoryUrlName(currentVariant.value.category.name).includes("pro")) return false
+    return basket.basket?.packages.some(item => item.id === currentVariant.value!.id) || false
+})
+
 function addToCart() {
     if (!currentVariant.value) return
     if (!shopAccount.isAuthenticated) {
         useToast().error("You must be logged in to add products to your basket.")
         return
     }
-    basket.addPackageToBasket(currentVariant.value.id)
+
+    const variables: Record<string, unknown> = {}
+
+    // Special Cases:
+    if (getProductOrCategoryUrlName(props.product.name) === "giftcard") {
+        variables.giftcard_to = prompt("Please enter the recipient's email address:") || ""
+    }
+
+    basket.addPackageToBasket(currentVariant.value.id, 1, variables as ShopPackageVariableData)
 }
 
 watch(currentVariant, (newVariant) => {

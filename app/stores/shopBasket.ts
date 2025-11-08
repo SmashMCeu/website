@@ -20,6 +20,9 @@ export const useShopBasket = defineStore("shopBasket", () => {
 
     async function createBasket(username: string): Promise<void> {
         basket.value = await useTebexEndpoints().createBasket(username)
+        console.log(basket.value)
+
+        basketId.value = basket.value ? basket.value.ident : null
     }
 
     function destroyBasket(): void {
