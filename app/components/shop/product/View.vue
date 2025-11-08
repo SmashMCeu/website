@@ -42,7 +42,7 @@
                     </UiButton>
                     <p
                         v-if="hasAlreadyRankVariantAddedInCart"
-                        class="text-sm text-muted-foreground"
+                        class="text-sm text-muted-foreground max-w-48"
                     >
                         You already have this rank in your cart.
                     </p>

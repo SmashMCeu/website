@@ -1,13 +1,22 @@
 <template>
     <div class="fixed z-30 left-16 right-16 bg-background/75 backdrop-blur-xl border p-4 rounded-lg flex items-center justify-between">
-        <div class="flex items-center gap-8">
-            <p>Shop</p>
+        <div class="flex items-center gap-6">
+            <NuxtLinkLocale
+                to="/shop"
+                class="text-lg font-semibold"
+            >
+                SmashMC Shop
+            </NuxtLinkLocale>
 
-            <div class="flex gap-4">
-                <p>Link</p>
-                <p>Link</p>
-                <p>Link</p>
-            </div>
+            <UiButton
+                as-child
+                variant="link"
+            >
+                <NuxtLinkLocale to="/shop">
+                    <Icon name="lucide:shopping-cart" />
+                    Our Products
+                </NuxtLinkLocale>
+            </UiButton>
         </div>
 
         <div class="flex gap-4">

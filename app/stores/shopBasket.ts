@@ -1,8 +1,7 @@
-import { useStorage } from "@vueuse/core"
 import useTebexEndpoints from "~/composables/useTebexEndpoints"
 import { skipHydrate } from "pinia"
-import type { ShopBasket, ShopBasketAction } from "~~/shared/types/ShopBasket"
-import type { ShopPackage, ShopPackageInBasket, ShopPackageVariableData } from "~~/shared/types/ShopPackage"
+import type { ShopBasket } from "~~/shared/types/ShopBasket"
+import type { ShopPackageInBasket, ShopPackageVariableData } from "~~/shared/types/ShopPackage"
 
 export const useShopBasket = defineStore("shopBasket", () => {
     const basket = ref<ShopBasket | null>(null)
@@ -15,13 +14,8 @@ export const useShopBasket = defineStore("shopBasket", () => {
         return new Map(packages.map((p: ShopPackageInBasket) => [p.id, p]))
     })
 
-    const pendingPackages = reactive<Set<ShopPackage["id"]>>(new Set())
-    const pendingPackageActions = useStorage<ShopBasketAction[]>("shop-pending-package-actions", [])
-
     async function createBasket(username: string): Promise<void> {
         basket.value = await useTebexEndpoints().createBasket(username)
-        console.log(basket.value)
-
         basketId.value = basket.value ? basket.value.ident : null
     }
 
@@ -39,53 +33,17 @@ export const useShopBasket = defineStore("shopBasket", () => {
         return basket.value
     }
 
-    async function addPendingAction(action: ShopBasketAction) {
-        pendingPackageActions.value.push(action)
-    }
-
-    function clearPendingPackageActions() {
-        pendingPackageActions.value = []
-    }
-
-    async function flushPendingPackages() {
-        for (const action of pendingPackageActions.value) {
-            if (action.type === "add") {
-                await addPackageToBasket(action.packageId, action.quantity)
-            } else if (action.type === "gift" && action.targetUsername) {
-                await giftPackage(action.packageId, action.quantity, action.targetUsername)
-            }
-        }
-
-        clearPendingPackageActions()
-    }
-
-    watch(
-        () => useShopAccount().isAuthenticated,
-        async (isAuthenticated, prevValue) => {
-            if (isAuthenticated && !prevValue) {
-                flushPendingPackages()
-            }
-        },
-    )
-
     async function addPackageToBasket(packageId: number, quantity = 1, variables?: ShopPackageVariableData): Promise<void> {
         if (!useShopAccount().isAuthenticated || !basket.value) {
-            addPendingAction({
-                type: "add",
-                packageId,
-                quantity,
-            })
             return
         }
 
-        pendingPackages.add(packageId)
         const newBasket = await useTebexEndpoints().addPackageToBasket(
             basket.value.ident,
             packageId.toString(),
             quantity,
             variables,
         )
-        pendingPackages.delete(packageId)
 
         if (newBasket) {
             basket.value = newBasket
@@ -98,12 +56,10 @@ export const useShopBasket = defineStore("shopBasket", () => {
     async function removePackageFromBasket(packageId: number): Promise<void> {
         if (!basket.value) return
 
-        pendingPackages.add(packageId)
         const newBasket = await useTebexEndpoints().removePackageFromBasket(
             basket.value.ident,
             packageId.toString(),
         )
-        pendingPackages.delete(packageId)
 
         if (newBasket) {
             basket.value = newBasket
@@ -115,16 +71,9 @@ export const useShopBasket = defineStore("shopBasket", () => {
 
     async function giftPackage(packageId: number, quantity = 1, targetUsername: string, variables?: ShopPackageVariableData): Promise<void> {
         if (!useShopAccount().isAuthenticated || !basket.value) {
-            addPendingAction({
-                type: "gift",
-                packageId,
-                quantity,
-                targetUsername,
-            })
             return
         }
 
-        pendingPackages.add(packageId)
         const newBasket = await useTebexEndpoints().addPackageToBasket(
             basket.value.ident,
             packageId.toString(),
@@ -132,7 +81,6 @@ export const useShopBasket = defineStore("shopBasket", () => {
             variables,
             targetUsername,
         )
-        pendingPackages.delete(packageId)
 
         if (newBasket) {
             basket.value = newBasket
@@ -146,7 +94,6 @@ export const useShopBasket = defineStore("shopBasket", () => {
         basketId,
         basket: skipHydrate(basket),
         hasBasket: skipHydrate(hasBasket),
-        pendingPackages: skipHydrate(pendingPackages),
         packages,
         createBasket,
         destroyBasket,
@@ -154,7 +101,6 @@ export const useShopBasket = defineStore("shopBasket", () => {
         addPackageToBasket,
         removePackageFromBasket,
         giftPackage,
-        clearPendingPackageActions,
     }
 })
 

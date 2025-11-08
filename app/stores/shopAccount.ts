@@ -1,10 +1,9 @@
-import { skipHydrate } from "pinia"
-import { useStorage } from "@vueuse/core"
+import { StorageSerializers, useStorage } from "@vueuse/core"
 import type { ShopUser } from "~~/shared/types/ShopUser"
 
 export const useShopAccount = defineStore("shopAccount", () => {
     const basket = useShopBasket()
-    const auth = useStorage<ShopUser | null>("shop-auth", null)
+    const auth = useStorage<ShopUser | null>("shop-auth", null, localStorage, { serializer: StorageSerializers.object })
     const isAuthenticated = computed(() => !!auth.value?.username)
 
     async function login(username: string): Promise<ShopUser | null> {
@@ -39,7 +38,7 @@ export const useShopAccount = defineStore("shopAccount", () => {
     }
 
     return {
-        user: skipHydrate(auth),
+        user: auth,
         isAuthenticated,
         login,
         logout,
