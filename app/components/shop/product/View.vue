@@ -24,9 +24,18 @@
                     <ShopProductVariantSelect
                         v-if="hasVariants"
                         v-model="currentVariant"
-                        :variants="product.variants"
+                        :variants="variants"
                     />
-                    <UiButton @click="addToCart">
+                    <div class="flex items-center justify-between rounded-md px-4">
+                        <p class="text-muted-foreground text-sm">
+                            Price:
+                        </p>
+                        <p>{{ currentVariant?.total_price }} €</p>
+                    </div>
+                    <UiButton
+                        class="mt-4"
+                        @click="addToCart"
+                    >
                         <Icon name="lucide:shopping-cart" />
                         Add to cart
                     </UiButton>
@@ -43,52 +52,38 @@
 </template>
 
 <script lang="ts" setup>
+import type { ShopCategory } from "~~/shared/types/ShopCategory"
+import type { ShopPackage } from "~~/shared/types/ShopPackage"
+
 const props = defineProps<{
-    productName: string
+    product: ShopCategory
+    variants: ShopPackage[]
 }>()
 
-const products = useShopStore().products
-const product = products.find(p => p.name.toLowerCase().replace(/ /g, "") === props.productName.toLowerCase().replace(/ /g, ""))
+const basket = useShopBasket()
+const shopAccount = useShopAccount()
 
-if (!product) {
-    throw createError({
-        statusCode: 404,
-        statusMessage: "Product not found",
-    })
-}
+const { getProductOrCategoryUrlName } = useShopProducts()
 
 const queryParamVariant = useRoute().query.variant as string | undefined
 
 const hasVariants = computed(() => {
-    return product.variants.length > 0
+    return props.variants.length > 0
 })
 
-const defaultVariant = computed(() => {
-    return product.package ? product.package : product.variants[0]
+const defaultVariant = computed<ShopPackage | undefined>(() => {
+    return props.variants.length > 0 ? props.variants[0] : props.product.packages[0]
 })
-const currentVariant = ref<TebexPackage | undefined>(
-    hasVariants.value
-        ? product.variants.find(v => v.name.toLowerCase().replace(/ /g, "") === queryParamVariant?.toLowerCase().replace(/ /g, "")) || defaultVariant.value
-        : defaultVariant.value,
-)
+
+const currentVariant = ref<ShopPackage | undefined>(props.variants.find(v => getProductOrCategoryUrlName(v.name) === queryParamVariant) || defaultVariant.value)
 
 function addToCart() {
     if (!currentVariant.value) return
-
-    useShopStore().addToCart({
-        id: currentVariant.value.id.toString(),
-        quantity: 1,
-    })
-
-    const localePath = useLocalePath()
-    useToast().success(`Added ${currentVariant.value.name} to cart!`, {
-        action: {
-            label: "Checkout",
-            onClick: () => {
-                navigateTo(localePath("/shop/checkout"))
-            },
-        },
-    })
+    if (!shopAccount.isAuthenticated) {
+        useToast().error("You must be logged in to add products to your basket.")
+        return
+    }
+    basket.addPackageToBasket(currentVariant.value.id)
 }
 
 watch(currentVariant, (newVariant) => {
@@ -98,7 +93,7 @@ watch(currentVariant, (newVariant) => {
         && newVariant.name !== defaultVariant.value.name
     ) {
         useRouter().replace({
-            query: { ...useRoute().query, variant: newVariant.name.toLowerCase().replace(/ /g, "") },
+            query: { ...useRoute().query, variant: getProductOrCategoryUrlName(newVariant.name) },
         })
     } else {
         useRouter().replace({

@@ -16,9 +16,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ShopPackage } from "~~/shared/types/ShopPackage"
+
 defineProps<{
-    variants: TebexPackage[]
+    variants: ShopPackage[]
 }>()
 
-const selectedVariant = defineModel<TebexPackage>()
+const selectedVariant = defineModel<ShopPackage>()
 </script>

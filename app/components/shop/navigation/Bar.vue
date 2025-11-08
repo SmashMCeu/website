@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed left-16 right-16 bg-background border p-4 rounded-lg flex items-center justify-between">
+    <div class="fixed z-30 left-16 right-16 bg-background/75 backdrop-blur-xl border p-4 rounded-lg flex items-center justify-between">
         <div class="flex items-center gap-8">
             <p>Shop</p>
 

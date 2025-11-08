@@ -4,7 +4,7 @@
         title="Shop Categories"
     >
         <div class="mt-20 flex items-center justify-center">
-            <ShopCategories />
+            <ShopCategoriesList />
         </div>
     </AppSection>
 </template>

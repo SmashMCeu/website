@@ -1,5 +1,6 @@
 <template>
     <UiButton
+        variant="outline"
         class="group justify-between"
         :class="{
             'min-w-[150px] hover:bg-red-400': isAuthenticated,
